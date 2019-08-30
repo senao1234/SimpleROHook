@@ -1,6 +1,6 @@
-**Note:** This fork has been **abandoned** since mid-2018. I currently do not play Ragnarok Online and accessing iRO from where I live is a hassle. **This version will not work on any current server.**
+**Note:** This fork has been **abandoned** since mid-2018. I currently do not play Ragnarok Online and accessing iRO from where I live is a hassle. **This version will (probably) not work on any current server.**
 
-**For developers:** *If you have basic Win32 reverse engineering skills*, updating this should not be particularly difficult or time-consuming. If you're thinking about picking up the slack, please don't be discouraged by the lack of activity: the reason you don't see anybody else doing it isn't that you need to be one of the Chosen Ones to figure this stuff out, just collective lack of interest.
+**For developers:** *If you have basic Win32 reverse engineering skills*, updating this should not be particularly difficult or time-consuming. If you're thinking about picking up the slack, please don't be discouraged by the lack of activity: the reason you (probably) don't see anybody else doing it isn't that you need to be one of the Chosen Ones to figure this stuff out, just collective lack of interest.
 
 If you have any questions you can reach me on Discord (@daxxy#3331). I'm still on iROWiki's server although at the time of writing I haven't been active for months and their #addon-support channel mentioned below was closed a long time ago.
 
