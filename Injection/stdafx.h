@@ -7,7 +7,8 @@
 
 #include "targetver.h"
 
-#define WIN32_LEAN_AND_MEAN             // Exclude unused parts from the Windows header.
+#define WIN32_LEAN_AND_MEAN  // Exclude unused parts from the Windows header.
+
 // Windows Header Files:
 #include <windows.h>
 #include <WinSock2.h>
@@ -22,8 +23,7 @@
 #pragma comment(lib, "dxguid.lib")
 #pragma comment(lib, "winmm.lib")
 
-
-#define DIRECTINPUT_VERSION  0x0700
+#define DIRECTINPUT_VERSION 0x0700
 #include <ddraw.h>
 #include <d3d.h>
 #include <dinput.h>
