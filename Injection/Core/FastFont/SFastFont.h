@@ -13,14 +13,14 @@
 class CSFastFont
 {
 private:
-	/// 頂点関係 ///
-//	#define SFF_FVF_CUSTOM ( D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX1 ) // 座標変換済み頂点
+	// Vertex relationship
+//	#define SFF_FVF_CUSTOM ( D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX1 )  // Coordinate converted vertices
 //
 //	struct SFF_CUSTOMVERTEX{
-//	   float x,y,z; // 頂点座標 
-//	   float rhw; // 除算数
-//	   DWORD dwColor; // 頂点の色
-//	   float u, v; //　テクスチャ座標 
+//	   float x,y,z;    // Vertex coordinates
+//	   float rhw;      // Arithmetic
+//	   DWORD dwColor;  // Vertex color
+//	   float u, v;     // Texture coordinates
 //	};
 
 	typedef struct StSFontCacheInfo{
