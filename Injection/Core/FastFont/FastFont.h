@@ -3,33 +3,31 @@
 #include <windows.h>
 #include "CacheInfo.h"
 
-typedef bool (*funcFFDATA2PIC)( VOID* , DWORD );
+typedef bool (*funcFFDATA2PIC)(VOID*, DWORD);
 
 class CFastFont
 {
 private:
-	typedef struct StOutlineFontData{
+	typedef struct StOutlineFontData
+	{
 		GLYPHMETRICS GM;
 		BYTE         Image[1];
-	}StOutlineFontData;
-public:
+	} StOutlineFontData;
 
+public:
 	CFastFont();
 	virtual ~CFastFont(void);
-	bool CreateFastFont(LOGFONT *lplf,
-		int OutLineFormat = GGO_BITMAP,
-		int HashDivideNums = 64);
+
+	bool CreateFastFont(LOGFONT *lplf, int OutLineFormat = GGO_BITMAP, int HashDivideNums = 64);
 
 	void ClearCache(void);
-	StOutlineFontData *GetFontData(int code,SIZE *size = NULL);
+	StOutlineFontData *GetFontData(int code, SIZE *size = NULL);
 
-	void BltFontData(int code,int x,int y,SIZE *size);
+	void BltFontData(int code, int x, int y, SIZE *size);
+	int DebugGetHashEntrys(int hashtableno);
 
-	int  DebugGetHashEntrys(int hashtableno);
-
-
-	//typedef int (WINAPI *PFNMESSAGEBOXA)(HWND, PCSTR, PCSTR, UINT);
-//	typedef bool (*funcFFDATA2PIC)( VOID* , DWORD );
+	// typedef int (WINAPI *PFNMESSAGEBOXA)(HWND, PCSTR, PCSTR, UINT);
+	// typedef bool (*funcFFDATA2PIC)(VOID*, DWORD);
 	void SetBltStatus(void *dist,DWORD pitch,DWORD bits,int mode,funcFFDATA2PIC func);
 
 	void GetMaxSize(SIZE *size);
@@ -37,14 +35,15 @@ public:
 	void test(int mode);
 
 private:
-	HDC     m_hDC;
-	HFONT   m_hOldFont;
+	HDC   m_hDC;
+	HFONT m_hOldFont;
 	TEXTMETRIC m_TM;
 
 	int m_DefaultBufferSize;
 	int m_OutLineFormat;
 	int m_HashDivideNums;
 	int m_BltAAMode;
+
 	HFONT m_hFont;
 	BYTE      *m_pDefaultBuffer;
 	CacheInfo *m_pCacheInfo;
