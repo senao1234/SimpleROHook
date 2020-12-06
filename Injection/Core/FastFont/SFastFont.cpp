@@ -420,7 +420,7 @@ CSFastFont::StSFontCacheInfo *CSFastFont::GetCacheData(int hashkey)
 	while(pCache)
 	{
 		if( pCache->OriginalKey == hashkey ){
-			// 参照されたキャッシュは最上位に繰り上がる
+			// The referenced cache moves up to the top
 			StSFontCacheInfo *pPrev = pCache->pPrev;
 			StSFontCacheInfo *pNext = pCache->pNext;
 			//
@@ -431,7 +431,7 @@ CSFastFont::StSFontCacheInfo *CSFastFont::GetCacheData(int hashkey)
 				m_pLastSFontChacheInfo = pPrev;
 			}
 			if( m_pLastSFontChacheInfoFirstUsed == pCache ){
-				// 最も使われていないハッシュキーの処理
+				// Handling the least used hash keys
 				if(&m_pSFontChacheInfo[0] == pPrev){
 					m_pLastSFontChacheInfoFirstUsed = pCache;
 				}else{
@@ -452,9 +452,9 @@ CSFastFont::StSFontCacheInfo *CSFastFont::GetCacheData(int hashkey)
 	// new data;
 	{
 //
-// 問題
-// キャッシュ終端を再利用した場合
-// オーダーポインタがリング状態になってしまう
+// Problem
+// When reusing cache termination
+// The order pointer goes into a ring state
 /*
 root
 DrawFont(x,y,str,color);A -> D
@@ -471,16 +471,16 @@ AGFEDCB
 */
 		pCache = m_pLastSFontChacheInfo;
 
-		// 最も使われていないハッシュキーの取得
-		// …、こうなるとは限らない
-		// キャッシュがヒットするとこれは成り立たない
+		// Get the least used hash key
+		// ..., this is not always the case
+		// if the cache hits this is not the case
 		if(	m_pLastSFontChacheInfoFirstUsed == m_pLastSFontChacheInfo ){
 			Flush();
 		}
 		if(!m_pLastSFontChacheInfoFirstUsed)
 			m_pLastSFontChacheInfoFirstUsed = m_pLastSFontChacheInfo;
 
-		m_pLastSFontChacheInfo = pCache->pPrev;// 実質最終端のキャッシュ
+		m_pLastSFontChacheInfo = pCache->pPrev;// Virtually final cache
 		
 		StSFontCacheInfo *pPrev = pCache->pPrev;
 		StSFontCacheInfo *pNext = pCache->pNext;
