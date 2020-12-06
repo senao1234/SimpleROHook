@@ -2,9 +2,9 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// アセンブリに関する一般情報は以下の属性セットをとおして制御されます。
-// アセンブリに関連付けられている情報を変更するには、
-// これらの属性値を変更してください。
+// General information about the assembly is controlled through the following set of attributes.
+// To change the information associated with the assembly,
+// Change these attribute values.
 [assembly: AssemblyTitle("SimpleROHookCS")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
@@ -14,23 +14,23 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-// ComVisible を false に設定すると、その型はこのアセンブリ内で COM コンポーネントから 
-// 参照不可能になります。COM からこのアセンブリ内の型にアクセスする場合は、
-// その型の ComVisible 属性を true に設定してください。
+// If ComVisible is set to false, its type will be from the COM component within this assembly.
+// It will be unreferenceable. If you want to access the types in this assembly from COM,
+// Set the ComVisible attribute for that type to true.
 [assembly: ComVisible(false)]
 
-// 次の GUID は、このプロジェクトが COM に公開される場合の、typelib の ID です
+// The following GUID is the ID of typelib when this project is published to COM
 [assembly: Guid("b7475390-b2fd-4a47-b0d8-7c5004aeae17")]
 
-// アセンブリのバージョン情報は、以下の 4 つの値で構成されています:
+// Assembly version information consists of four values:
 //
 //      Major Version
 //      Minor Version 
 //      Build Number
 //      Revision
 //
-// すべての値を指定するか、下のように '*' を使ってビルドおよびリビジョン番号を 
-// 既定値にすることができます:
+// Specify all values or use '*' as below for build and revision numbers
+// Can be the default:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.9")]
 [assembly: AssemblyFileVersion("1.0.0.9")]
