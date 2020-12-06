@@ -1,14 +1,14 @@
-// stdafx.h : 標準のシステム インクルード ファイルのインクルード ファイル、または
-// 参照回数が多く、かつあまり変更されない、プロジェクト専用のインクルード ファイル
-// を記述します。
+// stdafx.h: Include file for standard system include files, or
+// write a project-specific include file that is referenced frequently
+// and does not change much.
 //
 
 #pragma once
 
 #include "targetver.h"
 
-#define WIN32_LEAN_AND_MEAN             // Windows ヘッダーから使用されていない部分を除外します。
-// Windows ヘッダー ファイル:
+#define WIN32_LEAN_AND_MEAN             // Exclude unused parts from the Windows header.
+// Windows Header Files:
 #include <windows.h>
 #include <WinSock2.h>
 #include <Shlwapi.h>
@@ -28,7 +28,7 @@
 #include <d3d.h>
 #include <dinput.h>
 
-// TODO: プログラムに必要な追加ヘッダーをここで参照してください。
+// TODO: See here for any additional headers required by your program.
 #include <process.h>
 
 #include <math.h>
