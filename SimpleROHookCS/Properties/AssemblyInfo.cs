@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Planetleaf.com Lab.")]
 [assembly: AssemblyProduct("SimpleROHookCS")]
-[assembly: AssemblyCopyright("Copyright ©  2014 redchat Planetleaf.com Lab.")]
+[assembly: AssemblyCopyright("Copyright © 2014 redchat Planetleaf.com Lab.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -25,7 +25,7 @@ using System.Runtime.InteropServices;
 // Assembly version information consists of four values:
 //
 //      Major Version
-//      Minor Version 
+//      Minor Version
 //      Build Number
 //      Revision
 //
