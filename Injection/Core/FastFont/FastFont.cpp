@@ -278,22 +278,21 @@ void CFastFont::test(int mode)
 	GLYPHMETRICS GM;
 	int code;
 	DWORD imagesize;
-	code = (int)_T("あ");
+	code = (int)_T("Ah");
 	switch(mode){
 	case 0:
 		imagesize = GetGlyphOutline(m_hDC, code, m_OutLineFormat, &GM, 0, NULL, &Mat);
 		break;
 	case 1:
 		{
-			// バッファサイズが大きいほど時間が掛かる
-			// 
+			// The larger the buffer size, the longer it takes
 			BYTE g_data[64*64];
 			GetGlyphOutline(m_hDC, code, m_OutLineFormat,&GM, 64*64,g_data, &Mat);
 		}
 		break;
 	case 2:
 		{
-			// NULLによるバッファサイズ取得は以外に負荷が高い
+			// Other than getting the buffer size by NULL, the load is high.
 			BYTE *pdata;
 			imagesize = GetGlyphOutline(m_hDC, code, m_OutLineFormat, &GM, 0, NULL, &Mat);
 			pdata = new BYTE[imagesize];
@@ -303,8 +302,8 @@ void CFastFont::test(int mode)
 		break;
 	case 3:
 		{
-			// フォントサイズがある程度把握できるならば
-			// 取得バッファを前もって確保、取得後バッファを作成してコピーが最速
+			// If you can grasp the font size to some extent
+			// Reserve the acquisition buffer in advance, create a buffer after acquisition and copy is the fastest
 			BYTE g_data[64*64];
 			BYTE *pdata;
 			imagesize = GetGlyphOutline(m_hDC, code, m_OutLineFormat,&GM, 64*64,g_data, &Mat);
