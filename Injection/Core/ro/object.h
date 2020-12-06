@@ -1,6 +1,7 @@
 #pragma once
 
-class CRenderer {
+class CRenderer
+{
 public:
 	float m_hpc;
 	float m_vpc;
@@ -36,13 +37,12 @@ public:
 	void *m_lpUnknown;
 	unsigned long m_dwScreenWidth;
 	unsigned long m_dwScreenHeight;
-//  .
-//  .
-//  .
-	CRenderer(){};
+
+	CRenderer() {};
 };
 
-struct RPTriFace {
+struct RPTriFace
+{
 	struct tlvertex3d verts[3];
 	CTexture* tex;
 	unsigned long srcAlphaMode;
@@ -51,7 +51,8 @@ struct RPTriFace {
 	RPTriFace() {};
 };
 
-struct objectSegment {
+struct objectSegment
+{
 	struct vector3d pos;
 	struct vector3d deltaPos;
 	float longitude;
@@ -59,10 +60,11 @@ struct objectSegment {
 	struct matrix mat;
 
 	objectSegment() {};
-	struct objectSegment& operator=(struct objectSegment&) {};
+	struct objectSegment& operator = (struct objectSegment&) {};
 };
 
-struct KAC_XFORMDATA {
+struct KAC_XFORMDATA
+{
 	float x;
 	float y;
 	float u;
@@ -88,13 +90,15 @@ struct KAC_XFORMDATA {
 	unsigned long mtpreset;
 };
 
-struct KAC_KEYFRAME {
+struct KAC_KEYFRAME
+{
 	int iFrame;
 	unsigned long dwType;
 	struct KAC_XFORMDATA XformData;
 };
 
-struct KAC_LAYER {
+struct KAC_LAYER
+{
 	int cTex;
 	int iCurAniFrame;
 	class CTexture* m_tex[110];
@@ -107,7 +111,8 @@ struct KAC_LAYER {
 	CTexture* KAC_LAYER::GetTexture(int iTex) {};
 };
 
-struct KANICLIP {
+struct KANICLIP
+{
 	int nFPS;
 	int cFrame;
 	int cLayer;
@@ -118,39 +123,41 @@ struct KANICLIP {
 	KANICLIP::~KANICLIP() {};
 };
 
-
-class CGameObject {
+class CGameObject
+{
 public:
 #ifdef USE_GAMEOBJ_COUNTER
 	long long m_unknown_qword_counter;
 #endif
+
 	CGameObject(class CGameObject&) {};
 	CGameObject::CGameObject() {};
 	void CGameObject::OnInit() {};
 	void CGameObject::OnExit() {};
-	int  CGameObject::Get8Dir2(float rot, int isReal8Dir) {};
-	int  CGameObject::GetDir(float rot) {};
-	class CGameObject& operator=(class CGameObject&) {};
+	int CGameObject::Get8Dir2(float rot, int isReal8Dir) {};
+	int CGameObject::GetDir(float rot) {};
+	class CGameObject& operator = (class CGameObject&) {};
 
 	virtual CGameObject::~CGameObject() {};
-	virtual unsigned char CGameObject::OnProcess() { return 0;};
-	virtual void CGameObject::SendMsg( class CGameObject* sender, int message, int arg1, int arg2, int arg3) {};
-	virtual void CGameObject::Render( struct matrix& ptm) {};
-	virtual int CGameObject::Get8Dir( float rot) { return 0; };
+	virtual unsigned char CGameObject::OnProcess() { return 0; };
+	virtual void CGameObject::SendMsg(class CGameObject* sender, int message, int arg1, int arg2, int arg3) {};
+	virtual void CGameObject::Render(struct matrix& ptm) {};
+	virtual int CGameObject::Get8Dir(float rot) { return 0; };
 };
 
-
-class CRenderObject : public CGameObject  {
+class CRenderObject : public CGameObject
+{
 public:
 	struct vector3d m_pos;
-	std::basic_string<char> m_bodyPaletteName;	// class std::basic_string<char,std::char_traits<char>,std::allocator<char> > m_bodyPaletteName;
+	std::basic_string<char> m_bodyPaletteName;
+	// class std::basic_string<char, std::char_traits<char>, std::allocator<char> > m_bodyPaletteName;
 	int m_baseAction;
 	int m_curAction;
 	int m_curMotion;
 	int m_oldBaseAction;
 	int m_oldMotion;
 	int m_bodyPalette;
-	float m_roty; // body rot
+	float m_roty;  // body rot
 	float m_zoom;
 	float m_shadowZoom;
 	float m_motionSpeed;
@@ -169,10 +176,13 @@ public:
 	unsigned long m_stateStartTick;
 	struct ACTOR_COLOR m_oldColor;
 	struct ACTOR_COLOR m_curColor;
-	union {
+
+	union
+	{
 		unsigned long m_sprArgb;
 		struct COLOR m_sprColor;
 	};
+
 	unsigned char m_isLieOnGround;
 	unsigned char m_isMotionFinished;
 	unsigned char m_isMotionFreezed;
@@ -224,68 +234,70 @@ public:
 	class CSprRes* m_sprRes;
 	class CActRes* m_actRes;
 
-	int m_npcId; // added for later HightPrieast.exe?
+	int m_npcId;  // Added for later HightPrieast.exe?
+
 #ifdef JRO_CLIENT_STRUCTURE
 	unsigned long m_gid;
 #endif
+
 	CRenderObject(class CRenderObject&) {};
 	CRenderObject::CRenderObject() {};
-/*
-	void CRenderObject::OnInit();
-	void CRenderObject::OnExit();
-	void CRenderObject::UpdateTlvertex struct matrix& vtm);
-	void CRenderObject::RenderBody struct matrix& vtm, char FLAG1);
-	void CRenderObject::RenderMercenary struct matrix& vtm, int MerJob);
-	void CRenderObject::RenderShadow struct matrix& vtm, float zoom);
-	void CRenderObject::RenderSprite struct RPSprite& spr, unsigned long* pal, int renderFlag);
-	float CRenderObject::CalcDir float sx, float sz, float x, float z);
-	void CRenderObject::CalcDir float x, float z);
-	void CRenderObject::ModifyArgb int a, int r, int g, int b);
-	void CRenderObject::SetArgb int a, int r, int g, int b);
-	void CRenderObject::ProcessSound();
-	void CRenderObject::SetLmIntensity float& lmRIntensity, float& lmGIntensity, float& lmBIntensity);
-	float CRenderObject::CalcDist float x, float y, float z);
-	float CRenderObject::CalcDist float x, float z);
-	float GetStateCnt();
-	float GetLastPixelRatio();
-	unsigned char CRenderObject::GetTargetPos unsigned long targetGid, struct vector3d& tPos);
-	int GetLastTlvertX();
-	int GetLastTlvertY();
-	void CRenderObject::SetForceAnimSpeed(unsigned char speed);
-	void CRenderObject::SetForceAnimEndTick unsigned long tick);
-	void CRenderObject::SetForceAnimation int act, int mot, int maxMot, int finishAct, int finishMot, int isAnim, unsigned long endTick, int isLoop);
-	void CRenderObject::SetForceAnimation2 int act, int mot, int act2, int mot2, int act3, int mot3, int act4, int mot4, int act5, int mot5, int isAnim, unsigned long endTick, int isLoop);
-	void CRenderObject::SetForceAnimation3 int act, int mot, int maxMot, int isAnim, unsigned long endTick, int isLoop);
-	void CRenderObject::SetSprName char* sprName);
-	char* CRenderObject::GetSprName();
-	class CSprRes* CRenderObject::GetSprRes();
-	void CRenderObject::Palette_BW class CPaletteRes* palRes);
-	void CRenderObject::SetActName char* actName);
-	void CRenderObject::SetCharacterSquare float* top, float* btm, float* left, float* right);
-	void CRenderObject::SetCharacterAngle float* angle);
-	void CRenderObject::SetCharacterPreAngle int layer, int* imfOffX, int* imfOffY, int* head_imfOffX, int* head_imfOffY);
-	void CRenderObject::SetCharacterLight( struct RPSprite spr, unsigned long* pal);
-	void CRenderObject::SetCharacterPixelRatio float* pixelratio);
-	short CRenderObject::SetCharacterFlying();
-	class CActRes* CRenderObject::SetCharacterActRes int m_accessory2, int layer);
-	class CSprRes* CRenderObject::SetCharacterSprRes int m_accessory2, int layer);
-	char* CRenderObject::GetActName();
-	class CActRes* CRenderObject::GetActRes();
-	class CRenderObject& operator=(class CRenderObject&);
-*/
+
+	// void CRenderObject::OnInit();
+	// void CRenderObject::OnExit();
+	// void CRenderObject::UpdateTlvertex struct matrix& vtm);
+	// void CRenderObject::RenderBody struct matrix& vtm, char FLAG1);
+	// void CRenderObject::RenderMercenary struct matrix& vtm, int MerJob);
+	// void CRenderObject::RenderShadow struct matrix& vtm, float zoom);
+	// void CRenderObject::RenderSprite struct RPSprite& spr, unsigned long* pal, int renderFlag);
+	// float CRenderObject::CalcDir float sx, float sz, float x, float z);
+	// void CRenderObject::CalcDir float x, float z);
+	// void CRenderObject::ModifyArgb int a, int r, int g, int b);
+	// void CRenderObject::SetArgb int a, int r, int g, int b);
+	// void CRenderObject::ProcessSound();
+	// void CRenderObject::SetLmIntensity float& lmRIntensity, float& lmGIntensity, float& lmBIntensity);
+	// float CRenderObject::CalcDist float x, float y, float z);
+	// float CRenderObject::CalcDist float x, float z);
+	// float GetStateCnt();
+	// float GetLastPixelRatio();
+	// unsigned char CRenderObject::GetTargetPos unsigned long targetGid, struct vector3d& tPos);
+	// int GetLastTlvertX();
+	// int GetLastTlvertY();
+	// void CRenderObject::SetForceAnimSpeed(unsigned char speed);
+	// void CRenderObject::SetForceAnimEndTick unsigned long tick);
+	// void CRenderObject::SetForceAnimation int act, int mot, int maxMot, int finishAct, int finishMot, int isAnim, unsigned long endTick, int isLoop);
+	// void CRenderObject::SetForceAnimation2 int act, int mot, int act2, int mot2, int act3, int mot3, int act4, int mot4, int act5, int mot5, int isAnim, unsigned long endTick, int isLoop);
+	// void CRenderObject::SetForceAnimation3 int act, int mot, int maxMot, int isAnim, unsigned long endTick, int isLoop);
+	// void CRenderObject::SetSprName char* sprName);
+	// char* CRenderObject::GetSprName();
+	// class CSprRes* CRenderObject::GetSprRes();
+	// void CRenderObject::Palette_BW class CPaletteRes* palRes);
+	// void CRenderObject::SetActName char* actName);
+	// void CRenderObject::SetCharacterSquare float* top, float* btm, float* left, float* right);
+	// void CRenderObject::SetCharacterAngle float* angle);
+	// void CRenderObject::SetCharacterPreAngle int layer, int* imfOffX, int* imfOffY, int* head_imfOffX, int* head_imfOffY);
+	// void CRenderObject::SetCharacterLight(struct RPSprite spr, unsigned long* pal);
+	// void CRenderObject::SetCharacterPixelRatio float* pixelratio);
+	// short CRenderObject::SetCharacterFlying();
+	// class CActRes* CRenderObject::SetCharacterActRes int m_accessory2, int layer);
+	// class CSprRes* CRenderObject::SetCharacterSprRes int m_accessory2, int layer);
+	// char* CRenderObject::GetActName();
+	// class CActRes* CRenderObject::GetActRes();
+	// class CRenderObject& operator = (class CRenderObject&);
+
 	virtual CRenderObject::~CRenderObject() {};
-/*
-	virtual unsigned char CRenderObject::OnProcess();
-	virtual void CRenderObject::Render struct matrix& vtm);
-	virtual void CRenderObject::SetRenderInfo struct RENDER_INFO_RECT& info, float tlvertX, float tlvertY);
-	virtual void CRenderObject::SetTlvert float tlvertX, float tlvertY);
-	virtual void CRenderObject::SendMsg class CGameObject* sender, int message, int arg1, int arg2, int arg3);
-	virtual void CRenderObject::SetAction int action, int speed, int type);
-	virtual void CRenderObject::ProcessMotion();
-*/
+
+	// virtual unsigned char CRenderObject::OnProcess();
+	// virtual void CRenderObject::Render struct matrix& vtm);
+	// virtual void CRenderObject::SetRenderInfo struct RENDER_INFO_RECT& info, float tlvertX, float tlvertY);
+	// virtual void CRenderObject::SetTlvert float tlvertX, float tlvertY);
+	// virtual void CRenderObject::SendMsg class CGameObject* sender, int message, int arg1, int arg2, int arg3);
+	// virtual void CRenderObject::SetAction int action, int speed, int type);
+	// virtual void CRenderObject::ProcessMotion();
 };
 
-class CMousePointer : public CRenderObject  {
+class CMousePointer : public CRenderObject
+{
 public:
 	int m_visibleTime;
 
@@ -293,14 +305,15 @@ public:
 	CMousePointer::CMousePointer() {};
 	void CMousePointer::OnInit() {};
 	void CMousePointer::OnExit() {};
-	class CMousePointer& operator=(class CMousePointer&) {};
+	class CMousePointer& operator = (class CMousePointer&) {};
 
 	virtual CMousePointer::~CMousePointer() {};
-	virtual void CMousePointer::SendMsg( class CGameObject* sender, int message, int arg1, int arg2, int arg3) {};
+	virtual void CMousePointer::SendMsg(class CGameObject* sender, int message, int arg1, int arg2, int arg3) {};
 	virtual unsigned char CMousePointer::OnProcess() {};
 };
 
-class CItem : public CRenderObject  {
+class CItem : public CRenderObject
+{
 public:
 	class std::basic_string<char> m_itemName;
 	short m_itemid;
@@ -316,16 +329,17 @@ public:
 	void CItem::OnInit();
 	void CItem::OnExit();
 	unsigned long GetAID();
-	class CItem& operator=(class CItem&);
+	class CItem& operator = (class CItem&);
 
 	virtual CItem::~CItem();
 	virtual unsigned char CItem::OnProcess();
-	virtual void CItem::Render( struct matrix& vtm);
-	virtual void CItem::SendMsg( class CGameObject* sender, int message, int arg1, int arg2, int arg3);
-	virtual void CItem::SetRenderInfo( struct RENDER_INFO_RECT& info, float tlvertX, float tlvertY);
+	virtual void CItem::Render(struct matrix& vtm);
+	virtual void CItem::SendMsg(class CGameObject* sender, int message, int arg1, int arg2, int arg3);
+	virtual void CItem::SetRenderInfo(struct RENDER_INFO_RECT& info, float tlvertX, float tlvertY);
 };
 
-class CEffectPrim : public CRenderObject  {
+class CEffectPrim : public CRenderObject
+{
 public:
 	int m_isChangeProcessed;
 	class CRagEffect* m_master;
@@ -440,7 +454,8 @@ public:
 	virtual ~CEffectPrim() {};
 };
 
-class CRagEffect : public CRenderObject  {
+class CRagEffect : public CRenderObject
+{
 public:
 	class CRenderObject* m_master;
 	float m_param[4];
@@ -474,7 +489,8 @@ public:
 	virtual ~CRagEffect() {};
 };
 
-class CAbleToMakeEffect : public CRenderObject  {
+class CAbleToMakeEffect : public CRenderObject
+{
 public:
 	int m_efId;
 	int m_Sk_Level;
@@ -482,10 +498,12 @@ public:
 	std::list<CRagEffect*> m_effectList;
 	CRagEffect* m_beginSpellEffect;
 	CRagEffect* m_magicTargetEffect;
+
 	virtual ~CAbleToMakeEffect() {};
 };
 
-struct WBA {
+struct WBA
+{
 	int message;
 	int damage;
 	unsigned long time;
@@ -496,10 +514,12 @@ struct WBA {
 	int effectId2;
 	int effectLevel;
 	float attackedSpeedFactor;
+
 	WBA(int, int, unsigned long, unsigned long, int, int, int, int, int, float) {};
 };
 
-class CMsgEffect : public CAbleToMakeEffect  {
+class CMsgEffect : public CAbleToMakeEffect
+{
 public:
 	int m_isAnimation;
 	class CGameActor* m_masterActor;
@@ -523,10 +543,11 @@ public:
 	virtual ~CMsgEffect() {};
 };
 
-class CGameActor : public CAbleToMakeEffect  {
+class CGameActor : public CAbleToMakeEffect
+{
 public:
-  static intptr_t jobOffset;
-  int* pJob() { return (int*)((char*)this + jobOffset); }
+	static intptr_t jobOffset;
+	int* pJob() { return (int*)((char*)this + jobOffset); }
 
 #ifdef JRO_CLIENT_STRUCTURE
 	int m_cgameactor_unknown_j00;
@@ -535,6 +556,7 @@ public:
 	int m_cgameactor_unknown_j03;
 	int m_cgameactor_unknown_j04;
 #endif
+
 	int m_moveDestX;
 	int m_moveDestY;
 	unsigned long m_speed;
@@ -565,19 +587,26 @@ public:
 #ifndef JRO_CLIENT_STRUCTURE
 	unsigned long m_gid;
 #endif
+
 #ifdef CGAMEACTOR_PADDING
 	// As with CMode, I don't know where these extra bytes come from
 	// but putting them here fixes M2E
 	char m_pad1[CGAMEACTOR_PADDING];
 #endif
+
 	int m_job_deprecated;
 	int m_sex;
-	void* m_balloon;//class UIBalloonText* m_balloon;
-	void* m_chatTitle;//class UIChatRoomTitle* m_chatTitle;
-	void* m_merchantShopTitle;//class UIMerchantShopTitle* m_merchantShopTitle;
-	void* m_skillRechargeGage;//class UIRechargeGage* m_skillRechargeGage;
-	void* m_merchantPurchaseTitle;//class UIMerchantPurchaseTitle* m_merchantPurchaseTitle;
-	
+	void* m_balloon;
+	// class UIBalloonText* m_balloon;
+	void* m_chatTitle;
+	// class UIChatRoomTitle* m_chatTitle;
+	void* m_merchantShopTitle;
+	// class UIMerchantShopTitle* m_merchantShopTitle;
+	void* m_skillRechargeGage;
+	// class UIRechargeGage* m_skillRechargeGage;
+	void* m_merchantPurchaseTitle;
+	// class UIMerchantPurchaseTitle* m_merchantPurchaseTitle;
+
 	unsigned long m_freezeEndTick;
 	unsigned long m_petEmotionStartTick;
 	unsigned long m_skillRechargeEndTick;
@@ -610,21 +639,22 @@ public:
 	int m_gdid;
 	int m_emblemVersion;
 
-	int m_whiffCounter;//miss counter
-	int m_damagePoint;//damage
-	int m_unknown_data0002;//
-	int m_unknown_data0003;//m_effectState2
+	int m_whiffCounter;      // miss counter
+	int m_damagePoint;       // damage
+	int m_unknown_data0002;
+	int m_unknown_data0003;  // m_effectState2
 	void *m_unknown01_window;
 	int m_unknown01_window_offset;
 
-	void* m_homunAI;//class CMercenaryAI* m_homunAI;
-	void* m_merAI;//class CMercenaryAI* m_merAI;
+	void* m_homunAI;
+	// class CMercenaryAI* m_homunAI;
+	void* m_merAI;
+	// class CMercenaryAI* m_merAI;
 	unsigned char m_objectType;
 	struct _MSG2AI m_homunMsg;
 	struct _MSG2AI m_homunResMsg;
 	struct _MSG2AI m_merMsg;
 	struct _MSG2AI m_merResMsg;
-
 
 	class CMsgEffect* m_birdEffect;
 	class CMsgEffect* m_cartEffect;
@@ -647,27 +677,34 @@ public:
 	int m_cgameactor_unknown_dest_choice_state;
 	int m_cgameactor_unknown06;
 	int m_cgameactor_unknown07;
+
 #ifdef JRO_CLIENT_STRUCTURE
 	int m_cgameactor_unknown_j05;
 	int m_cgameactor_unknown_j06;
 #endif
+
 	virtual ~CGameActor() {};
 };
 
-class CSkill : public CGameActor  {
+class CSkill : public CGameActor
+{
 public:
 	int m_ownerGid;
 	unsigned long m_launchCnt;
 	unsigned long m_aid;
-	void *m_3dactor;// class C3dActor*
-	void *m_LoopEffect;// class CRagEffect*
-	long m_framecounter; // ?? added for later HightPrieast.exe?
+	void *m_3dactor;
+	// class C3dActor*
+	void *m_LoopEffect;
+	// class CRagEffect*
+	long m_framecounter;  // Added for later HightPrieast.exe?
 	int m_effectId;
 	int m_unknown_counter;
+
 	virtual ~CSkill() {};
 };
 
-class CPc : public CGameActor  {
+class CPc : public CGameActor
+{
 public:
 	int m_cpc_unknown01;
 	int m_cpc_unknown02;
@@ -689,7 +726,8 @@ public:
 	struct vector3d shoe_pos;
 	int m_renderWithoutLayer;
 	std::basic_string<char> m_headPaletteName;
-	void* m_gage;//UIPcGage* m_gage;
+	void* m_gage;
+	// UIPcGage* m_gage;
 	long m_pk_rank;
 	long m_pk_total;
 
@@ -709,7 +747,8 @@ public:
 	virtual ~CPc() {};
 };
 
-class CPlayer : public CPc  {
+class CPlayer : public CPc
+{
 public:
 	int m_destCellX;
 	int m_destCellZ;
@@ -737,7 +776,8 @@ public:
 	virtual~CPlayer() {};
 };
 
-class CNpc : public CGameActor  {
+class CNpc : public CGameActor
+{
 public:
 	float m_x1;
 	float m_z1;
@@ -746,8 +786,10 @@ public:
 	int m_playerIswithinBox;
 	unsigned long m_lastEffectLaunchTick;
 	int m_doesLaunchEffect;
-	void *m_gage;  //class UIPlayerGage*
-	void *m_gage2; //class UIPcGage*
+	void *m_gage;
+	// class UIPlayerGage*
+	void *m_gage2;
+	// class UIPcGage*
 	int m_unknown_value;
 	int m_unknown_counter;
 };
