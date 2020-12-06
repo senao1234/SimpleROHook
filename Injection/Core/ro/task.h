@@ -1,45 +1,48 @@
 #pragma once
 
-enum LMS_STATE {
-	LSM_WARNING = 0x0,
-	LSM_LICENCE = 0x1,
-	LSM_SELECTACCOUNT = 0x2,
-	LSM_IDENTRY = 0x3,
-	LSM_WAITRESP_FROM_ACSVR = 0x4,
-	LSM_WAITRESP_FROM_CHSVR = 0x5,
-	LSM_SELECTSVR = 0x6,
-	LSM_SELECTCHAR = 0x7,
-	LSM_MAKECHAR = 0x8,
+enum LMS_STATE
+{
+	LSM_WARNING                        = 0x0,
+	LSM_LICENCE                        = 0x1,
+	LSM_SELECTACCOUNT                  = 0x2,
+	LSM_IDENTRY                        = 0x3,
+	LSM_WAITRESP_FROM_ACSVR            = 0x4,
+	LSM_WAITRESP_FROM_CHSVR            = 0x5,
+	LSM_SELECTSVR                      = 0x6,
+	LSM_SELECTCHAR                     = 0x7,
+	LSM_MAKECHAR                       = 0x8,
 	LSM_WAITRESP_FROM_CHSVR_SELECTCHAR = 0x9,
-	LSM_WAITRESP_FROM_CHSVR_MAKECHAR = 0xa,
+	LSM_WAITRESP_FROM_CHSVR_MAKECHAR   = 0xa,
 	LSM_WAITRESP_FROM_CHSVR_DELETECHAR = 0xb,
-	LSM_READY_FOR_ZONESVR = 0xc,
-	LSM_SELECTACCOUNT2 = 0xd,
-	LSM_REQ_GAME_GUARD_CHECK = 0xe,
-	LSM_ACK_GAME_GUARD = 0xf,
-	LSM_REQ_GAME_GUARD_CHECK2 = 0x10,
-	LSM_REQ_PTNUM = 0x11,
-	LSM_REQ_PTACINFO = 0x12,
-	LSM_SELECTCHAR2 = 0x13,
-	LSM_LAST = 0x14,
+	LSM_READY_FOR_ZONESVR              = 0xc,
+	LSM_SELECTACCOUNT2                 = 0xd,
+	LSM_REQ_GAME_GUARD_CHECK           = 0xe,
+	LSM_ACK_GAME_GUARD                 = 0xf,
+	LSM_REQ_GAME_GUARD_CHECK2          = 0x10,
+	LSM_REQ_PTNUM                      = 0x11,
+	LSM_REQ_PTACINFO                   = 0x12,
+	LSM_SELECTCHAR2                    = 0x13,
+	LSM_LAST                           = 0x14,
 };
 
-class CMode {
+class CMode
+{
 public:
-	int m_subMode;    // pointer
+	int m_subMode;      // pointer
 	int m_subModeCnt;
-	int m_nextSubMode;// pointer +0x08
+	int m_nextSubMode;  // pointer +0x08
 	int m_fadeInCount;
 	int m_loopCond;
 	int m_isConnected;
-	void* m_helpBalloon;//UITransBalloonText* m_helpBalloon; +0x18
+	void* m_helpBalloon;
+	// UITransBalloonText* m_helpBalloon;  // +0x18
 	unsigned long m_helpBalloonTick;
 	unsigned long m_mouseAnimStartTick;
 	int m_isMouseLockOn;
 	int m_screenShotNow;
-	struct vector2d m_mouseSnapDiff; // Together until 0xd0 or 0xb4
+	struct vector2d m_mouseSnapDiff;  // Together until 0xd0 or 0xb4
+
 #ifdef CMODE_PADDING_24
-	//
 	// Padding used to be 28. At the latest, CGameMode.m_rswName
 	// was 4 bytes too far for iRO RE:Start 2017-09-20ragexe
 	// TODO: Figure out if this is *actually* the right field to shorten/remove.
@@ -47,22 +50,23 @@ public:
 #else
 	char m_pad1[28];
 #endif
-	int m_cursorActNum; 
-	int m_cursorMotNum; 
+
+	int m_cursorActNum;
+	int m_cursorMotNum;
 
 	CMode(class CMode&) {};
 	CMode::CMode() {};
 	void CMode::Initialize() {};
 	void PostQuitMsg() {};
 	void CMode::ScreenShot() {};
-	void CMode::SetCursorAction( int cursorActNum) {};
-	void CMode::RunFadeOut( int bDrawLogo) {};
-	void CMode::DrawSprite( int x, int y, class CActRes* act, class CSprRes* spr, int actId, int motId, float zoom, float angle, unsigned long color) {};
-	void CMode::DrawTexture( struct tagRECT* rect, int angle, float oow, unsigned long argb, class CTexture* tex, struct UVRECT uvRect) {};
-	void CMode::DrawBackGround2D( struct tagRECT* rect, int angle, float oow, unsigned long argb, class CTexture* tex, struct UVRECT uvRect) {};
+	void CMode::SetCursorAction(int cursorActNum) {};
+	void CMode::RunFadeOut(int bDrawLogo) {};
+	void CMode::DrawSprite(int x, int y, class CActRes* act, class CSprRes* spr, int actId, int motId, float zoom, float angle, unsigned long color) {};
+	void CMode::DrawTexture(struct tagRECT* rect, int angle, float oow, unsigned long argb, class CTexture* tex, struct UVRECT uvRect) {};
+	void CMode::DrawBackGround2D(struct tagRECT* rect, int angle, float oow, unsigned long argb, class CTexture* tex, struct UVRECT uvRect) {};
 	void CMode::DrawMouseCursor() {};
 	void CMode::DrawBattleMode() {};
-	void CMode::MakeHelpBalloon( char* helpMsg, int x, int y, unsigned long fntColor) {};
+	void CMode::MakeHelpBalloon(char* helpMsg, int x, int y, unsigned long fntColor) {};
 	void CMode::ProcessHelpBalloon() {};
 	void CMode::ProcessFadeIn() {};
 	void CMode::ProcessKeyBoard() {};
@@ -72,20 +76,19 @@ public:
 	int GetLoopCond() {};
 	void SetNextSubState(int) {};
 	void SetSubState(int) {};
-	class CMode& operator=(class CMode&) {};
+	class CMode& operator = (class CMode&) {};
 
 	virtual CMode::~CMode() {};
 	virtual int CMode::OnRun() {};
-	virtual void CMode::OnInit( char* modeName) {};
+	virtual void CMode::OnInit(char* modeName) {};
 	virtual void CMode::OnExit() {};
 	virtual void CMode::OnUpdate() {};
-	virtual int CMode::SendMsg( int messageId, int val1, int val2, int val3) {};
-	virtual void CMode::OnChangeState( int state) {};
-
+	virtual int CMode::SendMsg(int messageId, int val1, int val2, int val3) {};
+	virtual void CMode::OnChangeState(int state) {};
 };
 
-
-class CGameMode : public CMode {
+class CGameMode : public CMode
+{
 public:
 	static unsigned long m_lastLockOnPcGid;
 	static unsigned long m_dwOldAutoFollowTime;
@@ -97,7 +100,7 @@ public:
 	int m_areaBottom;
 	char m_rswName[40];
 	char m_minimapBmpName[60];
-	CWorld* m_world; // d0
+	CWorld* m_world;  // 0xd0
 	CView* m_view;
 	CMousePointer* m_mousePointer;
 	unsigned long m_leftBtnClickTick;
@@ -120,18 +123,18 @@ public:
 	std::basic_string<char> m_refuseWhisperName;
 	std::basic_string<char> m_streamFileName;
 	std::basic_string<char> m_lastExchangeCharacterName;
-	std::map<unsigned long,NamePair> m_actorNameList;
-	std::map<unsigned long,unsigned long> m_actorNameReqTimer;
-	std::map<unsigned long,NamePair> m_actorNameListByGID;
-	std::map<unsigned long,unsigned long> m_actorNameByGIDReqTimer;
-	std::map<unsigned long,int> m_guildMemberStatusCache;
-	std::map<unsigned long,CellPos> m_actorPosList;
+	std::map<unsigned long, NamePair> m_actorNameList;
+	std::map<unsigned long, unsigned long> m_actorNameReqTimer;
+	std::map<unsigned long, NamePair> m_actorNameListByGID;
+	std::map<unsigned long, unsigned long> m_actorNameByGIDReqTimer;
+	std::map<unsigned long, int> m_guildMemberStatusCache;
+	std::map<unsigned long, CellPos> m_actorPosList;
 	std::list<unsigned long> m_pickupReqItemNaidList;
-	std::map<unsigned long,unsigned long> m_aidList;
-	std::map<unsigned long,ColorCellPos> m_partyPosList;
-	std::map<unsigned long,ColorCellPos> m_guildPosList;
-	std::map<unsigned long,ColorCellPos2> m_compassPosList;
-	std::vector<int,std::allocator<int> > m_menuIdList;
+	std::map<unsigned long, unsigned long> m_aidList;
+	std::map<unsigned long, ColorCellPos> m_partyPosList;
+	std::map<unsigned long, ColorCellPos> m_guildPosList;
+	std::map<unsigned long, ColorCellPos2> m_compassPosList;
+	std::vector<int, std::allocator<int> > m_menuIdList;
 	std::list<unsigned long> m_visibleTrapList;
 	std::list<unsigned long> m_emblemReqGdidQueue;
 	unsigned long m_lastEmblemReqTick;
@@ -159,13 +162,20 @@ public:
 	unsigned long m_lastCouplePacketAid;
 	unsigned long m_lastCouplePacketGid;
 	char m_CoupleName[24];
-	void* m_nameBalloon;			// class UINameBalloonText* m_nameBalloon;
-	void* m_targetNameBalloon;		// class UINameBalloonText* m_targetNameBalloon;
-	void* m_broadcastBalloon;		// class UITransBalloonText* m_broadcastBalloon;
-	void* m_playerGage;				// class UIPlayerGage* m_playerGage;
-	void* m_skillNameBalloon;		// class UITransBalloonText* m_skillNameBalloon;
-	void* m_skillMsgBalloon;		// class UITransBalloonText* m_skillMsgBalloon;
-	void* m_skillUsedMsgBalloon;	// class UITransBalloonText* m_skillUsedMsgBalloon;
+	void* m_nameBalloon;
+	// class UINameBalloonText* m_nameBalloon;
+	void* m_targetNameBalloon;
+	// class UINameBalloonText* m_targetNameBalloon;
+	void* m_broadcastBalloon;
+	// class UITransBalloonText* m_broadcastBalloon;
+	void* m_playerGage;
+	// class UIPlayerGage* m_playerGage;
+	void* m_skillNameBalloon;
+	// class UITransBalloonText* m_skillNameBalloon;
+	void* m_skillMsgBalloon;
+	// class UITransBalloonText* m_skillMsgBalloon;
+	void* m_skillUsedMsgBalloon;
+	// class UITransBalloonText* m_skillUsedMsgBalloon;
 	unsigned long m_skillUsedTick;
 	unsigned long m_broadCastTick;
 	int m_nameDisplayed;
@@ -212,7 +222,8 @@ public:
 	virtual ~CGameMode() {};
 };
 
-class CModeMgr {
+class CModeMgr
+{
 public:
 	int m_loopCond;
 	class CMode* m_curMode;
@@ -222,11 +233,12 @@ public:
 	int m_nextModeType;
 
 	CModeMgr::CModeMgr() {};
-	void CModeMgr::Run( int modeType, char* worldName) {};
-	void CModeMgr::Switch( int modeType, char* modeName) {};
+	void CModeMgr::Run(int modeType, char* worldName) {};
+	void CModeMgr::Switch(int modeType, char* modeName) {};
 	void CModeMgr::Quit() {};
 	int GetLoopCond() {};
 	CMode* GetCurMode() {};
 	CGameMode* CModeMgr::GetGameMode() {};
-	void* CModeMgr::GetLoginMode() {}; // CLoginMode* CModeMgr::GetLoginMode();
+	void* CModeMgr::GetLoginMode() {};
+	// CLoginMode* CModeMgr::GetLoginMode();
 };
