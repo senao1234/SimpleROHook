@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -13,15 +13,15 @@ namespace SimpleROHookCS
         public SRHAboutBox()
         {
             InitializeComponent();
-            this.Text = String.Format("{0} のバージョン情報", AssemblyTitle);
+            this.Text = String.Format("About {0}", AssemblyTitle);
             this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("バージョン {0}", AssemblyVersion);
+            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
             this.labelCompanyName.Text = AssemblyCompany;
             this.textBoxDescription.Text = AssemblyDescription;
         }
 
-        #region アセンブリ属性アクセサー
+        #region Assembly attribute accessor
 
         public string AssemblyTitle
         {
