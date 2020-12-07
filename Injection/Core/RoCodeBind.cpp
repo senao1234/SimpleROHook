@@ -1649,9 +1649,9 @@ void CRoCodeBind::SearchRagexeMemory(void)
 
 	CSearchCode CGameActor_Job_use(
 		"89***1******"      // mov     [edi+234h], eax ; m_job
-		"8b**"              // mov     esi, [edi]
-		"8b**"              // mov     ecx, edi
-		"e8********"        // call    sub_698C70
+		"8B**"              // mov     esi, [edi]
+		"8B**"              // mov     ecx, edi
+		"E8********"        // call    sub_698C70
 	);
 
 	// CZ_UIYourItemWnd::SendMsg CZ_REQ_WEAR_EQUIP handler
@@ -1665,190 +1665,190 @@ void CRoCodeBind::SearchRagexeMemory(void)
 
 	// Based RagFree.exe iRO vc6
 	CSearchCode UIYourItemWnd__SendMsg_REQ_WEAR_EQUIP_Handler_TypeA(
-		"b9*1******"        // mov     ecx, dword L008208d0 ; CModeMgr__g_modeMgr
-		"e8*2******"        // call    near F0052c0e0 ; CModeMgr__GetGameMode
-		"668b536c"          // mov     dx, [ebx+06ch]
-		"668b4370"          // mov     ax, [ebx+070h]
-		"8d4dec"            // lea     ecx, [ebp-014h]
-		"66c745eca900"      // mov     word [ebp-014h], word 000a9h
+		"B9*1******"        // mov     ecx, dword L008208d0 ; CModeMgr__g_modeMgr
+		"E8*2******"        // call    near F0052c0e0 ; CModeMgr__GetGameMode
+		"668B536C"          // mov     dx, [ebx+06ch]
+		"668B4370"          // mov     ax, [ebx+070h]
+		"8D4DEC"            // lea     ecx, [ebp-014h]
+		"66C745ECA900"      // mov     word [ebp-014h], word 000a9h
 		"51"                // push    ecx
-		"68a9000000"        // push    dword 0000000a9h
-		"668955ee"          // mov     [ebp-012h], dx
-		"668945f0"          // mov     [ebp-010h], ax
-		"e8*3******"        // call    near F004190f0 ; CRagConnection__instanceR
-		"8bc8"              // mov     ecx, eax
-		"e8*4******"        // call    near F00419030 ; CRagConnection__GetPacketSize
+		"68A9000000"        // push    dword 0000000a9h
+		"668955EE"          // mov     [ebp-012h], dx
+		"668945F0"          // mov     [ebp-010h], ax
+		"E8*3******"        // call    near F004190f0 ; CRagConnection__instanceR
+		"8BC8"              // mov     ecx, eax
+		"E8*4******"        // call    near F00419030 ; CRagConnection__GetPacketSize
 		"50"                // push    eax
-		"e8********"        // call    near F004190f0 ; CRagConnection__instanceR
-		"8bc8"              // mov     ecx, eax
-		"e8*5******"        // call    near F00418f00 ; CRagConnection__SendPacket
+		"E8********"        // call    near F004190f0 ; CRagConnection__instanceR
+		"8BC8"              // mov     ecx, eax
+		"E8*5******"        // call    near F00418f00 ; CRagConnection__SendPacket
 		"68**000000"        // push    dword 00000008ah
-		"b9*6******"        // mov     ecx, dword L007e7220 ; UIWindowMgr__g_windowMgr
-		"e8*7******"        // call    near F00502390 ; UIWindowMgr__DeleteWindow
+		"B9*6******"        // mov     ecx, dword L007e7220 ; UIWindowMgr__g_windowMgr
+		"E8*7******"        // call    near F00502390 ; UIWindowMgr__DeleteWindow
 		);
 
 	// F2P_Ragexe.exe iRO vc9
 	CSearchCode UIYourItemWnd__SendMsg_REQ_WEAR_EQUIP_Handler_TypeB(
-		"b9*1******"        // mov     ecx, dword L00812088 ; CModeMgr__g_modeMgr
-		"e8*2******"        // call    near F0051eeb0 ; CModeMgr__GetGameMode
-		"668b4e**"          // mov     cx, [esi+06ch]
-		"668b56**"          // mov     dx, [esi+070h]
-		"b8a9000000"        // mov     eax, dword 0000000a9h
+		"B9*1******"        // mov     ecx, dword L00812088 ; CModeMgr__g_modeMgr
+		"E8*2******"        // call    near F0051eeb0 ; CModeMgr__GetGameMode
+		"668B4E**"          // mov     cx, [esi+06ch]
+		"668B56**"          // mov     dx, [esi+070h]
+		"B8A9000000"        // mov     eax, dword 0000000a9h
 		"6689442408"        // mov     [esp+008h], ax
-		"8d442408"          // lea     eax, [esp+008h]
+		"8D442408"          // lea     eax, [esp+008h]
 		"50"                // push    eax
-		"68a9000000"        // push    dword 0000000a9h
-		"66894c2412"        // mov     [esp+012h], cx
+		"68A9000000"        // push    dword 0000000a9h
+		"66894C2412"        // mov     [esp+012h], cx
 		"6689542414"        // mov     [esp+014h], dx
-		"e8*3******"        // call    near F006335a0 ; CRagConnection__instanceR
-		"8bc8"              // mov     ecx, eax
-		"e8*4******"        // call    near F006336d0 ; CRagConnection__GetPacketSize
+		"E8*3******"        // call    near F006335a0 ; CRagConnection__instanceR
+		"8BC8"              // mov     ecx, eax
+		"E8*4******"        // call    near F006336d0 ; CRagConnection__GetPacketSize
 		"50"                // push    eax
-		"e8********"        // call    near F006335a0 ; CRagConnection__instanceR
-		"8bc8"              // mov     ecx, eax
-		"e8*5******"        // call    near F00633550 ; CRagConnection__SendPacket
-		"688a000000"        // push    dword 00000008ah
-		"b9*6******"        // mov     ecx, dword L0083df40 ; UIWindowMgr__g_windowMgr
-		"e8*7******"        // call    near F004f8270 ; UIWindowMgr__DeleteWindow
+		"E8********"        // call    near F006335a0 ; CRagConnection__instanceR
+		"8BC8"              // mov     ecx, eax
+		"E8*5******"        // call    near F00633550 ; CRagConnection__SendPacket
+		"688A000000"        // push    dword 00000008ah
+		"B9*6******"        // mov     ecx, dword L0083df40 ; UIWindowMgr__g_windowMgr
+		"E8*7******"        // call    near F004f8270 ; UIWindowMgr__DeleteWindow
 		);
 
 	// Based 2011-12-01aRagexe.exe iRO vc9
 	CSearchCode UIYourItemWnd__SendMsg_REQ_WEAR_EQUIP_Handler_TypeC(
-		"b9*1******"        // mov     ecx, dword L008371f8 ; CModeMgr__g_modeMgr
-		"e8*2******"        // call    near F0054a7a0 ; CModeMgr__GetGameMode
-		"668b4e**"          // mov     cx, [esi+07ch]
-		"668b96**000000"    // mov     dx, [esi+000000080h]
-		"b8a9000000"        // mov     eax, dword 0000000a9h
+		"B9*1******"        // mov     ecx, dword L008371f8 ; CModeMgr__g_modeMgr
+		"E8*2******"        // call    near F0054a7a0 ; CModeMgr__GetGameMode
+		"668B4E**"          // mov     cx, [esi+07ch]
+		"668B96**000000"    // mov     dx, [esi+000000080h]
+		"B8A9000000"        // mov     eax, dword 0000000a9h
 		"6689442408"        // mov     [esp+008h], ax
-		"8d442408"          // lea     eax, [esp+008h]
+		"8D442408"          // lea     eax, [esp+008h]
 		"50"                // push    eax
-		"68a9000000"        // push    dword 0000000a9h
-		"66894c2412"        // mov     [esp+012h], cx
+		"68A9000000"        // push    dword 0000000a9h
+		"66894C2412"        // mov     [esp+012h], cx
 		"6689542414"        // mov     [esp+014h], dx
-		"e8*3******"        // call    near F0065d4d0 ; CRagConnection__instanceR
-		"8bc8"              // mov     ecx, eax
-		"e8*4******"        // call    near F0065cf90 ; CRagConnection__GetPacketSize
+		"E8*3******"        // call    near F0065d4d0 ; CRagConnection__instanceR
+		"8BC8"              // mov     ecx, eax
+		"E8*4******"        // call    near F0065cf90 ; CRagConnection__GetPacketSize
 		"50"                // push    eax
-		"e8********"        // call    near F0065d4d0 ; CRagConnection__instanceR
-		"8bc8"              // mov     ecx, eax
-		"e8*5******"        // call    near F0065d3f0 ; CRagConnection__SendPacket
-		"688a000000"        // push    dword 00000008ah
-		"b9*6******"        // mov     ecx, dword L008626b8 ; UIWindowMgr__g_windowMgr
-		"e8*7******"        // call    near F00523770 ; UIWindowMgr__DeleteWindow
+		"E8********"        // call    near F0065d4d0 ; CRagConnection__instanceR
+		"8BC8"              // mov     ecx, eax
+		"E8*5******"        // call    near F0065d3f0 ; CRagConnection__SendPacket
+		"688A000000"        // push    dword 00000008ah
+		"B9*6******"        // mov     ecx, dword L008626b8 ; UIWindowMgr__g_windowMgr
+		"E8*7******"        // call    near F00523770 ; UIWindowMgr__DeleteWindow
 		);
 
 	// 2014-03-14aRagexe.exe jRO
 	CSearchCode UIYourItemWnd__SendMsg_REQ_WEAR_EQUIP_Handler_TypeD(
-		"b9*1******"        // mov     ecx, dword L00812088 ; CModeMgr__g_modeMgr
-		"e8*2******"        // call    near F0051eeb0 ; CModeMgr__GetGameMode
-		"668b****"          // mov     cx, [esi+06ch]
-		"668b****"          // mov     dx, [esi+070h]
-		"b9a9000000"        // mov     eax, dword 0000000a9h
+		"B9*1******"        // mov     ecx, dword L00812088 ; CModeMgr__g_modeMgr
+		"E8*2******"        // call    near F0051eeb0 ; CModeMgr__GetGameMode
+		"668B****"          // mov     cx, [esi+06ch]
+		"668B****"          // mov     dx, [esi+070h]
+		"B9A9000000"        // mov     eax, dword 0000000a9h
 		"6689****"          // mov     [esp+008h], ax
-		"8d****"            // lea     eax, [esp+008h]
+		"8D****"            // lea     eax, [esp+008h]
 		"51"                // push    eax
-		"68a9000000"        // push    dword 0000000a9h
+		"68A9000000"        // push    dword 0000000a9h
 		"668955**"          // mov     [ebp-012h], dx
 		"668945**"          // mov     [ebp-010h], ax
-		"e8*3******"        // call    near F006335a0 ; CRagConnection__instanceR
-		"8bc8"              // mov     ecx, eax
-		"e8*4******"        // call    near F006336d0 ; CRagConnection__GetPacketSize
+		"E8*3******"        // call    near F006335a0 ; CRagConnection__instanceR
+		"8BC8"              // mov     ecx, eax
+		"E8*4******"        // call    near F006336d0 ; CRagConnection__GetPacketSize
 		"50"                // push    eax
-		"e8********"        // call    near F006335a0 ; CRagConnection__instanceR
-		"8bc8"              // mov     ecx, eax
-		"e8*5******"        // call    near F00633550 ; CRagConnection__SendPacket
-		"688a000000"        // push    dword 00000008ah
-		"b9*6******"        // mov     ecx, dword L0083df40 ; UIWindowMgr__g_windowMgr
-		"e8*7******"        // call    near F004f8270 ; UIWindowMgr__DeleteWindow
+		"E8********"        // call    near F006335a0 ; CRagConnection__instanceR
+		"8BC8"              // mov     ecx, eax
+		"E8*5******"        // call    near F00633550 ; CRagConnection__SendPacket
+		"688A000000"        // push    dword 00000008ah
+		"B9*6******"        // mov     ecx, dword L0083df40 ; UIWindowMgr__g_windowMgr
+		"E8*7******"        // call    near F004f8270 ; UIWindowMgr__DeleteWindow
 		);
 
 	// 2014-03-18 Ragexe.exe iRO link time 20140226 155100
 	CSearchCode UIYourItemWnd__SendMsg_REQ_WEAR_EQUIP_Handler_TypeE(
-		"b9*1******"        // mov     ecx, dword L0099f930 ; CModeMgr__g_modeMgr
-		"e8*2******"        // call    near F005a5eb0 ; CModeMgr__GetGameMode
-		"668b96********"    // mov     dx, [esi+00000008ch]
-		"668b86********"    // mov     ax, [esi+000000090h]
-		"b9a9000000"        // mov     ecx, dword 0000000a9h
-		"66894d**"          // mov     [ebp-034h], cx
-		"8d4d**"            // lea     ecx, [ebp-034h]
+		"B9*1******"        // mov     ecx, dword L0099f930 ; CModeMgr__g_modeMgr
+		"E8*2******"        // call    near F005a5eb0 ; CModeMgr__GetGameMode
+		"668B96********"    // mov     dx, [esi+00000008ch]
+		"668B86********"    // mov     ax, [esi+000000090h]
+		"B9A9000000"        // mov     ecx, dword 0000000a9h
+		"66894D**"          // mov     [ebp-034h], cx
+		"8D4D**"            // lea     ecx, [ebp-034h]
 		"51"                // push    ecx
-		"68a9000000"        // push    dword 0000000a9h
+		"68A9000000"        // push    dword 0000000a9h
 		"668955**"          // mov     [ebp-032h], dx
 		"668945**"          // mov     [ebp-030h], ax
-		"e8*3******"        // call    near F00716fc0 ; CRagConnection__instanceR
-		"8bc8"              // mov     ecx, eax
-		"e8*4******"        // call    near F007168e0 ; CRagConnection__GetPacketSize
+		"E8*3******"        // call    near F00716fc0 ; CRagConnection__instanceR
+		"8BC8"              // mov     ecx, eax
+		"E8*4******"        // call    near F007168e0 ; CRagConnection__GetPacketSize
 		"50"                // push    eax
-		"e8********"        // call    near F00716fc0 ; CRagConnection__instanceR
-		"8bc8"              // mov     ecx, eax
-		"e8*5******"        // call    near F00716ee0 ; CRagConnection__SendPacket
-		"688a000000"        // push    dword 00000008ah
-		"b9*6******"        // mov     ecx, dword L009d21c0 ; UIWindowMgr__g_windowMgr
-		"e8*7******"        // call    near F00573a40 ; UIWindowMgr__DeleteWindow
+		"E8********"        // call    near F00716fc0 ; CRagConnection__instanceR
+		"8BC8"              // mov     ecx, eax
+		"E8*5******"        // call    near F00716ee0 ; CRagConnection__SendPacket
+		"688A000000"        // push    dword 00000008ah
+		"B9*6******"        // mov     ecx, dword L009d21c0 ; UIWindowMgr__g_windowMgr
+		"E8*7******"        // call    near F00573a40 ; UIWindowMgr__DeleteWindow
 		);
 
 	// 2014-08-20data-gm Ragexe.exe iRO
 	CSearchCode UIYourItemWnd__SendMsg_REQ_WEAR_EQUIP_Handler_TypeF(
-		"b9*1******"        // mov     ecx, dword L009b74f8
-		"e8*2******"        // call    near F005ac940
-		"668b96********"    // mov     dx, [esi + 00000008ch]
-		"8b86********"      // mov     eax, dword[esi + 000000090h]
-		"b998090000"        // mov     ecx, dword 000000998h
-		"66894d**"          // mov     [ebp - 034h], cx
-		"8d4d**"            // lea     ecx, [ebp - 034h]
+		"B9*1******"        // mov     ecx, dword L009b74f8
+		"E8*2******"        // call    near F005ac940
+		"668B96********"    // mov     dx, [esi + 00000008ch]
+		"8B86********"      // mov     eax, dword[esi + 000000090h]
+		"B998090000"        // mov     ecx, dword 000000998h
+		"66894D**"          // mov     [ebp - 034h], cx
+		"8D4D**"            // lea     ecx, [ebp - 034h]
 		"51"                // push    ecx
 		"6898090000"        // push    dword 000000998h
 		"668955**"          // mov     [ebp - 032h], dx
 		"8945**"            // mov     dword[ebp - 030h], eax
-		"e8*3******"        // call    near F0071fb40
-		"8bc8"              // mov     ecx, eax
-		"e8*4******"        // call    near F0071f460
+		"E8*3******"        // call    near F0071fb40
+		"8BC8"              // mov     ecx, eax
+		"E8*4******"        // call    near F0071f460
 		"50"                // push    eax
-		"e8********"        // call    near F0071fb40
-		"8bc8"              // mov     ecx, eax
-		"e8*5******"        // call    near F0071fa60
-		"688a000000"        // push    dword 00000008ah
-		"b9*6******"        // mov     ecx, dword L009ebe90
-		"e8*7******"        // call    near F00579fc0
+		"E8********"        // call    near F0071fb40
+		"8BC8"              // mov     ecx, eax
+		"E8*5******"        // call    near F0071fa60
+		"688A000000"        // push    dword 00000008ah
+		"B9*6******"        // mov     ecx, dword L009ebe90
+		"E8*7******"        // call    near F00579fc0
 		);
 
 	// 2017-09-20ragexe Ragexe.exe iRO RE:Start
 	CSearchCode UIYourItemWnd__SendMsg_REQ_WEAR_EQUIP_Handler_TypeG(
-		"b9*1******"        // mov     ecx, ragexe.BB7468 ; CModeMgr g_modeMgr
-		"e8*2******"        // call    ragexe.59A910 ; CModeMgr::GetGameMode
-		"b898090000"        // mov     eax, 998
+		"B9*1******"        // mov     ecx, ragexe.BB7468 ; CModeMgr g_modeMgr
+		"E8*2******"        // call    ragexe.59A910 ; CModeMgr::GetGameMode
+		"B898090000"        // mov     eax, 998
 		"668945**"          // mov     word ptr ss:[ebp-30], ax
-		"668b86********"    // mov     ax, word ptr ds:[esi+88]
+		"668B86********"    // mov     ax, word ptr ds:[esi+88]
 		"668945**"          // mov     word ptr ss:[ebp-2E], ax
-		"8b86********"      // mov     eax, dword ptr ds:[esi+8C]
+		"8B86********"      // mov     eax, dword ptr ds:[esi+8C]
 		"8945**"            // mov     dword ptr ss:[ebp-2C], eax
-		"8d45**"            // lea     eax, dword ptr ss:[ebp-30]
+		"8D45**"            // lea     eax, dword ptr ss:[ebp-30]
 		"50"                // push    eax
 		"6898090000"        // push    998
-		"e8*3******"        // call    ragexe.7CCAB0 ; CRagConnection::instanceR
-		"8bc8"              // mov     ecx, eax
-		"e8*4******"        // call    ragexe.7CC080 ; CRagConnection::GetPacketSize
+		"E8*3******"        // call    ragexe.7CCAB0 ; CRagConnection::instanceR
+		"8BC8"              // mov     ecx, eax
+		"E8*4******"        // call    ragexe.7CC080 ; CRagConnection::GetPacketSize
 		"50"                // push    eax
-		"e8********"        // call    ragexe.7CCAB0 ; CRagConnection::instanceR
-		"8bc8"              // mov     ecx, eax
-		"e8*5******"        // call    ragexe.7CC810 ; CRagConnection::SendPacket
-		"688a000000"        // push    8A
-		"b9*6******"        // mov     ecx, ragexe.BE3578 ; UIWindowMgr g_windowMgr
-		"e8*7******"        // call    ragexe.5654E0 ; UIWindowMgr::DeleteWindow
+		"E8********"        // call    ragexe.7CCAB0 ; CRagConnection::instanceR
+		"8BC8"              // mov     ecx, eax
+		"E8*5******"        // call    ragexe.7CC810 ; CRagConnection::SendPacket
+		"688A000000"        // push    8A
+		"B9*6******"        // mov     ecx, ragexe.BE3578 ; UIWindowMgr g_windowMgr
+		"E8*7******"        // call    ragexe.5654E0 ; UIWindowMgr::DeleteWindow
 		);
 
 	CSearchCode Mov_ecx_adr_Call_near_adr(
-		"b9*1******"        // mov     ecx, dword L009b74f8
-		"e8*2******"        // call    near F005ac940
+		"B9*1******"        // mov     ecx, dword L009b74f8
+		"E8*2******"        // call    near F005ac940
 		);
 
 	CSearchCode CMouse_Init_vc6(
-		"a1********"        // mov     eax, [ g_hInstance ]
+		"A1********"        // mov     eax, [ g_hInstance ]
 		"53"                // push    ebx
 		"56"                // push    esi
-		"33db"              // xor     ebx, ebx
+		"33DB"              // xor     ebx, ebx
 		"57"                // push    edi
-		"8bf1"              // mov     esi, ecx
+		"8BF1"              // mov     esi, ecx
 		"53"                // push    ebx
 		"56"                // push    esi
 		"6800070000"        // push    dword 000000700h
@@ -1856,12 +1856,12 @@ void CRoCodeBind::SearchRagexeMemory(void)
 		);
 
 	CSearchCode CMouse_Init_vc9(
-		"a1********"        // mov     eax, [ g_hInstance ]
+		"A1********"        // mov     eax, [ g_hInstance ]
 		"53"                // push    ebx
 		"56"                // push    esi
-		"33db"              // xor     ebx, ebx
+		"33DB"              // xor     ebx, ebx
 		"53"                // push    ebx
-		"8bf1"              // mov     esi, ecx
+		"8BF1"              // mov     esi, ecx
 		"56"                // push    esi
 		"6800070000"        // push    dword 000000700h
 		"50"                // push    eax
@@ -1869,115 +1869,115 @@ void CRoCodeBind::SearchRagexeMemory(void)
 
 	CSearchCode CMouse_Init_vc11(
 		"56"                // push    esi
-		"6a00"              // push    0 ; punkOuter
-		"8bf1"              // mov     esi, ecx
+		"6A00"              // push    0 ; punkOuter
+		"8BF1"              // mov     esi, ecx
 		"56"                // push    esi ; ppDI
 		"6800070000"        // push    700 ; dwVersion
-		"ff35********"      // push    dword ptr ds:[D44B50] ; hinst
+		"FF35********"      // push    dword ptr ds:[D44B50] ; hinst
 		);
 
 	CSearchCode winmain_init_CMouse_Init_call(
-		"b9*1******"        // mov     ecx, g_mouse
-		"e8*2******"        // call    near CMouse__Init
-		"a1*3******"        // mov     eax, g_renderer__CRenderer
+		"B9*1******"        // mov     ecx, g_mouse
+		"E8*2******"        // call    near CMouse__Init
+		"A1*3******"        // mov     eax, g_renderer__CRenderer
 		);
 
 	// 2017-09-27ragexe iRO RE:Start - does not use DirectInput
 	CSearchCode winmain_init_no_CMouse_Init_call(
-		"a1*1******"        // mov     eax, dword ptr ds:[BE29E8] ; g_renderer__CRenderer
-		"b9********"        // mov     ecx, ragexe.BE3658 ; g_windowMgr
-		"ff7028"            // push    dword ptr ds:[eax+28]
-		"ff7024"            // push    dword ptr ds:[eax+24]
+		"A1*1******"        // mov     eax, dword ptr ds:[BE29E8] ; g_renderer__CRenderer
+		"B9********"        // mov     ecx, ragexe.BE3658 ; g_windowMgr
+		"FF7028"            // push    dword ptr ds:[eax+28]
+		"FF7024"            // push    dword ptr ds:[eax+24]
 		);
 
 	CSearchCode funcPlayStrem_based_HighPrest_exe(
 		"55"                // push    ebp
-		"8bec"              // mov     ebp, esp
-		"a1*1******"        // mov     eax, [L006f2534] ; g_soundMode
+		"8BEC"              // mov     ebp, esp
+		"A1*1******"        // mov     eax, [L006f2534] ; g_soundMode
 		"53"                // push    ebx
-		"85c0"              // test    eax, eax
+		"85C0"              // test    eax, eax
 		"56"                // push    esi
-		"0f84c5000000"      // jz      near C0040afa7
-		"8b5d08"            // mov     ebx, dword [ebp+008h] ;+streamFileName
-		"be********"        // mov     esi, dword L0074e7c4
-		"8bc3"              // mov     eax, ebx
-		"8a10"              // mov     dl, [eax]
-		"8aca"              // mov     cl, dl
-		"3a16"              // cmp     dl, [esi]
-		"751c"              // jnz     C0040af10
-		"84c9"              // test    cl, cl
+		"0F84C5000000"      // jz      near C0040afa7
+		"8B5D08"            // mov     ebx, dword [ebp+008h] ;+streamFileName
+		"BE********"        // mov     esi, dword L0074e7c4
+		"8BC3"              // mov     eax, ebx
+		"8A10"              // mov     dl, [eax]
+		"8ACA"              // mov     cl, dl
+		"3A16"              // cmp     dl, [esi]
+		"751C"              // jnz     C0040af10
+		"84C9"              // test    cl, cl
 		);
 
 	CSearchCode funcPlayStrem_based_RagFree_exe(
 		"55"                // push    ebp
-		"8bec"              // mov     ebp, esp
-		"81ec00010000"      // sub     esp, dword 000000100h
-		"a1*1******"        // mov     eax, [L00775d44] ; g_soundMode
+		"8BEC"              // mov     ebp, esp
+		"81EC00010000"      // sub     esp, dword 000000100h
+		"A1*1******"        // mov     eax, [L00775d44] ; g_soundMode
 		"53"                // push    ebx
-		"85c0"              // test    eax, eax
+		"85C0"              // test    eax, eax
 		"56"                // push    esi
-		"0f8417010000"      // jz      near C0041b6bf
-		"8b5d08"            // mov     ebx, dword [ebp+008h] ;+streamFileName
-		"be********"        // mov     esi, dword L007cd9b4
-		"8bc3"              // mov     eax, ebx
-		"8a10"              // mov     dl, [eax]
-		"8aca"              // mov     cl, dl
-		"3a16"              // cmp     dl, [esi]
-		"751c"              // jnz     C0041b5d6
-		"84c9"              // test    cl, cl
+		"0F8417010000"      // jz      near C0041b6bf
+		"8B5D08"            // mov     ebx, dword [ebp+008h] ;+streamFileName
+		"BE********"        // mov     esi, dword L007cd9b4
+		"8BC3"              // mov     eax, ebx
+		"8A10"              // mov     dl, [eax]
+		"8ACA"              // mov     cl, dl
+		"3A16"              // cmp     dl, [esi]
+		"751C"              // jnz     C0041b5d6
+		"84C9"              // test    cl, cl
 		);
 
 	CSearchCode funcPlayStrem_based_2011111201aRagexe_exe(
-		"81ec04010000"      // sub     esp, dword 000000104h
-		"a1*1******"        // mov     eax, [L00845990] ; g_soundMode
-		"33c4"              // xor     eax, esp
+		"81EC04010000"      // sub     esp, dword 000000104h
+		"A1*1******"        // mov     eax, [L00845990] ; g_soundMode
+		"33C4"              // xor     eax, esp
 		"89842400010000"    // mov     dword [esp+000000100h], eax
-		"833d********00"    // cmp     dword [L0084459c], byte +000h
+		"833D********00"    // cmp     dword [L0084459c], byte +000h
 		"56"                // push    esi
-		"8bb4240c010000"    // mov     esi, dword [esp+00000010ch] ;+streamFileName
-		"0f8406010000"      // jz      near C0065fd9f
-		"b9********"        // mov     ecx, dword L008e348c
-		"8bc6"              // mov     eax, esi
-		"8a10"              // mov     dl, [eax]
-		"3a11"              // cmp     dl, [ecx]
-		"751a"              // jnz     C0065fcc0
-		"84d2"              // test    dl, dl
+		"8BB4240C010000"    // mov     esi, dword [esp+00000010ch] ;+streamFileName
+		"0F8406010000"      // jz      near C0065fd9f
+		"B9********"        // mov     ecx, dword L008e348c
+		"8BC6"              // mov     eax, esi
+		"8A10"              // mov     dl, [eax]
+		"3A11"              // cmp     dl, [ecx]
+		"751A"              // jnz     C0065fcc0
+		"84D2"              // test    dl, dl
 		);
 
 	CSearchCode funcPlayStrem_based_20140226_155100iRagexe_exe(
 		// F00719260
 		"55"                // push    ebp
-		"8bec"              // mov     ebp, esp
-		"81ec********"      // sub     esp, dword 000000104h
-		"a1*1******"        // mov     eax, [L009b63d0] ; g_soundMode
-		"33c5"              // xor     eax, ebp
+		"8BEC"              // mov     ebp, esp
+		"81EC********"      // sub     esp, dword 000000104h
+		"A1*1******"        // mov     eax, [L009b63d0] ; g_soundMode
+		"33C5"              // xor     eax, ebp
 		"8945**"            // mov     dword [ebp-004h], eax
-		"833d********00"    // cmp     dword [L00aa1610], byte +000h
+		"833D********00"    // cmp     dword [L00aa1610], byte +000h
 		"56"                // push    esi
-		"8b75**"            // mov     esi, dword [ebp+008h]
-		"0f84********"      // jz      near C00719393
+		"8B75**"            // mov     esi, dword [ebp+008h]
+		"0F84********"      // jz      near C00719393
 		);
 
 	CSearchCode initCConnection_20140318iRagexe(  // WinMain...
 //		"56"                // push    esi
 //		"68********"        // push    dword S00920704; "ws2_32.dll"
-//		"ff15********"      // call    dword[L008e619c]; ds:LoadLibraryA
-//		"8b35********"      // mov     esi, dword[L008e6194]; ds:GetProcAddress
+//		"FF15********"      // call    dword[L008e619c]; ds:LoadLibraryA
+//		"8B35********"      // mov     esi, dword[L008e6194]; ds:GetProcAddress
 //		"68********"        // push    dword L009206e8 ; "send"
 //		"50"                // push    eax
-//		"a3********"        // mov     [L00a68674], eax; CConnection_s_wsmodule
-//		"ffd6"              // call    esi; GetProcAddress
-//		"a3********"        // mov     [L00a68678], eax; CConnection_s_wsSend
-//		"a1********"        // mov     eax, [L00a68674]; CConnection_s_wsmodule
+//		"A3********"        // mov     [L00a68674], eax; CConnection_s_wsmodule
+//		"FFD6"              // call    esi; GetProcAddress
+//		"A3********"        // mov     [L00a68678], eax; CConnection_s_wsSend
+//		"A1********"        // mov     eax, [L00a68674]; CConnection_s_wsmodule
 //		"68********"        // push    dword S0092078c; "recv"
 //		"50"                // push    eax; hModule
-		"ffd6"              // call    esi; GetProcAddress
-		"833d*1******00"    // cmp     dword[L00a68678], byte + 000h; CConnection_s_wsSend
-		"8b35********"      // mov     esi, dword[L008e66e8]; ds:MessageBoxA
-		"a3*2******"        // mov     [L00a68670], eax; CConnection_s_wsRecv
-		"751c"              // jnz     C007170db
-		"8b0d********"      // mov     ecx, dword[WS2_32.dll_13]; ds:send
-		"6a00"              // push    byte + 000h; uType
+		"FFD6"              // call    esi; GetProcAddress
+		"833D*1******00"    // cmp     dword[L00a68678], byte + 000h; CConnection_s_wsSend
+		"8B35********"      // mov     esi, dword[L008e66e8]; ds:MessageBoxA
+		"A3*2******"        // mov     [L00a68670], eax; CConnection_s_wsRecv
+		"751C"              // jnz     C007170db
+		"8B0D********"      // mov     ecx, dword[WS2_32.dll_13]; ds:send
+		"6A00"              // push    byte + 000h; uType
 	);
 
 	CSearchCode strings_event_grf(0, "event.grf");
@@ -1985,8 +1985,8 @@ void CRoCodeBind::SearchRagexeMemory(void)
 
 	CSearchCode addPak_event_grf(
 		"68*1******"        // push    dword *"event.grf"
-		"b9*2******"        // mov     ecx, dword CFileMgr::g_fileMgr
-		"e8*3******"        // call    near CFileMgr::AddPak
+		"B9*2******"        // mov     ecx, dword CFileMgr::g_fileMgr
+		"E8*3******"        // call    near CFileMgr::AddPak
 	);
 
 	CSearchCode strings_readfolder(0, "readfolder");
@@ -1994,49 +1994,49 @@ void CRoCodeBind::SearchRagexeMemory(void)
 
 	CSearchCode set_g_readFolderFirst(
 		"68*1******"        // push    dword *"readfolder"
-		"8b**"              // mov     ecx, esi || ecx, ebp
-		"e8********"        // call    near XMLElement::FindChild(char const *)
-		"85c0"              // test    eax, eax
+		"8B**"              // mov     ecx, esi || ecx, ebp
+		"E8********"        // call    near XMLElement::FindChild(char const *)
+		"85C0"              // test    eax, eax
 		"7407"              // jz      C005a43ce
-		"c605*2******01"    // mov     byte[g_readFolderFirst], byte 001h // bool g_readFolderFirst
+		"C605*2******01"    // mov     byte[g_readFolderFirst], byte 001h // bool g_readFolderFirst
 	);
 
 	PBOOL pg_readFolderFirst = NULL;
 
 	CSearchCode subfunction_CFileMgr__Open(
-		"803d*1******00"    // cmp     byte[ g_readFolderFirst ], byte 000h
+		"803D*1******00"    // cmp     byte[ g_readFolderFirst ], byte 000h
 		"53"                // push    ebx
-		"8b5d08"            // mov     ebx, dword[ebp + 008h]
+		"8B5D08"            // mov     ebx, dword[ebp + 008h]
 		"57"                // push    edi
-		"8b7d0c"            // mov     edi, dword[ebp + 00ch]
+		"8B7D0C"            // mov     edi, dword[ebp + 00ch]
 		"57"                // push    edi
 		"53"                // push    ebx
 		"7419"              // jz      C005c79ac
-		"e8*2******"        // call    near CFileMgr::GetFile
-		"85c0"              // test    eax, eax
+		"E8*2******"        // call    near CFileMgr::GetFile
+		"85C0"              // test    eax, eax
 		"7522"              // jnz     C005c79be;; goto
 		"57"                // push    edi
 		"53"                // push    ebx
-		"8bce"              // mov     ecx, esi
-		"e8*3******"        // call    near CFileMgr::GetPak
+		"8BCE"              // mov     ecx, esi
+		"E8*3******"        // call    near CFileMgr::GetPak
 	);
 
 	CSearchCode subfunction_CFileMgr__Open_v9(
-		"803d*1******00"    // cmp     byte[L00862c54], byte 000h
+		"803D*1******00"    // cmp     byte[L00862c54], byte 000h
 		"53"                // push    ebx
-		"8b5c240c"          // mov     ebx, dword[esp + 00ch]
+		"8B5C240C"          // mov     ebx, dword[esp + 00ch]
 		"57"                // push    edi
-		"8b7c2414"          // mov     edi, dword[esp + 014h]
+		"8B7C2414"          // mov     edi, dword[esp + 014h]
 		"57"                // push    edi
 		"53"                // push    ebx
 		"7418"              // jz      C0053aa2c
-		"e8*2******"        // call    near CFileMgr::GetFile
-		"85c0"              // test    eax, eax
+		"E8*2******"        // call    near CFileMgr::GetFile
+		"85C0"              // test    eax, eax
 		"7521"              // jnz     C0053aa3e;; goto
 		"57"                // push    edi
 		"53"                // push    ebx
-		"8bce"              // mov     ecx, esi
-		"e8*3******"        // call    near CFileMgr::GetPak
+		"8BCE"              // mov     ecx, esi
+		"E8*3******"        // call    near CFileMgr::GetPak
 	);
 
 	LPBYTE pRagexeBase;
