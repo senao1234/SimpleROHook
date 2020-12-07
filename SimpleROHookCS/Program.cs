@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
@@ -34,6 +34,7 @@ namespace SimpleROHookCS
                         MessageBox.Show("error:LoadLibrary failed.");
                         return;
                     }
+
                     IntPtr intPtrInstall = GetProcAddress(hModule, @"InstallHook");
                     IntPtr intPtrRemove = GetProcAddress(hModule, @"RemoveHook");
 
@@ -43,6 +44,7 @@ namespace SimpleROHookCS
                         FreeLibrary(hModule);
                         return;
                     }
+
                     if (intPtrRemove == IntPtr.Zero)
                     {
                         MessageBox.Show("error:intPtrRemove function is not included in Core.dll.");
