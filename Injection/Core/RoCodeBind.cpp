@@ -22,7 +22,7 @@ BOOL OpenSharedMemory(void)
 
 	if (!g_hMapObject)
 	{
-		DEBUG_LOGGING_NORMAL(("shared memory:Initialize Failed."));
+		DEBUG_LOGGING_NORMAL(("Shared memory:Initialize Failed."));
 		return FALSE;
 	}
 
@@ -30,7 +30,7 @@ BOOL OpenSharedMemory(void)
 
 	if (!g_pSharedData)
 	{
-		DEBUG_LOGGING_NORMAL(("shared memory:DataMap Failed."));
+		DEBUG_LOGGING_NORMAL(("Shared memory:DataMap Failed."));
 		::CloseHandle(g_hMapObject);
 		g_hMapObject = NULL;
 
@@ -128,9 +128,9 @@ void CRoCodeBind::Init(IDirect3DDevice7* d3ddevice)
 		if (pDD)
 		{
 			if (SUCCEEDED(pDD->CreateSurface(&ddsd, &m_pddsFontTexture, NULL)))
-				DEBUG_LOGGING_NORMAL(("font texture created."));
+				DEBUG_LOGGING_NORMAL(("Font texture created Success."));
 			else
-				DEBUG_LOGGING_NORMAL(("failed create a font texture."));
+				DEBUG_LOGGING_NORMAL(("Font texture created Failed."));
 
 			pDD->Release();
 		}
@@ -196,11 +196,11 @@ void CRoCodeBind::InitItemNameMap()
 	char *p, *ptoken;
 
 	unsigned int size;
-	buf = (char*)GetPak("data\\idnum2itemdisplaynametable.txt", &size);
+	buf = (char*)GetPak("Data\\IdNum2ItemDisplayNameTable.txt", &size);
 
 	if (!buf)
 		return;
-	DEBUG_LOGGING_NORMAL(("load data\\idnum2itemdisplaynametable.txt from grf."));
+	DEBUG_LOGGING_NORMAL(("Loading file Data\\IdNum2ItemDisplayNameTable.txt from GRF."));
 
 	p = buf;
 
@@ -245,7 +245,7 @@ void CRoCodeBind::InitItemNameMap()
 		*pname++ = '\0';
 		int itemid = atoi(numstr);
 #endif
-		// DEBUG_LOGGING_NORMAL(("item id: %d", itemid));
+		// DEBUG_LOGGING_NORMAL(("Item ID: %d", itemid));
 
 		char tempstr[256];
 		char *pdname = tempstr;
@@ -269,7 +269,7 @@ void CRoCodeBind::InitItemNameMap()
 	}
 
 	ReleasePak(buf);
-	DEBUG_LOGGING_NORMAL(("release data\\idnum2itemdisplaynametable.txt"));
+	DEBUG_LOGGING_NORMAL(("Release file Data\\IdNum2ItemDisplayNameTable.txt from GRF."));
 }
 
 const char *CRoCodeBind::GetItemNameByID(int id)
@@ -458,7 +458,7 @@ void CRoCodeBind::LoadIni(void)
 			wcslen(g_pSharedData->configfilepath) + 1, filename, sizeof(filename), NULL, NULL)
 			)
 		{
-			DEBUG_LOGGING_NORMAL(("LoadIni startup"));
+			DEBUG_LOGGING_NORMAL(("Load Ini startup."));
 			DEBUG_LOGGING_NORMAL(("%s", filename));
 
 			sectionsize = GetPrivateProfileSection(_T("M2E"), Sectionbuf, 32768, filename);
@@ -739,7 +739,7 @@ void CRoCodeBind::DrawSRHDebug(IDirect3DDevice7* d3ddevice)
 	if (g_pSharedData->show_framerate)
 	{
 		std::stringstream str;
-		str << g_PerformanceCounter.GetFrameRate() << "fps : "<<(int)g_PerformanceCounter.GetTotalTick() << std::endl;
+		str << g_PerformanceCounter.GetFrameRate() << "Fps: "<<(int)g_PerformanceCounter.GetTotalTick() << std::endl;
 
 		m_pSFastFont->DrawText((LPSTR)str.str().c_str(), 0, 0, D3DCOLOR_ARGB(255, 255, 255, 255), 0, NULL);
 	}
@@ -1481,7 +1481,7 @@ void CRoCodeBind::SendMessageToNPCLogger(const char *src, int size)
 
 	if ((wsize = ::MultiByteToWideChar(CP_ACP, 0, buffer, -1, wbuffer, sizeof(wbuffer) / sizeof(WCHAR))) != NULL)
 	{
-		// DEBUG_LOGGING_NORMAL(("sizeof wbuffer = %d wsize = %d", sizeof(wbuffer), wsize));
+		// DEBUG_LOGGING_NORMAL(("Size of Wbuffer = %d | Wsize = %d", sizeof(wbuffer), wsize));
 		HWND hNPCLoggerWnd;
 		hNPCLoggerWnd = ::FindWindow(NULL, "NPCLogger");
 
@@ -1570,7 +1570,7 @@ void CRoCodeBind::PacketQueueProc(char *buf, int len)
 
 		if (m_packetqueue_head + len >= PACKETQUEUE_BUFFERSIZE)
 		{
-			DEBUG_LOGGING_NORMAL(("packet buffer has overflowed.\n"));
+			DEBUG_LOGGING_NORMAL(("Packet buffer has overflowed.\n"));
 			return;
 		}
 
@@ -1591,7 +1591,7 @@ void CRoCodeBind::PacketQueueProc(char *buf, int len)
 				{
 					m_CMode_old_subMode = m_CMode_subMode;
 					m_CMode_subMode = p_mode->m_subMode;
-					DEBUG_LOGGING_DETAIL(("CMode.m_subMode = %08X->%08X m_subModeCnt = %08X\n",
+					DEBUG_LOGGING_DETAIL(("CMode.m_subMode = %08X->%08X | m_subModeCnt = %08X\n",
 						m_CMode_old_subMode, m_CMode_subMode, p_mode->m_subModeCnt)
 						);
 				}
@@ -1625,7 +1625,7 @@ void CRoCodeBind::PacketQueueProc(char *buf, int len)
 				}
 				else
 				{
-					DEBUG_LOGGING_DETAIL(("Opcode %04X size = %d / %d\n", opcode, packetlength, m_packetqueue_head));
+					DEBUG_LOGGING_DETAIL(("Opcode = %04X | size = %d / %d\n", opcode, packetlength, m_packetqueue_head));
 					PacketProc(m_packetqueuebuffer);
 				}
 
@@ -1980,7 +1980,7 @@ void CRoCodeBind::SearchRagexeMemory(void)
 		"6A00"              // push    byte + 000h; uType
 	);
 
-	CSearchCode strings_event_grf(0, "event.grf");
+	CSearchCode strings_event_grf(0, "Event.grf");
 	LPBYTE strings_event_grf_address = NULL;
 
 	CSearchCode addPak_event_grf(
@@ -1989,7 +1989,7 @@ void CRoCodeBind::SearchRagexeMemory(void)
 		"E8*3******"        // call    near CFileMgr::AddPak
 	);
 
-	CSearchCode strings_readfolder(0, "readfolder");
+	CSearchCode strings_readfolder(0, "ReadFolder");
 	LPBYTE strings_readfolder_address = NULL;
 
 	CSearchCode set_g_readFolderFirst(
@@ -2051,12 +2051,12 @@ void CRoCodeBind::SearchRagexeMemory(void)
 		DWORD ptr_CMouse_Init = 0;
 		p_std_map_packetlen *packetLenMap = 0;
 
-		DEBUG_LOGGING_NORMAL(("MEMORY_BASIC_INFORMATION lpAddres:%08X", pRagexeBase));
+		DEBUG_LOGGING_NORMAL(("MEMORY_BASIC_INFORMATION lpAddres = %08X", pRagexeBase));
 		DEBUG_LOGGING_NORMAL(("mbi.AllocationBase = %08X", mbi.AllocationBase));
 		DEBUG_LOGGING_NORMAL(("mbi.BaseAddress    = %08X", mbi.BaseAddress));
 		DEBUG_LOGGING_NORMAL(("mbi.RegionSize     = %08X", mbi.RegionSize));
 
-		DEBUG_LOGGING_NORMAL(("MEMORY_BASIC_INFORMATION lpAddres:%08X", (LPBYTE)mbi.BaseAddress + mbi.RegionSize));
+		DEBUG_LOGGING_NORMAL(("MEMORY_BASIC_INFORMATION lpAddres = %08X", (LPBYTE)mbi.BaseAddress + mbi.RegionSize));
 		DEBUG_LOGGING_NORMAL(("mbi_data.AllocationBase = %08X", mbi_data.AllocationBase));
 		DEBUG_LOGGING_NORMAL(("mbi_data.BaseAddress    = %08X", mbi_data.BaseAddress));
 		DEBUG_LOGGING_NORMAL(("mbi_data.RegionSize     = %08X", mbi_data.RegionSize));
@@ -2072,7 +2072,7 @@ void CRoCodeBind::SearchRagexeMemory(void)
 			{
 				pCConnection_s_wsSend = (tWS2_32_send*)initCConnection_20140318iRagexe.GetImmediateDWORD(&pBase[ii], '1');
 				pCConnection_s_wsRecv = (tWS2_32_recv*)initCConnection_20140318iRagexe.GetImmediateDWORD(&pBase[ii], '2');
-				DEBUG_LOGGING_NORMAL(("Find s_wsSend, s_wsRecv baseaddress = %08X send = %08X | recv =%08X",
+				DEBUG_LOGGING_NORMAL(("Find s_wsSend, s_wsRecv baseaddress = %08X | send = %08X | recv = %08X",
 					&pBase[ii], pCConnection_s_wsSend, pCConnection_s_wsRecv)
 					);
 				break;
@@ -2087,7 +2087,7 @@ void CRoCodeBind::SearchRagexeMemory(void)
 			if (CGameActor_Job_use.PatternMatcher(&pBase[ii]))
 			{
 				CGameActor::jobOffset = CGameActor_Job_use.GetImmediateDWORD(&pBase[ii], '1');
-				DEBUG_LOGGING_NORMAL(("Find CGameActor::m_job offset = %08X (found at %08X)", CGameActor::jobOffset, &pBase[ii]));
+				DEBUG_LOGGING_NORMAL(("Find CGameActor::m_job offset = %08X (Found at %08X)", CGameActor::jobOffset, &pBase[ii]));
 				break;
 			}
 		}
@@ -2107,7 +2107,7 @@ void CRoCodeBind::SearchRagexeMemory(void)
 					.Get4BIndexDWORD(&pBase[ii], '4');
 				g_pmodeMgr = (CModeMgr*)UIYourItemWnd__SendMsg_REQ_WEAR_EQUIP_Handler_TypeA
 					.GetImmediateDWORD(&pBase[ii], '1');
-				DEBUG_LOGGING_NORMAL(("TypeA CRagConnection::instanceR = %08X", m_functionRagexe_CRagConnection__instanceR));
+				DEBUG_LOGGING_NORMAL(("TypeA CRagConnection::instanceR     = %08X", m_functionRagexe_CRagConnection__instanceR));
 				DEBUG_LOGGING_NORMAL(("TypeA CRagConnection::GetPacketSize = %08X", m_functionRagexe_CRagConnection__GetPacketSize));
 				break;
 			}
@@ -2121,7 +2121,7 @@ void CRoCodeBind::SearchRagexeMemory(void)
 					.Get4BIndexDWORD(&pBase[ii], '4');
 				g_pmodeMgr = (CModeMgr*)UIYourItemWnd__SendMsg_REQ_WEAR_EQUIP_Handler_TypeB
 					.GetImmediateDWORD(&pBase[ii], '1');
-				DEBUG_LOGGING_NORMAL(("TypeB CRagConnection::instanceR = %08X", m_functionRagexe_CRagConnection__instanceR));
+				DEBUG_LOGGING_NORMAL(("TypeB CRagConnection::instanceR     = %08X", m_functionRagexe_CRagConnection__instanceR));
 				DEBUG_LOGGING_NORMAL(("TypeB CRagConnection::GetPacketSize = %08X", m_functionRagexe_CRagConnection__GetPacketSize));
 				break;
 			}
@@ -2135,7 +2135,7 @@ void CRoCodeBind::SearchRagexeMemory(void)
 					.Get4BIndexDWORD(&pBase[ii], '4');
 				g_pmodeMgr = (CModeMgr*)UIYourItemWnd__SendMsg_REQ_WEAR_EQUIP_Handler_TypeC
 					.GetImmediateDWORD(&pBase[ii], '1');
-				DEBUG_LOGGING_NORMAL(("TypeC CRagConnection::instanceR = %08X", m_functionRagexe_CRagConnection__instanceR));
+				DEBUG_LOGGING_NORMAL(("TypeC CRagConnection::instanceR     = %08X", m_functionRagexe_CRagConnection__instanceR));
 				DEBUG_LOGGING_NORMAL(("TypeC CRagConnection::GetPacketSize = %08X", m_functionRagexe_CRagConnection__GetPacketSize));
 				break;
 			}
@@ -2149,7 +2149,7 @@ void CRoCodeBind::SearchRagexeMemory(void)
 					.Get4BIndexDWORD(&pBase[ii], '4');
 				g_pmodeMgr = (CModeMgr*)UIYourItemWnd__SendMsg_REQ_WEAR_EQUIP_Handler_TypeD
 					.GetImmediateDWORD(&pBase[ii], '1');
-				DEBUG_LOGGING_NORMAL(("TypeD CRagConnection::instanceR = %08X", m_functionRagexe_CRagConnection__instanceR));
+				DEBUG_LOGGING_NORMAL(("TypeD CRagConnection::instanceR     = %08X", m_functionRagexe_CRagConnection__instanceR));
 				DEBUG_LOGGING_NORMAL(("TypeD CRagConnection::GetPacketSize = %08X", m_functionRagexe_CRagConnection__GetPacketSize));
 				break;
 			}
@@ -2163,7 +2163,7 @@ void CRoCodeBind::SearchRagexeMemory(void)
 					.Get4BIndexDWORD(&pBase[ii], '4');
 				g_pmodeMgr = (CModeMgr*)UIYourItemWnd__SendMsg_REQ_WEAR_EQUIP_Handler_TypeE
 					.GetImmediateDWORD(&pBase[ii], '1');
-				DEBUG_LOGGING_NORMAL(("TypeE CRagConnection::instanceR = %08X", m_functionRagexe_CRagConnection__instanceR));
+				DEBUG_LOGGING_NORMAL(("TypeE CRagConnection::instanceR     = %08X", m_functionRagexe_CRagConnection__instanceR));
 				DEBUG_LOGGING_NORMAL(("TypeE CRagConnection::GetPacketSize = %08X", m_functionRagexe_CRagConnection__GetPacketSize));
 				break;
 			}
@@ -2177,7 +2177,7 @@ void CRoCodeBind::SearchRagexeMemory(void)
 					.Get4BIndexDWORD(&pBase[ii], '4');
 				g_pmodeMgr = (CModeMgr*)UIYourItemWnd__SendMsg_REQ_WEAR_EQUIP_Handler_TypeF
 					.GetImmediateDWORD(&pBase[ii], '1');
-				DEBUG_LOGGING_NORMAL(("TypeF CRagConnection::instanceR = %08X", m_functionRagexe_CRagConnection__instanceR));
+				DEBUG_LOGGING_NORMAL(("TypeF CRagConnection::instanceR     = %08X", m_functionRagexe_CRagConnection__instanceR));
 				DEBUG_LOGGING_NORMAL(("TypeF CRagConnection::GetPacketSize = %08X", m_functionRagexe_CRagConnection__GetPacketSize));
 				break;
 			}
@@ -2191,7 +2191,7 @@ void CRoCodeBind::SearchRagexeMemory(void)
 					.Get4BIndexDWORD(&pBase[ii], '4');
 				g_pmodeMgr = (CModeMgr*)UIYourItemWnd__SendMsg_REQ_WEAR_EQUIP_Handler_TypeG
 					.GetImmediateDWORD(&pBase[ii], '1');
-				DEBUG_LOGGING_NORMAL(("TypeG CRagConnection::instanceR = %08X", m_functionRagexe_CRagConnection__instanceR));
+				DEBUG_LOGGING_NORMAL(("TypeG CRagConnection::instanceR     = %08X", m_functionRagexe_CRagConnection__instanceR));
 				DEBUG_LOGGING_NORMAL(("TypeG CRagConnection::GetPacketSize = %08X", m_functionRagexe_CRagConnection__GetPacketSize));
 				break;
 			}
@@ -2212,8 +2212,8 @@ void CRoCodeBind::SearchRagexeMemory(void)
 					m_packetLenMap = (void**)(Mov_ecx_adr_Call_near_adr.GetImmediateDWORD(&pBase[ii], '1') + 4);
 					m_packetLenMap_InsertTree = (void*)Mov_ecx_adr_Call_near_adr.GetNearJmpAddress(&pBase[ii], '2');
 					packetLenMap = (p_std_map_packetlen*) *m_packetLenMap;
-					DEBUG_LOGGING_NORMAL(("m_packetLenMap %08X", m_packetLenMap));
-					DEBUG_LOGGING_NORMAL(("m_packetLenMap_InsertTree %08X", m_packetLenMap_InsertTree));
+					DEBUG_LOGGING_NORMAL(("m_packetLenMap            = %08X", m_packetLenMap));
+					DEBUG_LOGGING_NORMAL(("m_packetLenMap_InsertTree = %08X", m_packetLenMap_InsertTree));
 				}
 			}
 		}
@@ -2231,7 +2231,7 @@ void CRoCodeBind::SearchRagexeMemory(void)
 				)
 			{
 				ptr_CMouse_Init = (DWORD)(&pBase[ii]);
-				DEBUG_LOGGING_NORMAL(("find CMouse::Init = %08X", pBase + ii));
+				DEBUG_LOGGING_NORMAL(("Find CMouse::Init      = %08X", pBase + ii));
 				break;
 			}
 		}
@@ -2244,15 +2244,15 @@ void CRoCodeBind::SearchRagexeMemory(void)
 
 				if (winmain_init_CMouse_Init_call.PatternMatcher(&pBase[ii]))
 				{
-					DEBUG_LOGGING_NORMAL(("find CMouse::Init call : %08X", pBase + ii));
+					DEBUG_LOGGING_NORMAL(("Find CMouse::Init call = %08X", pBase + ii));
 
 					if (winmain_init_CMouse_Init_call.NearJmpAddressMatcher(&pBase[ii], '2', ptr_CMouse_Init))
 					{
 						g_mouse = (CMouse*)winmain_init_CMouse_Init_call.GetImmediateDWORD(&pBase[ii], '1');
 						g_renderer = (CRenderer**)winmain_init_CMouse_Init_call.GetImmediateDWORD(&pBase[ii], '3');
 
-						DEBUG_LOGGING_NORMAL(("find g_mouse = %08X", g_mouse));
-						DEBUG_LOGGING_NORMAL(("find *g_renderer = %08X", g_renderer));
+						DEBUG_LOGGING_NORMAL(("Find g_mouse     = %08X", g_mouse));
+						DEBUG_LOGGING_NORMAL(("Find *g_renderer = %08X", g_renderer));
 						break;
 					}
 				}
@@ -2266,9 +2266,9 @@ void CRoCodeBind::SearchRagexeMemory(void)
 
 				if (winmain_init_no_CMouse_Init_call.PatternMatcher(&pBase[ii]))
 				{
-					DEBUG_LOGGING_NORMAL(("find init without CMouse::Init call : %08X", pBase + ii));
+					DEBUG_LOGGING_NORMAL(("Find init without CMouse::Init call = %08X", pBase + ii));
 					g_renderer = (CRenderer**)winmain_init_no_CMouse_Init_call.GetImmediateDWORD(&pBase[ii], '1');
-					DEBUG_LOGGING_NORMAL(("find *g_renderer = %08X", g_renderer));
+					DEBUG_LOGGING_NORMAL(("Find *g_renderer  = %08X", g_renderer));
 					break;
 				}
 			}
@@ -2284,8 +2284,8 @@ void CRoCodeBind::SearchRagexeMemory(void)
 				m_funcRagexe_PlayStream = (tPlayStream)&pBase[ii];
 				DWORD pPlayStream;
 				pPlayStream = (DWORD)&pBase[ii];
-				DEBUG_LOGGING_NORMAL(("based_20140226_155100iRagexe : %08X", &pBase[ii]));
-				DEBUG_LOGGING_NORMAL(("g_soundMode == %08X", (char*)funcPlayStrem_based_20140226_155100iRagexe_exe.GetImmediateDWORD(&pBase[ii], '1')));
+				DEBUG_LOGGING_NORMAL(("Based_20140226_155100iRagexe = %08X", &pBase[ii]));
+				DEBUG_LOGGING_NORMAL(("g_soundMode = %08X", (char*)funcPlayStrem_based_20140226_155100iRagexe_exe.GetImmediateDWORD(&pBase[ii], '1')));
 				DEBUG_LOGGING_NORMAL(("void PlayStream(const char *streamFileName) = %08X", pPlayStream));
 				break;
 			}
@@ -2295,8 +2295,8 @@ void CRoCodeBind::SearchRagexeMemory(void)
 				m_funcRagexe_PlayStream = (tPlayStream)&pBase[ii];
 				DWORD pPlayStream;
 				pPlayStream = (DWORD)&pBase[ii];
-				DEBUG_LOGGING_NORMAL(("based_HighPrest_exe : %08X", &pBase[ii]));
-				DEBUG_LOGGING_NORMAL(("g_soundMode == %08X", (char*)funcPlayStrem_based_HighPrest_exe.GetImmediateDWORD(&pBase[ii], '1')));
+				DEBUG_LOGGING_NORMAL(("Based_HighPrest_exe = %08X", &pBase[ii]));
+				DEBUG_LOGGING_NORMAL(("g_soundMode = %08X", (char*)funcPlayStrem_based_HighPrest_exe.GetImmediateDWORD(&pBase[ii], '1')));
 				DEBUG_LOGGING_NORMAL(("void PlayStream(const char *streamFileName) = %08X", pPlayStream));
 				break;
 			}
@@ -2306,8 +2306,8 @@ void CRoCodeBind::SearchRagexeMemory(void)
 				m_funcRagexe_PlayStream = (tPlayStream)&pBase[ii];
 				DWORD pPlayStream;
 				pPlayStream = (DWORD)&pBase[ii];
-				DEBUG_LOGGING_NORMAL(("based_RagFree_exe : %08X", &pBase[ii]));
-				DEBUG_LOGGING_NORMAL(("g_soundMode == %08X", (char*)funcPlayStrem_based_RagFree_exe.GetImmediateDWORD(&pBase[ii], '1')));
+				DEBUG_LOGGING_NORMAL(("Based_RagFree_exe = %08X", &pBase[ii]));
+				DEBUG_LOGGING_NORMAL(("g_soundMode = %08X", (char*)funcPlayStrem_based_RagFree_exe.GetImmediateDWORD(&pBase[ii], '1')));
 				DEBUG_LOGGING_NORMAL(("void PlayStream(const char *streamFileName, int playflag) = %08X", pPlayStream));
 				break;
 			}
@@ -2317,8 +2317,8 @@ void CRoCodeBind::SearchRagexeMemory(void)
 				m_funcRagexe_PlayStream = (tPlayStream)&pBase[ii];
 				DWORD pPlayStream;
 				pPlayStream = (DWORD)&pBase[ii];
-				DEBUG_LOGGING_NORMAL(("based_2011111201aRagexe_exe : %08X", &pBase[ii]));
-				DEBUG_LOGGING_NORMAL(("g_soundMode == %08X", (char*)funcPlayStrem_based_2011111201aRagexe_exe.GetImmediateDWORD(&pBase[ii], '1')));
+				DEBUG_LOGGING_NORMAL(("Based_2011111201aRagexe_exe = %08X", &pBase[ii]));
+				DEBUG_LOGGING_NORMAL(("g_soundMode = %08X", (char*)funcPlayStrem_based_2011111201aRagexe_exe.GetImmediateDWORD(&pBase[ii], '1')));
 				DEBUG_LOGGING_NORMAL(("void PlayStream(const char *streamFileName, int playflag) = %08X", pPlayStream));
 				break;
 			}
@@ -2332,13 +2332,13 @@ void CRoCodeBind::SearchRagexeMemory(void)
 			if (!strings_event_grf_address && strings_event_grf.PatternMatcher(&pBase[ii]))
 			{
 				strings_event_grf_address = &pBase[ii];
-				DEBUG_LOGGING_NORMAL(("find 'event.grf' : %08X", strings_event_grf_address));
+				DEBUG_LOGGING_NORMAL(("Find 'Event.grf'  = %08X", strings_event_grf_address));
 			}
 
 			if (!strings_readfolder_address && strings_readfolder.PatternMatcher(&pBase[ii]))
 			{
 				strings_readfolder_address = &pBase[ii];
-				DEBUG_LOGGING_NORMAL(("find 'readfolderf' : %08X", strings_readfolder_address));
+				DEBUG_LOGGING_NORMAL(("Find 'ReadFolder' = %08X", strings_readfolder_address));
 			}
 		}
 
@@ -2351,7 +2351,7 @@ void CRoCodeBind::SearchRagexeMemory(void)
 				addPak_event_grf.GetImmediateDWORD(&pBase[ii], '1') == (DWORD)strings_event_grf_address)
 			{
 				m_CFileMgr__gfileMgr = (void*)addPak_event_grf.GetImmediateDWORD(&pBase[ii], '2');
-				DEBUG_LOGGING_NORMAL(("find CFileMgr::g_fileMgr : %08X", m_CFileMgr__gfileMgr));
+				DEBUG_LOGGING_NORMAL(("Find CFileMgr::g_fileMgr = %08X", m_CFileMgr__gfileMgr));
 				break;
 			}
 		}
@@ -2365,7 +2365,7 @@ void CRoCodeBind::SearchRagexeMemory(void)
 				set_g_readFolderFirst.GetImmediateDWORD(&pBase[ii], '1') == (DWORD)strings_readfolder_address)
 			{
 				pg_readFolderFirst = (PBOOL)set_g_readFolderFirst.GetImmediateDWORD(&pBase[ii], '2');
-				DEBUG_LOGGING_NORMAL(("find g_readFolderFirst : %08X", pg_readFolderFirst));
+				DEBUG_LOGGING_NORMAL(("Find g_readFolderFirst = %08X", pg_readFolderFirst));
 				break;
 			}
 		}
@@ -2379,8 +2379,8 @@ void CRoCodeBind::SearchRagexeMemory(void)
 				subfunction_CFileMgr__Open.GetImmediateDWORD(&pBase[ii], '1') == (DWORD)pg_readFolderFirst)
 			{
 				m_functionRagexe_CFileMgr__GetPak = (tCFileMgr__GetPak)subfunction_CFileMgr__Open.GetNearJmpAddress(&pBase[ii], '3');
-				DEBUG_LOGGING_NORMAL(("find CFileMgr::GetFile : %08X", subfunction_CFileMgr__Open.GetNearJmpAddress(&pBase[ii], '2')));
-				DEBUG_LOGGING_NORMAL(("find CFileMgr::GetPak : %08X", m_functionRagexe_CFileMgr__GetPak));
+				DEBUG_LOGGING_NORMAL(("Find CFileMgr::GetFile = %08X", subfunction_CFileMgr__Open.GetNearJmpAddress(&pBase[ii], '2')));
+				DEBUG_LOGGING_NORMAL(("Find CFileMgr::GetPak  = %08X", m_functionRagexe_CFileMgr__GetPak));
 				break;
 			}
 
@@ -2388,8 +2388,8 @@ void CRoCodeBind::SearchRagexeMemory(void)
 				subfunction_CFileMgr__Open_v9.GetImmediateDWORD(&pBase[ii], '1') == (DWORD)pg_readFolderFirst)
 			{
 				m_functionRagexe_CFileMgr__GetPak = (tCFileMgr__GetPak)subfunction_CFileMgr__Open_v9.GetNearJmpAddress(&pBase[ii], '3');
-				DEBUG_LOGGING_NORMAL(("find CFileMgr::GetFile : %08X", subfunction_CFileMgr__Open_v9.GetNearJmpAddress(&pBase[ii], '2')));
-				DEBUG_LOGGING_NORMAL(("find CFileMgr::GetPak : %08X", m_functionRagexe_CFileMgr__GetPak));
+				DEBUG_LOGGING_NORMAL(("Find CFileMgr::GetFile = %08X", subfunction_CFileMgr__Open_v9.GetNearJmpAddress(&pBase[ii], '2')));
+				DEBUG_LOGGING_NORMAL(("Find CFileMgr::GetPak  = %08X", m_functionRagexe_CFileMgr__GetPak));
 				break;
 			}
 		}
@@ -2398,12 +2398,12 @@ void CRoCodeBind::SearchRagexeMemory(void)
 			void *address = NULL;
 			unsigned int size = 0;
 
-			DEBUG_LOGGING_NORMAL(("call CFileMgr::GetPak"));
-			address = GetPak("data\\idnum2itemdisplaynametable.txt", &size);
+			DEBUG_LOGGING_NORMAL(("Call CFileMgr::GetPak"));
+			address = GetPak("Data\\IdNum2ItemDisplayNameTable.txt", &size);
 
-			DEBUG_LOGGING_NORMAL(("load data\\idnum2itemdisplaynametable.txt %08X size of %d", address, size));
+			DEBUG_LOGGING_NORMAL(("Loading file Data\\IdNum2ItemDisplayNameTable.txt (%08X size of %d)", address, size));
 
-			DEBUG_LOGGING_NORMAL(("release data\\idnum2itemdisplaynametable.txt"));
+			DEBUG_LOGGING_NORMAL(("Release file Data\\IdNum2ItemDisplayNameTable.txt"));
 			ReleasePak(address);
 		}
 
