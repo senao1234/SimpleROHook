@@ -30,9 +30,9 @@
         {
             this.richTextBox_LogText = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
-            // 
+            //
             // richTextBox_LogText
-            // 
+            //
             this.richTextBox_LogText.AutoWordSelection = true;
             this.richTextBox_LogText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox_LogText.Location = new System.Drawing.Point(0, 0);
@@ -41,9 +41,9 @@
             this.richTextBox_LogText.Size = new System.Drawing.Size(284, 262);
             this.richTextBox_LogText.TabIndex = 0;
             this.richTextBox_LogText.Text = "";
-            // 
+            //
             // NPCLogger
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
