@@ -1,4 +1,4 @@
-﻿using System.Windows.Forms;
+using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
 
@@ -30,7 +30,7 @@ namespace SimpleROHookCS
         {
             TrackBarControl.TickFrequency = tick;
         }
-        public int Value 
+        public int Value
         {
             get {
                 return TrackBarControl.Value;
@@ -52,7 +52,7 @@ namespace SimpleROHookCS
             // Cast Control to a TrackBar control.
             TrackBar trackBarContol = (TrackBar)c;
             // Add the event.
-            trackBarContol.ValueChanged += 
+            trackBarContol.ValueChanged +=
                 new System.EventHandler(OnValueChanged);
         }
         protected override void OnUnsubscribeControlEvents(Control c)
@@ -62,7 +62,7 @@ namespace SimpleROHookCS
             // Cast the controle to a TrackBar control.
             TrackBar trackBarContol = (TrackBar)c;
             // Remove the event.
-            trackBarContol.ValueChanged -= 
+            trackBarContol.ValueChanged -=
                 new System.EventHandler(OnValueChanged);
         }
         // Declare the TrackBar event.
