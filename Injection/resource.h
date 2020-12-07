@@ -2,7 +2,7 @@
 // Microsoft Visual C++ generated include file.
 // Used by Core.rc
 
-// 新しいオブジェクトの次の既定値
+// The following defaults for the new object
 //
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
