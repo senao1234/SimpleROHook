@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 using System.Windows.Forms;
 using System.IO.MemoryMappedFiles;
@@ -200,7 +200,7 @@ namespace SimpleROHookCS
                 m_pSharedMemory->fix_windowmode_vsyncwait = (value == false) ? 0 : 1;
             }
         }
-        public bool show_framerate 
+        public bool show_framerate
         {
             get
             {
