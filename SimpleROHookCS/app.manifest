@@ -20,17 +20,17 @@
       </requestedPrivileges>
     </security>
   </trustInfo>
-  
+
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
     <application>
       <!-- A list of all versions of Windows designed to work with this application. Windows will automatically select the most compatible environment. -->
 
       <!-- Uncomment the following supportedOS node if the application is designed to run on Windows 7. -->
       <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
-      
+
     </application>
   </compatibility>
-  
+
   <!-- Enable Windows Common Controls and Dialog Themes (Windows XP and above) -->
   <!-- <dependency>
     <dependentAssembly>
