@@ -14,7 +14,8 @@ namespace SimpleROHookCS
             get
             {
                 const int WS_EX_TOOLWINDOW = 0x80;
-                const int CS_NOCLOSE = 0x0;//0x200;
+                const int CS_NOCLOSE = 0x0;
+                // const int CS_NOCLOSE = 0x200;
                 CreateParams cp = base.CreateParams;
                 cp.ClassStyle = cp.ClassStyle | CS_NOCLOSE;
                 cp.ExStyle = WS_EX_TOOLWINDOW;
@@ -30,8 +31,8 @@ namespace SimpleROHookCS
             public int cbData;
             public IntPtr lpData;
         }
-        private const int WM_COPYDATA = 0x4A;
 
+        private const int WM_COPYDATA = 0x4A;
         private const int NPCLOGLINE_MAX = 30001;
         private int m_textcolor;
 
@@ -56,15 +57,18 @@ namespace SimpleROHookCS
                         richTextBox_LogText.SelectionColor = Color.FromArgb(m_textcolor);
                         richTextBox_LogText.AppendText(message.Substring(indextop, ii - indextop));
                     }
+
                     string colorhex = message.Substring(ii + 1, 6);
                     m_textcolor = Convert.ToInt32(colorhex, 16);
                     ii += 7;
                     indextop = ii;
                 }
             }
+
             richTextBox_LogText.SelectionColor = Color.FromArgb(m_textcolor);
             richTextBox_LogText.AppendText(message.Substring(indextop));
             richTextBox_LogText.AppendText(Environment.NewLine);
+
             if (richTextBox_LogText.Lines.Length > NPCLOGLINE_MAX)
             {
                 richTextBox_LogText.ReadOnly = false;
@@ -84,6 +88,7 @@ namespace SimpleROHookCS
             {
                 COPYDATASTRUCT data = new COPYDATASTRUCT();
                 data = (COPYDATASTRUCT)Marshal.PtrToStructure(m.LParam, typeof(COPYDATASTRUCT));
+
                 if (data.dwData == (IntPtr)COPYDATAENTRY.COPYDATA_NPCLogger && data.cbData > 0)
                 {
                     char[] buffer = new char[data.cbData / 2];
@@ -91,9 +96,9 @@ namespace SimpleROHookCS
 
                     string npcmessage = new string(buffer);
                     AppendNPCMessage(npcmessage);
-
                 }
             }
+
             base.WndProc(ref m);
         }
 
