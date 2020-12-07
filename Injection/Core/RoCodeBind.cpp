@@ -135,7 +135,7 @@ void CRoCodeBind::Init(IDirect3DDevice7* d3ddevice)
 			logfont.lfClipPrecision  = CLIP_DEFAULT_PRECIS; 
 			logfont.lfQuality        = NONANTIALIASED_QUALITY; 
 			logfont.lfPitchAndFamily = FIXED_PITCH | FF_DONTCARE; 
-			_tcscpy_s(logfont.lfFaceName,_T("‚l‚r ‚oƒSƒVƒbƒN"));
+			_tcscpy_s(logfont.lfFaceName,_T("ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯"));
 
 			m_pSFastFont = new CSFastFont;
 			m_pSFastFont->CreateFastFont(&logfont,d3ddevice,m_pddsFontTexture,0);
