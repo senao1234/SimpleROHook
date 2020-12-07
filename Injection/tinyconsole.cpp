@@ -35,7 +35,7 @@ public:
 CTinylogger *s_pTinyLogger = NULL;
 
 
-void DebugLogger(const char* format, ...) 
+void DebugLogger(const char* format, ...)
 {
 	va_list argptr;
 	va_start(argptr, format);
@@ -52,7 +52,7 @@ void DebugLogger(const char* format, ...)
 	va_end(argptr);
 }
 
-void DebugLoggerWithLogWindow(const char* format, ...) 
+void DebugLoggerWithLogWindow(const char* format, ...)
 {
 	va_list argptr;
 	va_start(argptr, format);
