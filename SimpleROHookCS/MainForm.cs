@@ -189,7 +189,7 @@ namespace SimpleROHookCS
 
 		private void Set_ZBiasValue_groundZBiasToolStripMenuItem(int value)
 		{
-			groundZBiasToolStripMenuItem.Text = String.Format("Ground Z Bias {0}", value);
+			groundZBiasToolStripMenuItem.Text = String.Format("Ground Z Bias: {0}", value);
 		}
 
 		private void CPUCooler_toolStripTrackBar_Update(object sender, EventArgs e)
@@ -204,11 +204,11 @@ namespace SimpleROHookCS
 		{
 			if (value == 0)
 			{
-				CPUCoolerText_toolStripMenuItem.Text = "CPU Cooler OFF";
+				CPUCoolerText_toolStripMenuItem.Text = "CPU Cooler: OFF";
 			}
 			else
 			{
-				CPUCoolerText_toolStripMenuItem.Text = String.Format("CPU Cooler Level {0}", value);
+				CPUCoolerText_toolStripMenuItem.Text = String.Format("CPU Cooler Level: {0}", value);
 			}
 		}
 
@@ -222,7 +222,7 @@ namespace SimpleROHookCS
 
 		private void Set_AlphaLevelValue_alphaLeveltoolStripMenuItem(int value)
 		{
-			alphaLeveltoolStripMenuItem.Text = String.Format("Alpha Level {0}", value);
+			alphaLeveltoolStripMenuItem.Text = String.Format("Alpha Level: {0}", value);
 		}
 
 		private void InitTaskTrayMenu()
