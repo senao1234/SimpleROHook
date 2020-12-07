@@ -131,10 +131,10 @@ void CRoCodeBind::Init(IDirect3DDevice7* d3ddevice)
 			logfont.lfUnderline      = FALSE;
 			logfont.lfStrikeOut      = FALSE;
 			logfont.lfCharSet        = DEFAULT_CHARSET;
-			logfont.lfOutPrecision   = OUT_DEFAULT_PRECIS; 
-			logfont.lfClipPrecision  = CLIP_DEFAULT_PRECIS; 
-			logfont.lfQuality        = NONANTIALIASED_QUALITY; 
-			logfont.lfPitchAndFamily = FIXED_PITCH | FF_DONTCARE; 
+			logfont.lfOutPrecision   = OUT_DEFAULT_PRECIS;
+			logfont.lfClipPrecision  = CLIP_DEFAULT_PRECIS;
+			logfont.lfQuality        = NONANTIALIASED_QUALITY;
+			logfont.lfPitchAndFamily = FIXED_PITCH | FF_DONTCARE;
 			_tcscpy_s(logfont.lfFaceName,_T("MS PGothic"));
 
 			m_pSFastFont = new CSFastFont;
@@ -416,7 +416,7 @@ void CRoCodeBind::LoadIni(void)
 			for(int ii = 0;ii < MAX_GROUNDSKILLTYPE;ii++)
 				m_M2ESkillColor[ii]=0;
 
-			
+
 			while(*pkey!='\0'){
 				int index;
 				DWORD color;
@@ -684,7 +684,7 @@ void CRoCodeBind::DrawSRHDebug(IDirect3DDevice7* d3ddevice)
 		d3ddevice->SetRenderState(D3DRENDERSTATE_DESTBLEND, D3DBLEND_INVSRCALPHA);
 
 
-		if( p_gamemode && pcmode->m_curModeType == 1 
+		if( p_gamemode && pcmode->m_curModeType == 1
 		 && p_gamemode->m_world && p_gamemode->m_view && p_gamemode->m_world->m_attr ){
 			CView *pView = p_gamemode->m_view;
 			C3dAttr *pAttr = p_gamemode->m_world->m_attr;
@@ -955,7 +955,7 @@ void CRoCodeBind::DrawSRHDebug(IDirect3DDevice7* d3ddevice)
 					m_pSFastFont->DrawText((LPSTR)putinfostr.str().c_str(), sx, sy,D3DCOLOR_ARGB(255,255,255,255),2,NULL);
 				}
 			}
-			
+
 		}
 		str << std::endl;
 		m_pSFastFont->DrawText((LPSTR)str.str().c_str(), 0, 16,D3DCOLOR_ARGB(255,255,255,255),0,NULL);
@@ -1082,19 +1082,19 @@ void CRoCodeBind::DrawM2E(IDirect3DDevice7* d3ddevice)
 int distance_circle(int dx, int dy)
 {
 	double temp_dist = std::sqrt((double)(dx*dx + dy*dy));
-	
+
 		//Bonus factor used by client
 		//This affects even horizontal/vertical lines so they are one cell longer than expected
 		temp_dist -= 0.0625;
-	
+
 		if (temp_dist < 0) temp_dist = 0;
-	
+
 		return ((int)temp_dist);
 }
 bool check_distance_circle(int dx, int dy, int distance)
 {
 	if (distance < 0) distance = 0;
-	
+
 	return (distance_circle(dx, dy) == distance);
 }
 
@@ -1713,7 +1713,7 @@ void CRoCodeBind::SearchRagexeMemory(void)
 		"8a10"              //   mov     dl,[eax]
 		"8aca"              //   mov     cl,dl
 		"3a16"              //   cmp     dl,[esi]
-		"751c"              //   jnz     C0040af10                            
+		"751c"              //   jnz     C0040af10
 		"84c9"              //   test    cl,cl
 		);
 	CSearchCode funcPlayStrem_based_RagFree_exe(
@@ -1731,7 +1731,7 @@ void CRoCodeBind::SearchRagexeMemory(void)
 		"8a10"              //   mov     dl,[eax]
 		"8aca"              //   mov     cl,dl
 		"3a16"              //   cmp     dl,[esi]
-		"751c"              //   jnz     C0041b5d6                            
+		"751c"              //   jnz     C0041b5d6
 		"84c9"              //   test    cl,cl
 		);
 	CSearchCode funcPlayStrem_based_2011111201aRagexe_exe(
@@ -1747,7 +1747,7 @@ void CRoCodeBind::SearchRagexeMemory(void)
 		"8bc6"              //   mov     eax,esi
 		"8a10"              //   mov     dl,[eax]
 		"3a11"              //   cmp     dl,[ecx]
-		"751a"              //   jnz     C0065fcc0                                  
+		"751a"              //   jnz     C0065fcc0
 		"84d2"              //   test    dl,dl
 		);
 	CSearchCode funcPlayStrem_based_20140226_155100iRagexe_exe(
@@ -2000,7 +2000,7 @@ void CRoCodeBind::SearchRagexeMemory(void)
 				DEBUG_LOGGING_NORMAL(("TypeG CRagConnection::GetPacketSize = %08X", m_functionRagexe_CRagConnection__GetPacketSize));
 				break;
 			}
-		} 
+		}
 #if 0
 		if (m_functionRagexe_CRagConnection__instanceR && m_functionRagexe_CRagConnection__GetPacketSize){
 			// get packet length for classic client.
@@ -2050,7 +2050,7 @@ void CRoCodeBind::SearchRagexeMemory(void)
 					{
 						g_mouse = (CMouse*)winmain_init_CMouse_Init_call.GetImmediateDWORD(&pBase[ii],'1');
 						g_renderer = (CRenderer**)winmain_init_CMouse_Init_call.GetImmediateDWORD(&pBase[ii],'3');
-						
+
 						DEBUG_LOGGING_NORMAL( ("find g_mouse = %08X",g_mouse) );
 						DEBUG_LOGGING_NORMAL( ("find *g_renderer = %08X",g_renderer) );
 						break;
@@ -2073,7 +2073,7 @@ void CRoCodeBind::SearchRagexeMemory(void)
 			}
 		}
 
-		// get the address of PlayStream function 
+		// get the address of PlayStream function
 		for( UINT ii = 0; ii < mbi.RegionSize - funcPlayStrem_based_HighPrest_exe.GetSize() ; ii++ )
 		{
 			LPBYTE pBase = (LPBYTE)mbi.BaseAddress;
@@ -2228,4 +2228,3 @@ void CRoCodeBind::SearchRagexeMemory(void)
 
 	}
 }
-
