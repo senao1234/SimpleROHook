@@ -7,7 +7,7 @@ namespace SimpleROHookCS
     static class Program
     {
         /// <summary>
-        /// アプリケーションのメイン エントリ ポイントです。
+        /// This is the main entry point of the application.
         /// </summary>
         [DllImport("kernel32.dll", EntryPoint = "LoadLibrary")]
         static extern int LoadLibrary(
