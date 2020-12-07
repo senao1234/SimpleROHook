@@ -98,7 +98,7 @@ namespace SimpleROHookCS
 			//
 			this.playMusicOnClientStreamPlayerToolStripMenuItem.Name = "playMusicOnClientStreamPlayerToolStripMenuItem";
 			this.playMusicOnClientStreamPlayerToolStripMenuItem.Size = new System.Drawing.Size(248, 22);
-			this.playMusicOnClientStreamPlayerToolStripMenuItem.Text = "PlayMusic on ClientStreamPlayer";
+			this.playMusicOnClientStreamPlayerToolStripMenuItem.Text = "Play Music on Client Stream Player";
 			this.playMusicOnClientStreamPlayerToolStripMenuItem.Click += new System.EventHandler(this.playMusicOnClientStreamPlayerToolStripMenuItem_Click);
 			//
 			// toolStripSeparator1
@@ -125,7 +125,7 @@ namespace SimpleROHookCS
 			this.kHzAudioModeonBootToolStripMenuItem.CheckOnClick = true;
 			this.kHzAudioModeonBootToolStripMenuItem.Name = "kHzAudioModeonBootToolStripMenuItem";
 			this.kHzAudioModeonBootToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
-			this.kHzAudioModeonBootToolStripMenuItem.Text = "44kHz Audio Mode(on boot)";
+			this.kHzAudioModeonBootToolStripMenuItem.Text = "44kHz Audio Mode (on boot)";
 			this.kHzAudioModeonBootToolStripMenuItem.Click += new System.EventHandler(this.kHzAudioModeonBootToolStripMenuItem_Click);
 			//
 			// freeMouseToolStripMenuItem
@@ -133,7 +133,7 @@ namespace SimpleROHookCS
 			this.freeMouseToolStripMenuItem.CheckOnClick = true;
 			this.freeMouseToolStripMenuItem.Name = "freeMouseToolStripMenuItem";
 			this.freeMouseToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
-			this.freeMouseToolStripMenuItem.Text = "FreeMouse(on boot)";
+			this.freeMouseToolStripMenuItem.Text = "Mouse Freedom (on boot)";
 			this.freeMouseToolStripMenuItem.Click += new System.EventHandler(this.freeMouseToolStripMenuItem_Click);
 			//
 			// fixWindowModeVsyncWaitToolStripMenuItem
@@ -141,7 +141,7 @@ namespace SimpleROHookCS
 			this.fixWindowModeVsyncWaitToolStripMenuItem.CheckOnClick = true;
 			this.fixWindowModeVsyncWaitToolStripMenuItem.Name = "fixWindowModeVsyncWaitToolStripMenuItem";
 			this.fixWindowModeVsyncWaitToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
-			this.fixWindowModeVsyncWaitToolStripMenuItem.Text = "Fix WindowMode VsyncWait";
+			this.fixWindowModeVsyncWaitToolStripMenuItem.Text = "Fix Vsync Wait in Window Mode";
 			this.fixWindowModeVsyncWaitToolStripMenuItem.Click += new System.EventHandler(this.fixWindowModeVsyncWaitToolStripMenuItem_Click);
 			//
 			// windowToolStripMenuItem
@@ -181,7 +181,7 @@ namespace SimpleROHookCS
 			this.showFpsToolStripMenuItem.CheckOnClick = true;
 			this.showFpsToolStripMenuItem.Name = "showFpsToolStripMenuItem";
 			this.showFpsToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-			this.showFpsToolStripMenuItem.Text = "Show Fps";
+			this.showFpsToolStripMenuItem.Text = "Show Fps.";
 			this.showFpsToolStripMenuItem.Click += new System.EventHandler(this.showFpsToolStripMenuItem_Click);
 			//
 			// showObjectInformationToolStripMenuItem
@@ -197,7 +197,7 @@ namespace SimpleROHookCS
 			this.packetLogToolStripMenuItem.CheckOnClick = true;
 			this.packetLogToolStripMenuItem.Name = "packetLogToolStripMenuItem";
 			this.packetLogToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-			this.packetLogToolStripMenuItem.Text = "Packet Log";
+			this.packetLogToolStripMenuItem.Text = "Packet Logging";
 			this.packetLogToolStripMenuItem.Click += new System.EventHandler(this.packetLogToolStripMenuItem_Click);
 			//
 			// dMapMarkerToolStripMenuItem
@@ -224,7 +224,7 @@ namespace SimpleROHookCS
 			this.showM2EToolStripMenuItem.CheckOnClick = true;
 			this.showM2EToolStripMenuItem.Name = "showM2EToolStripMenuItem";
 			this.showM2EToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
-			this.showM2EToolStripMenuItem.Text = "Show M2E";
+			this.showM2EToolStripMenuItem.Text = "Show M2E (Ground Skills)";
 			this.showM2EToolStripMenuItem.Click += new System.EventHandler(this.showM2EToolStripMenuItem_Click);
 			//
 			// showBBEtoolStripMenuItem
@@ -232,7 +232,7 @@ namespace SimpleROHookCS
 			this.showBBEtoolStripMenuItem.CheckOnClick = true;
 			this.showBBEtoolStripMenuItem.Name = "showBBEtoolStripMenuItem";
 			this.showBBEtoolStripMenuItem.Size = new System.Drawing.Size(275, 22);
-			this.showBBEtoolStripMenuItem.Text = "Show BBE";
+			this.showBBEtoolStripMenuItem.Text = "Show BBE (Gutter Lines)";
 			this.showBBEtoolStripMenuItem.Click += new System.EventHandler(this.showBBEtoolStripMenuItem_Click);
 			//
 			// showDeadCelltoolStripMenuItem
@@ -333,7 +333,7 @@ namespace SimpleROHookCS
 			this.chainloadDinputdllasiForDinputfreeRagexesToolStripMenuItem.CheckOnClick = true;
 			this.chainloadDinputdllasiForDinputfreeRagexesToolStripMenuItem.Name = "chainloadDinputdllasiForDinputfreeRagexesToolStripMenuItem";
 			this.chainloadDinputdllasiForDinputfreeRagexesToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
-			this.chainloadDinputdllasiForDinputfreeRagexesToolStripMenuItem.Text = "Chainload dinput.dll/.asi for dinput-free Ragexes";
+			this.chainloadDinputdllasiForDinputfreeRagexesToolStripMenuItem.Text = "Chainload DInput.dll/.asi";
 			this.chainloadDinputdllasiForDinputfreeRagexesToolStripMenuItem.Click += new System.EventHandler(this.chainloadDinputdllasiForDinputfreeRagexesToolStripMenuItem_Click);
 			//
 			// MainForm
