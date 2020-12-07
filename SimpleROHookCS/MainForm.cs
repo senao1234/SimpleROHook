@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
@@ -294,7 +294,7 @@ Gutterline=0x00FF0000
 Demigutter=0x000000FF
 
 [M2E]
-; 
+;
 ; Safety_Wall
 Skill007E=0xBFFF00FF
 
