@@ -254,7 +254,7 @@ HRESULT WINAPI ProxyDirectDrawCreateEx(
 
 	DEBUG_LOGGING_MORE_DETAIL(("DirectDrawCreateEx Hook hookfunc"));
 
-    return Result;
+	return Result;
 }
 
 HRESULT WINAPI ProxyDirectInputCreateA(
@@ -274,7 +274,7 @@ HRESULT WINAPI ProxyDirectInputCreateA(
 	}
 	DEBUG_LOGGING_MORE_DETAIL(("DirectInputCreateA Hook hookfunc"));
 
-    return Result;
+	return Result;
 }
 
 
@@ -298,8 +298,8 @@ BOOL IsRagnarokApp(void)
 }
 
 BOOL APIENTRY DllMain( HMODULE hModule,
-                       DWORD  ul_reason_for_call,
-                       LPVOID lpReserved
+					   DWORD  ul_reason_for_call,
+					   LPVOID lpReserved
 					 )
 {
 	switch (ul_reason_for_call)
