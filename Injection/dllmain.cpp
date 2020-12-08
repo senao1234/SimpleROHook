@@ -1,4 +1,4 @@
-// dllmain.cpp : DLL アプリケーションのエントリ ポイントを定義します。
+// dllmain.cpp: Defines the entry point for the DLL application.
 #include "Hook.h"
 
 #include "tinyconsole.h"
