@@ -38,7 +38,7 @@ BOOL InstallProxyFunction(LPCTSTR dllname,LPCSTR exportname,VOID *ProxyFunction,
 			DEBUG_LOGGING_NORMAL(("dllname conversion failed (WTF?)"));
 			goto error_free_wstr;
 		}
-#endif 
+#endif
 		int result = MH_CreateHookApiEx(dllnameW, exportname, ProxyFunction, pOriginalFunction, &ppTarget);
 		if (result != MH_OK)
 		{
@@ -115,7 +115,7 @@ fallback:
 			p[0] == 0xeb && p[1] == 0xf9)
 		{
 			// find hotpached function.
-			// jmp **** 
+			// jmp ****
 			// jmp short [pc -7]
 			DWORD flOldProtect, flDontCare;
 			if (::VirtualProtect((LPVOID)&p[-5], 7, PAGE_READWRITE, &flOldProtect))
@@ -136,7 +136,7 @@ fallback:
 			// find irregular hook code. case by iro
 			//
 			// 9090909090 nop  x 5
-			// e9******** jmp  im4byte 
+			// e9******** jmp  im4byte
 			//       or
 			// cccccccccc int 3 x 5
 			// e9******** jmp  im4byte
@@ -359,7 +359,7 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 			}
 
 			InstallProxyFunction(
-				_T("ddraw.dll"),  "DirectDrawCreateEx", 
+				_T("ddraw.dll"),  "DirectDrawCreateEx",
 				ProxyDirectDrawCreateEx, (LPVOID*)&OrigDirectDrawCreateEx);
 			InstallProxyFunction(
 				_T("dinput.dll"), "DirectInputCreateA",
@@ -377,4 +377,3 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 	}
 	return TRUE;
 }
-
