@@ -1,4 +1,4 @@
-// Core.cpp : DLL アプリケーション用にエクスポートされる関数を定義します。
+// Core.cpp: DLL Defines the function to be exported for the application.
 //
 
 #include "Hook.h"
