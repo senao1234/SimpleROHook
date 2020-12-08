@@ -12,7 +12,7 @@ public:
 
 	CProxyIDirectDraw7(IDirectDraw7* ptr);
 	~CProxyIDirectDraw7();
-	
+
 	static CProxyIDirectDraw7* getLPProxyIDirectDraw7(void){return lpthis;};
 	void   setThis(CProxyIDirectDraw7* _lpthis){lpthis = _lpthis;};
 
