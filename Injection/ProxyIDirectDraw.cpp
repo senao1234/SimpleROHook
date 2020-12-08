@@ -8,12 +8,12 @@ CProxyIDirectDraw7* CProxyIDirectDraw7::lpthis;
 CProxyIDirectDraw7::CProxyIDirectDraw7(IDirectDraw7 *ptr):m_Instance(ptr), CooperativeLevel(0), PrimarySurfaceFlag(0), TargetSurface(NULL)
 {
 	g_pRoCodeBind = new CRoCodeBind();
-	DEBUG_LOGGING_MORE_DETAIL(("IDirectDraw7::Create"));
+	DEBUG_LOGGING_MORE_DETAIL(("IDirectDraw7::Create."));
 }
 
 CProxyIDirectDraw7::~CProxyIDirectDraw7()
 {
-	DEBUG_LOGGING_MORE_DETAIL(("IDirectDraw7::Releace"));
+	DEBUG_LOGGING_MORE_DETAIL(("IDirectDraw7::Release."));
 }
 
 ULONG CProxyIDirectDraw7::Proxy_Release(void)
@@ -22,7 +22,7 @@ ULONG CProxyIDirectDraw7::Proxy_Release(void)
 
 	if (g_pRoCodeBind)delete g_pRoCodeBind;
 	Count = m_Instance->Release();
-	DEBUG_LOGGING_MORE_DETAIL(("CProxyIDirectDraw7::Release()  RefCount = %d", Count));
+	DEBUG_LOGGING_MORE_DETAIL(("CProxyIDirectDraw7::Release(): RefCount = %d", Count));
 	delete this;
 
 	return Count;
@@ -39,7 +39,7 @@ HRESULT CProxyIDirectDraw7::Proxy_QueryInterface(THIS_ REFIID riid, LPVOID FAR *
 
 	if (IsEqualGUID(riid, IID_IDirect3D7))
 	{
-		DEBUG_LOGGING_MORE_DETAIL(("CProxyIDirectDraw7::IDirect3D7 create"));
+		DEBUG_LOGGING_MORE_DETAIL(("CProxyIDirectDraw7::IDirect3D7 Create."));
 		HRESULT temp_ret = m_Instance->QueryInterface(riid, ppvObj);
 
 		if (temp_ret == S_OK)
@@ -64,7 +64,7 @@ HRESULT CProxyIDirectDraw7::Proxy_CreateSurface(LPDDSURFACEDESC2 SurfaceDesc, LP
 {
 	DDSURFACEDESC2 OrgSurfaceDesc2 = *SurfaceDesc;
 
-	DEBUG_LOGGING_MORE_DETAIL(("IDirectDraw7::CreateSurface()  Desc.dwFlags = 0x%x", SurfaceDesc->dwFlags));
+	DEBUG_LOGGING_MORE_DETAIL(("IDirectDraw7::CreateSurface(): Desc.dwFlags = 0x%x", SurfaceDesc->dwFlags));
 	DEBUG_LOGGING_MORE_DETAIL(("DDSD_BACKBUFFERCOUNT = %x", DDSD_BACKBUFFERCOUNT));
 	HRESULT Result = m_Instance->CreateSurface(SurfaceDesc, CreatedSurface, pUnkOuter);
 
@@ -81,7 +81,7 @@ HRESULT CProxyIDirectDraw7::Proxy_CreateSurface(LPDDSURFACEDESC2 SurfaceDesc, LP
 			DEBUG_LOGGING_MORE_DETAIL(("BackBuffer Surface"));
 		}
 
-		DEBUG_LOGGING_MORE_DETAIL(("%0x W %d H %d", *CreatedSurface, SurfaceDesc->dwWidth, SurfaceDesc->dwHeight));
+		DEBUG_LOGGING_MORE_DETAIL(("%0x | W %d | H %d", *CreatedSurface, SurfaceDesc->dwWidth, SurfaceDesc->dwHeight));
 
 		if (Caps->dwCaps & DDSCAPS_PRIMARYSURFACE)
 		{
@@ -157,7 +157,7 @@ HRESULT CProxyIDirectDraw7::Proxy_GetDisplayMode(LPDDSURFACEDESC2 Desc)
 
 HRESULT CProxyIDirectDraw7::Proxy_SetCooperativeLevel(HWND hWnd, DWORD dwFlags)
 {
-	DEBUG_LOGGING_MORE_DETAIL(("IDirectDraw7::SetCooperativeLevel()  dwFlags = 0x%x", dwFlags));
+	DEBUG_LOGGING_MORE_DETAIL(("IDirectDraw7::SetCooperativeLevel(): dwFlags = 0x%x", dwFlags));
 
 	if (g_pSharedData)
 		g_pSharedData->g_hROWindow = hWnd;
@@ -181,7 +181,7 @@ HRESULT CProxyIDirectDraw7::Proxy_SetDisplayMode(DWORD p1, DWORD p2, DWORD p3, D
 	if (FAILED(Result))
 		return Result;
 
-	DEBUG_LOGGING_MORE_DETAIL(("    %d  %d  %d  %d  %d", p1, p2, p3, p4, p5));
+	DEBUG_LOGGING_MORE_DETAIL(("    %d | %d | %d | %d | %d", p1, p2, p3, p4, p5));
 
 	DDSURFACEDESC2 Desc;
 	::ZeroMemory(&Desc, sizeof(Desc));
@@ -205,7 +205,7 @@ HRESULT CProxyIDirectDraw7::Proxy_WaitForVerticalBlank(DWORD dwFlags, HANDLE hEv
 {
 	static double VSyncWaitTick = 0.0;
 
-	// DEBUG_LOGGING_MORE_DETAIL(("IDirectDraw7::WaitForVerticalBlank()  dwFlags = 0x%x  hEvent = 0x%x", dwFlags, hEvent));
+	// DEBUG_LOGGING_MORE_DETAIL(("IDirectDraw7::WaitForVerticalBlank(): dwFlags = 0x%x | hEvent = 0x%x", dwFlags, hEvent));
 	HRESULT result;
 
 	g_PerformanceCounter.ModifiCounter();
@@ -258,7 +258,7 @@ void CProxyIDirect3DDevice7::Proxy_Release(void)
 
 HRESULT CProxyIDirect3DDevice7::Proxy_SetRenderState(THIS_ D3DRENDERSTATETYPE dwRenderStateType, DWORD dwRenderState)
 {
-	// DEBUG_LOGGING_MORE_DETAIL(("CProxyIDirect3D7::Proxy_SetRenderState() type:%08X val:%08X",dwRenderStateType,dwRenderState));
+	// DEBUG_LOGGING_MORE_DETAIL(("CProxyIDirect3D7::Proxy_SetRenderState(): type = %08X | val = %08X", dwRenderStateType, dwRenderState));
 
 	if (dwRenderStateType == D3DRENDERSTATE_ZENABLE && dwRenderState == 0)
 	{
