@@ -1,9 +1,9 @@
-// 以下の ifdef ブロックは DLL からのエクスポートを容易にするマクロを作成するための
-// 一般的な方法です。この DLL 内のすべてのファイルは、コマンド ラインで定義された INJECTION_EXPORTS
-// シンボルを使用してコンパイルされます。このシンボルは、この DLL を使用するプロジェクトでは定義できません。
-// ソースファイルがこのファイルを含んでいる他のプロジェクトは、
-// CORE_API 関数を DLL からインポートされたと見なすのに対し、この DLL は、このマクロで定義された
-// シンボルをエクスポートされたと見なします。
+// The following ifdef blocks are a common way to create macros that facilitate export from a DLL.
+// All files in this DLL are compiled using the INJECTION_EXPORTS symbol defined on the command line.
+// This symbol cannot be defined in projects that use this DLL.
+// Other projects whose source file contains this file
+// Consider the CORE_API function to be imported from a DLL,
+// While this DLL considers the symbols defined in this macro to be exported.
 #ifdef INJECTION_EXPORTS
 	extern HINSTANCE g_hDLL;
 	#define INJECTION_API extern "C" __declspec(dllexport)
