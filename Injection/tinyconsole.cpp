@@ -20,7 +20,7 @@ private:
 public:
 	CTinylogger()
 	{
-		ofs.open("_simplerohook.log");
+		ofs.open("SimpleROHook.log");
 	}
 
 	void operator << (char *str)
