@@ -46,8 +46,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.richTextBox_LogText);
-            this.Name = "NPCLogger";
-            this.Text = "NPCLogger";
+            this.Name = "NPC Logger";
+            this.Text = "NPC Logger";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Window_FormClosing);
             this.ResumeLayout(false);
 

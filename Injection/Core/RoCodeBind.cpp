@@ -1483,7 +1483,7 @@ void CRoCodeBind::SendMessageToNPCLogger(const char *src, int size)
 	{
 		// DEBUG_LOGGING_NORMAL(("Size of Wbuffer = %d | Wsize = %d", sizeof(wbuffer), wsize));
 		HWND hNPCLoggerWnd;
-		hNPCLoggerWnd = ::FindWindow(NULL, "NPCLogger");
+		hNPCLoggerWnd = ::FindWindow(NULL, "NPC Logger");
 
 		if (hNPCLoggerWnd)
 		{
