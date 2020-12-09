@@ -83,7 +83,7 @@ void DebugLoggerWithLogWindow(const char* format, ...)
 void CreateTinyConsole(void)
 {
 	HINSTANCE hinst = ::GetModuleHandle(NULL);
-	g_hTinyConsole  = ::CreateEvent(NULL, TRUE, TRUE, _T("TinyConsole"));
+	g_hTinyConsole  = ::CreateEvent(NULL, TRUE, TRUE, _T("Tiny Console"));
 
 	if (g_hTinyConsole)
 	{
