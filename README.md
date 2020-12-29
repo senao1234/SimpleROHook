@@ -1,10 +1,8 @@
 ### Development Note
 
-This is forked of [SimpleROHook](https://github.com/sekishi1259/SimpleROHook)
-
-Last development by [@drdxxy](https://github.com/drdaxxy) and original code by [@sekishi1259](https://github.com/sekishi1259)
-
-Setting up again in 2020-12-05 by [@X-EcutiOnner](https://github.com/X-EcutiOnner)
+* This is forked of [SimpleROHook](https://github.com/sekishi1259/SimpleROHook)
+* Last development by [@drdxxy](https://github.com/drdaxxy) and original code by [@sekishi1259](https://github.com/sekishi1259)
+* Setting up again in 2020-12-05 by [@X-EcutiOnner](https://github.com/X-EcutiOnner)
 
 -------
 
@@ -79,16 +77,38 @@ As of September 24, 2017, iRO's GM team [appears to tolerate gutterline and grou
 
 ### Build instructions (for developers)
 
-* Install the [August 2007 DirectX SDK](https://www.microsoft.com/en-us/download/details.aspx?id=13287). Other versions **will not work**.
-  * Note this will overwrite your `DXSDK_DIR` environment variable. If you've had the June 2010 SDK installed before, you'll probably want to set it back.
-  * Set `DXSDK_AUG07_DIR` to the August 2007 DirectX SDK directory, e.g. `C:\Program Files (x86)\Microsoft DirectX SDK (August 2007)`.
-* Clone the repository.
-* Open in **Visual Studio 2015** (may also work in 2017, untested).
-* Select `Release-iRO/Mixed Platforms` build configuration.
+* Install the [August 2007 DirectX SDK](https://www.microsoft.com/en-us/download/details.aspx?id=13287). Other versions **may not work**.
+  * **Note:** this will overwrite your original `DXSDK_DIR` environment variable.
+  * If you've had the `June 2010 DirectX SDK` installed before, you'll probably want to set it back.
+  * Change `Environment Variables` (System variables) path from `DXSDK_DIR` to `DXSDK_AUG07_DIR`.
+* Clone this repository.
+* Open SimpleROHook.sln in **Visual Studio 2019** and also work in 2017 or 2015 too.
+* Install the **MinHook** Nuget packages or compile it libraries.
+* Select `Release-iRO/Mixed Platforms` in build configuration.
 * Build Solution.
+
+### MinHook ReadMe
+
+This project requires the [MinHook](https://github.com/TsudaKageyu/minhook) libraries by [@TsudaKageyu](https://github.com/TsudaKageyu).
+
+```
+Each file name has these tags:
+
+"x86", "x64":
+    CPU archtecture
+
+"v90", "v100", "v110", "v120", "v140", "v141":
+    Platform toolset (compiler version)
+    Choose "v110" for "v110_xp", "v120" for "v120_xp", "v140" for "v140_xp", "v141" for "v141_xp"
+
+"md", "mt", "mdd", "mtd":
+    Runtime Link (Dynamic/Static) and Config (Release/Debug)
+    Corresponding to "/MD", "/MT", "/MDd" and "/MTd" compiler options respectively.
+```
 
 ### Original README
 
+```
     SimpleROHook
 
     Simply extend Ragnarok Online.
@@ -111,3 +131,4 @@ As of September 24, 2017, iRO's GM team [appears to tolerate gutterline and grou
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+```
