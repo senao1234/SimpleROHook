@@ -1,3 +1,15 @@
+### Development Note
+
+This is forked of [SimpleROHook](https://github.com/sekishi1259/SimpleROHook)
+
+Last development by [@drdxxy](https://github.com/drdaxxy) and original code by [@sekishi1259](https://github.com/sekishi1259)
+
+Setting up again in 2020-12-05 by [@X-EcutiOnner](https://github.com/X-EcutiOnner)
+
+-------
+
+### Abandoned Note
+
 **Note:** This fork has been **abandoned** since mid-2018. I currently do not play Ragnarok Online and accessing iRO from where I live is a hassle. **This version will (probably) not work on any current server.**
 
 **For developers:** *If you have basic Win32 reverse engineering skills*, updating this should not be particularly difficult or time-consuming. If you're thinking about picking up the slack, please don't be discouraged by the lack of activity: the reason you (probably) don't see anybody else doing it isn't that you need to be one of the Chosen Ones to figure this stuff out, just collective lack of interest.
@@ -48,7 +60,7 @@ The best place to **get technical support** and be notified of updates is #addon
 * Edit `config.ini` as with M2E, you'll find a new `[MiscColor]` section at the top.
 * If you're updating from a previous version and would like to keep your M2E settings, this is the section you need to add to the top or bottom of the file:
   * **Do not** just add it somewhere in the middle, that would break all following M2E skill colors!
-  
+
 ```
 [MiscColor]
 ; Alpha is ignored for these - use the alpha level option in the GUI
@@ -58,13 +70,13 @@ Castrange=0x007F00FF
 Gutterline=0x00FF0000
 Demigutter=0x000000FF
 ```
-  
+
 ### Disclaimers
 
 I did the minimum work necessary to make Bowling Bash gutterline display work on the client mentioned above, with only a few minutes of testing. If this ends up crashing your client, I'd appreciate a heads up, but don't yell at me if that loses you an MvP or something.
 
 As of September 24, 2017, iRO's GM team [appears to tolerate gutterline and ground skill target display client edits](https://forums.warpportal.com/index.php?/topic/202141-ro1-in-game-rules-and-guidelines/). Keep in mind they may change their stance at any time and this doesn't necessarily apply to other servers. Whatever you do, use this tool at your own responsibility.
-  
+
 ### Build instructions (for developers)
 
 * Install the [August 2007 DirectX SDK](https://www.microsoft.com/en-us/download/details.aspx?id=13287). Other versions **will not work**.
