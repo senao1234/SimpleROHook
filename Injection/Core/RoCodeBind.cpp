@@ -413,7 +413,7 @@ void CRoCodeBind::LoadIni(void)
 			sectionsize = GetPrivateProfileSection(_T("M2E"),Sectionbuf,32768,filename);
 			pkey = Sectionbuf;
 
-			for(int ii = 0;ii < MAX_FLLORSKILLTYPE;ii++)
+			for(int ii = 0;ii < MAX_GROUNDSKILLTYPE;ii++)
 				m_M2ESkillColor[ii]=0;
 
 			
