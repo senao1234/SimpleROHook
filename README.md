@@ -1,8 +1,20 @@
+# SimpleROHook
+ SimpleROHook - Simply Extend Ragnarök Online
+
+![License](https://img.shields.io/github/license/X-EcutiOnner/SimpleROHook)
+![Language](https://img.shields.io/badge/language-C%2B%2B-blue)
+![Contributors](https://img.shields.io/github/contributors/X-EcutiOnner/SimpleROHook.svg)
+
+## Requeriments
+  - Visual Studio 2019 (C++ support)
+
 ### Development Note
 
 * This is forked of [SimpleROHook](https://github.com/sekishi1259/SimpleROHook)
 * Last development by [@drdxxy](https://github.com/drdaxxy) and original code by [@sekishi1259](https://github.com/sekishi1259)
 * Setting up again in 2020-12-05 by [@X-EcutiOnner](https://github.com/X-EcutiOnner)
+
+  - Last tested with 2021-01-07aRagexeRE
 
 -------
 
