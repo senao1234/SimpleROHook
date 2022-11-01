@@ -6,7 +6,11 @@
 ![Contributors](https://img.shields.io/github/contributors/X-EcutiOnner/SimpleROHook.svg)
 
 ## Requeriments
-  - Visual Studio 2019 (C++ support)
+  - [Visual Studio 2022 (with C++ support)](https://visualstudio.microsoft.com/downloads/)
+  - [DirectX SDK August 2007](https://archive.org/details/dxsdk_aug2007)
+  - [.NET Framework 4.8 Developer Pack](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48)
+
+  **PS.** Version of Visual Studio also can pick from 2015 up to 2022 (Recommended 2017)
 
 ### Development Note
 
