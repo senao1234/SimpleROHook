@@ -18,6 +18,29 @@
 
 -------
 
+## Screenshots
+- Tiny Console
+
+![Tiny Console](Screenshots/Tiny%20Console.png)
+
+- MENU - Extra
+
+![MENU - Extra](Screenshots/MENU%20Extra.png)
+
+- MENU - Debug Info
+
+![MENU - Debug Info](Screenshots/MENU%20Debug%20Info.png)
+
+- MENU - 3D Map Grid
+
+![MENU - 3D Map Grid](Screenshots/MENU%203D%20Map%20Grid.png)
+
+- Capture Screen
+
+![Capture Screen](Screenshots/Capture%20Screen.png)
+
+-------
+
 ### Abandoned Note
 
 **Note:** This fork has been **abandoned** since mid-2018. I currently do not play Ragnarok Online and accessing iRO from where I live is a hassle. **This version will (probably) not work on any current server.**
