@@ -280,13 +280,13 @@ Demigutter=0x000000FF
 
 [M2E]
 ;
-; Safety_Wall
+; Safety Wall
 Skill007E=0xBFFF00FF
 
-; Fire_Wall
+; Fire Wall
 Skill007F=0x7F880000
 
-; Warp_Portal
+; Warp Portal
 Skill0080=0x7FFFFFFF
 Skill0081=0x7FFFFFFF
 ;
@@ -295,55 +295,55 @@ Skill0082=0x7F888888
 ; Sanctuary
 Skill0083=0x7F33FF66
 
-; Magnus_Exorcismus
+; Magnus Exorcismus
 Skill0084=0x7ED1363
 
 ; Pneuma
 Skill0085=0xFF00EEFF
 
-; Exploding_Dragon
-; Heaven's_Drive
+; Exploding Dragon
+; Heaven's Drive
 ; Thunderstorm
-; Meteor_Storm
-; Storm_Gust
-; Lord_of_Vermilion
-; Dark_Grand_Cross
-; Grand_Cross
+; Meteor Storm
+; Storm Gust
+; Lord of Vermilion
+; Dark Grand Cross
+; Grand Cross
 Skill0086=0x7F006688
 
-; Fire_Pillar
+; Fire Pillar
 Skill0087=0x7F888800
 Skill0088=0x7F888800
 
-; Sheltering_Bliss
+; Sheltering Bliss
 Skill0089=0x7F888888
 ;
 Skill008A=0x7F888888
 Skill008B=0x7F888888
 Skill008C=0x7F888888
 
-; Ice_Wall
+; Ice Wall
 Skill008D=0x7F3771FA
 
 ; Quagmire
 Skill008E=0x7F00CC33
 
-; Blast_Mine
+; Blast Mine
 Skill008F=0x7F888888
 
-; Skid_Trap
+; Skid Trap
 Skill0090=0x7F888888
 
-; Ankle_Snare
+; Ankle Snare
 Skill0091=0x7F000000
 
-; Venom_Dust
+; Venom Dust
 Skill0092=0x7F660066
 
-; Land_Mine
+; Land Mine
 Skill0093=0x7F888888
 
-; Shockwave_Trap
+; Shockwave Trap
 Skill0094=0x7F888888
 
 ; Sandman
@@ -352,13 +352,13 @@ Skill0095=0x7F888888
 ; Flasher
 Skill0096=0x7F888888
 
-; Freezing_Trap
+; Freezing Trap
 Skill0097=0x7F888888
 
-; Claymore_Trap
+; Claymore Trap
 Skill0098=0x7F888888
 
-; Talkie_Box
+; Talkie Box
 Skill0099=0x7F888888
 
 ; Volcano
@@ -370,61 +370,61 @@ Skill009B=0x7F0033CC
 ; Whirlwind
 Skill009C=0x7F00CC66
 
-; Magnetic_Earth
+; Magnetic Earth
 Skill009D=0x7FFA00F6
 
 ; Lullaby
 Skill009E=0x7F888888
 
-; Mental_Sensing
+; Mental Sensing
 Skill009F=0x7F888888
 
-; Down_Tempo
+; Down Tempo
 Skill00A0=0x7F888888
 
-; Battle_Theme
+; Battle Theme
 Skill00A1=0x7F888888
 
-; Harmonic_Lick
+; Harmonic Lick
 Skill00A2=0x7F888888
 
-; Classical_Pluck
+; Classical Pluck
 Skill00A3=0x7F46065C
 
-; Power_Cord
+; Power Cord
 Skill00A4=0x5F888888
 
-; Acoustic_Rhythm
+; Acoustic Rhythm
 Skill00A5=0x5F888888
 
-; Unchained_Serenade
+; Unchained Serenade
 Skill00A6=0x7FEDE4E4
 
-; Perfect_Tablature
+; Perfect Tablature
 Skill00A7=0x5F3417EE
 
-; Impressive_Riff
+; Impressive Riff
 Skill00A8=0x7FFF0073
 
-; Magic_Strings
+; Magic Strings
 Skill00A9=0xBF0099FF
 
-; Song_of_Lutie
+; Song of Lutie
 Skill00AA=0x7FFFEE00
 
-; Hip_Shaker
+; Hip Shaker
 Skill00AB=0x7F47D543
 
-; Focus_Ballet
+; Focus Ballet
 Skill00AC=0x7F47D543
 
-; Slow_Grace
+; Slow Grace
 Skill00AD=0x7F00FF00
 
-; Lady_Luck
+; Lady Luck
 Skill00AE=0x7F47D543
 
-; Gypsy's_Kiss
+; Gypsy's Kiss
 Skill00AF=0x7FA200FF
 
 ; Scribble
@@ -433,48 +433,48 @@ Skill00B0=0x7F888888
 ; Bomb
 Skill00B1=0xBFFF0000
 
-; Come_to_me,_honey~
-; Mom,_Dad,_I_miss_you!
-; Romantic_Rendezvous
+; Come to me, honey~
+; Mom, Dad, I miss you!
+; Romantic Rendezvous
 Skill00B2=0x7F888888
 
-; Battle_Chant
+; Battle Chant
 Skill00B3=0x7F1ADEE8
 
 ; Basilica
 Skill00B4=0x7F888888
 
-; Lunar_Heat
-; Stellar_Heat
-; Solar_Heat
+; Lunar Heat
+; Stellar Heat
+; Solar Heat
 Skill00B5=0x7F888888
 
 
-; Blinding_Mist
+; Blinding Mist
 Skill00B6=0xBF696464
 
-; Fiber_Lock
+; Fiber Lock
 Skill00B7=0xBFC9C5C5
 
-; Gravitational_Field
+; Gravitational Field
 Skill00B8=0x7F888888
 
-; Hermode's_Rod
+; Hermode's Rod
 Skill00B9=0x7F888888
 
 ; Desperado
 Skill00BA=0x7F888888
 
-; Watery_Evasion
+; Watery Evasion
 Skill00BB=0x7F888888
 
-; Flip_Tatami
+; Flip Tatami
 Skill00BC=0x7F888888
 
-; Blaze_Shield
+; Blaze Shield
 Skill00BD=0x7F888888
 
-; Gunslinger_Mine
+; Gunslinger Mine
 Skill00BE=0x7F888888
 
 ;//----------------------------------------------------------------------------
