@@ -279,7 +279,6 @@ Gutterline=0x00FF0000
 Demigutter=0x000000FF
 
 [M2E]
-;
 ; Safety Wall
 Skill007E=0xBFFF00FF
 
@@ -449,7 +448,6 @@ Skill00B4=0x7F888888
 ; Solar Heat
 Skill00B5=0x7F888888
 
-
 ; Blinding Mist
 Skill00B6=0xBF696464
 
@@ -495,16 +493,16 @@ Skill00D0=0x7F663300
 ; Chaos Panic
 Skill00CE=0x7F660066
 
-;neutral barrier
+; Neutral Barrier
 Skill00E2=0x7F606060
 
-;stealth field
+; Stealth Field
 Skill00E3=0x7606060
 
-;volcanic ash
+; Volcanic Ash
 Skill00F7=0x7FF6600
 
-;song of despair
+; Song of Despair
 Skill00DE=0x7F000000
 ;
 ;
