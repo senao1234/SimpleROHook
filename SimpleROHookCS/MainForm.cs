@@ -254,20 +254,20 @@ namespace SimpleROHookCS
 					#region config.ini
 					w.WriteLine(@"
 ;//----------------------------------------------------------------------------
-;  Edit SimpleROHook settings from config.xml
+; Edit SimpleROHook settings from config.xml
 ;
-;  Toxn's M2E Configuration
+; Toxn's M2E Configuration
 ;
-;  M2E
-;  Shows area of effects
-;  How to edit colors
-;  Edit values after x
-;  Example = 0xAARRGGBB
+; M2E
+; Shows area of effects
+; How to edit colors
+; Edit values after 0x
+; Example = 0xAARRGGBB
 ;
-; AA:Alpha  00-FF (00:0%---7F:50%---FF:100%)
-; RR:Red    00-FF (0-255)
-; GG:Green  00-FF (0-255)
-; BB:Blue   00-FF (0-255)
+; AA:Alpha 00-FF (00:0%---7F:50%---FF:100%)
+; RR:Red   00-FF (0-255)
+; GG:Green 00-FF (0-255)
+; BB:Blue  00-FF (0-255)
 ;----------------------------------------------------------------------------//
 
 [MiscColor]
@@ -477,9 +477,9 @@ Skill00BD=0x7F888888
 ; Gunslinger_Mine
 Skill00BE=0x7F888888
 
-;
+;//----------------------------------------------------------------------------
 ; 3rd Class
-;-----------
+;----------------------------------------------------------------------------//
 : Warmer
 Skill00E4=0x7FFFFF66
 
