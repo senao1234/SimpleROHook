@@ -2022,21 +2022,21 @@ void CRoCodeBind::SearchRagexeMemory(void)
 	);
 
 	CSearchCode subfunction_CFileMgr__Open_v9(
-		"803D*1******00"    // cmp     byte[L00862c54], byte 000h
-		"53"                // push    ebx
-		"8B5C240C"          // mov     ebx, dword[esp + 00ch]
-		"57"                // push    edi
-		"8B7C2414"          // mov     edi, dword[esp + 014h]
-		"57"                // push    edi
-		"53"                // push    ebx
-		"7418"              // jz      C0053aa2c
-		"E8*2******"        // call    near CFileMgr::GetFile
-		"85C0"              // test    eax, eax
-		"7521"              // jnz     C0053aa3e;; goto
-		"57"                // push    edi
-		"53"                // push    ebx
-		"8BCE"              // mov     ecx, esi
-		"E8*3******"        // call    near CFileMgr::GetPak
+		"803D*1******00"          ///< cmp     byte[L00862c54], byte 000h
+		"53"                      ///< push    ebx
+		"8B5C240C"                ///< mov     ebx, dword[esp + 00ch]
+		"57"                      ///< push    edi
+		"8B7C2414"                ///< mov     edi, dword[esp + 014h]
+		"57"                      ///< push    edi
+		"53"                      ///< push    ebx
+		"7418"                    ///< jz      C0053aa2c
+		"E8*2******"              ///< call    near CFileMgr::GetFile
+		"85C0"                    ///< test    eax, eax
+		"7521"                    ///< jnz     C0053aa3e;; goto
+		"57"                      ///< push    edi
+		"53"                      ///< push    ebx
+		"8BCE"                    ///< mov     ecx, esi
+		"E8*3******"              ///< call    near CFileMgr::GetPak
 	);
 
 	LPBYTE pRagexeBase;
