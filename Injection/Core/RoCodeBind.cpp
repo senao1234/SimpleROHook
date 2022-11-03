@@ -1838,8 +1838,8 @@ void CRoCodeBind::SearchRagexeMemory(void)
 		);
 
 	CSearchCode Mov_ecx_adr_Call_near_adr(
-		"B9*1******"        // mov     ecx, dword L009b74f8
-		"E8*2******"        // call    near F005ac940
+		"B9*1******"              ///< mov     ecx, dword L009b74f8
+		"E8*2******"              ///< call    near F005ac940
 		);
 
 	CSearchCode CMouse_Init_vc6(
