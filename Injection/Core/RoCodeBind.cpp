@@ -504,11 +504,11 @@ void CRoCodeBind::LoadIni(void)
 
 				pkey += linestring.length();
 
-				if (sscanf_s(linestring.c_str(), "Deadcell=%x"  , &color)) m_deadcellColor      = color & 0x00ffffff;
-				if (sscanf_s(linestring.c_str(), "Chatscope=%x" , &color)) m_chatscopeColor     = color & 0x00ffffff;
-				if (sscanf_s(linestring.c_str(), "Castrange=%x" , &color)) m_castrangeColor     = color & 0x00ffffff;
-				if (sscanf_s(linestring.c_str(), "Gutterline=%x", &color)) m_bbeGutterlineColor = color & 0x00ffffff;
-				if (sscanf_s(linestring.c_str(), "Demigutter=%x", &color)) m_bbeDemigutterColor = color & 0x00ffffff;
+				if (sscanf_s(linestring.c_str(), "Deadcell = %x"  , &color)) m_deadcellColor      = color & 0x00ffffff;
+				if (sscanf_s(linestring.c_str(), "Chatscope = %x" , &color)) m_chatscopeColor     = color & 0x00ffffff;
+				if (sscanf_s(linestring.c_str(), "Castrange = %x" , &color)) m_castrangeColor     = color & 0x00ffffff;
+				if (sscanf_s(linestring.c_str(), "Gutterline = %x", &color)) m_bbeGutterlineColor = color & 0x00ffffff;
+				if (sscanf_s(linestring.c_str(), "Demigutter = %x", &color)) m_bbeDemigutterColor = color & 0x00ffffff;
 
 				pkey++;
 			}
