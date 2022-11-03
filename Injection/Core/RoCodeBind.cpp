@@ -1993,12 +1993,12 @@ void CRoCodeBind::SearchRagexeMemory(void)
 	LPBYTE strings_readfolder_address = NULL;
 
 	CSearchCode set_g_readFolderFirst(
-		"68*1******"        // push    dword *"readfolder"
-		"8B**"              // mov     ecx, esi || ecx, ebp
-		"E8********"        // call    near XMLElement::FindChild(char const *)
-		"85C0"              // test    eax, eax
-		"7407"              // jz      C005a43ce
-		"C605*2******01"    // mov     byte[g_readFolderFirst], byte 001h // bool g_readFolderFirst
+		"68*1******"              ///< push    dword *"readfolder"
+		"8B**"                    ///< mov     ecx, esi || ecx, ebp
+		"E8********"              ///< call    near XMLElement::FindChild(char const *)
+		"85C0"                    ///< test    eax, eax
+		"7407"                    ///< jz      C005a43ce
+		"C605*2******01"          ///< mov     byte[g_readFolderFirst], byte 001h // bool g_readFolderFirst
 	);
 
 	PBOOL pg_readFolderFirst = NULL;
