@@ -1764,27 +1764,27 @@ void CRoCodeBind::SearchRagexeMemory(void)
 
 	// 2014-03-18 Ragexe.exe iRO link time 20140226 155100
 	CSearchCode UIYourItemWnd__SendMsg_REQ_WEAR_EQUIP_Handler_TypeE(
-		"B9*1******"        // mov     ecx, dword L0099f930 ; CModeMgr__g_modeMgr
-		"E8*2******"        // call    near F005a5eb0 ; CModeMgr__GetGameMode
-		"668B96********"    // mov     dx, [esi+00000008ch]
-		"668B86********"    // mov     ax, [esi+000000090h]
-		"B9A9000000"        // mov     ecx, dword 0000000a9h
-		"66894D**"          // mov     [ebp-034h], cx
-		"8D4D**"            // lea     ecx, [ebp-034h]
-		"51"                // push    ecx
-		"68A9000000"        // push    dword 0000000a9h
-		"668955**"          // mov     [ebp-032h], dx
-		"668945**"          // mov     [ebp-030h], ax
-		"E8*3******"        // call    near F00716fc0 ; CRagConnection__instanceR
-		"8BC8"              // mov     ecx, eax
-		"E8*4******"        // call    near F007168e0 ; CRagConnection__GetPacketSize
-		"50"                // push    eax
-		"E8********"        // call    near F00716fc0 ; CRagConnection__instanceR
-		"8BC8"              // mov     ecx, eax
-		"E8*5******"        // call    near F00716ee0 ; CRagConnection__SendPacket
-		"688A000000"        // push    dword 00000008ah
-		"B9*6******"        // mov     ecx, dword L009d21c0 ; UIWindowMgr__g_windowMgr
-		"E8*7******"        // call    near F00573a40 ; UIWindowMgr__DeleteWindow
+		"B9*1******"              ///< mov     ecx, dword L0099f930 ; CModeMgr__g_modeMgr
+		"E8*2******"              ///< call    near F005a5eb0 ; CModeMgr__GetGameMode
+		"668B96********"          ///< mov     dx, [esi+00000008ch]
+		"668B86********"          ///< mov     ax, [esi+000000090h]
+		"B9A9000000"              ///< mov     ecx, dword 0000000a9h
+		"66894D**"                ///< mov     [ebp-034h], cx
+		"8D4D**"                  ///< lea     ecx, [ebp-034h]
+		"51"                      ///< push    ecx
+		"68A9000000"              ///< push    dword 0000000a9h
+		"668955**"                ///< mov     [ebp-032h], dx
+		"668945**"                ///< mov     [ebp-030h], ax
+		"E8*3******"              ///< call    near F00716fc0 ; CRagConnection__instanceR
+		"8BC8"                    ///< mov     ecx, eax
+		"E8*4******"              ///< call    near F007168e0 ; CRagConnection__GetPacketSize
+		"50"                      ///< push    eax
+		"E8********"              ///< call    near F00716fc0 ; CRagConnection__instanceR
+		"8BC8"                    ///< mov     ecx, eax
+		"E8*5******"              ///< call    near F00716ee0 ; CRagConnection__SendPacket
+		"688A000000"              ///< push    dword 00000008ah
+		"B9*6******"              ///< mov     ecx, dword L009d21c0 ; UIWindowMgr__g_windowMgr
+		"E8*7******"              ///< call    near F00573a40 ; UIWindowMgr__DeleteWindow
 		);
 
 	// 2014-08-20data-gm Ragexe.exe iRO
