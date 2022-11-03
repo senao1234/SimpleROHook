@@ -1984,9 +1984,9 @@ void CRoCodeBind::SearchRagexeMemory(void)
 	LPBYTE strings_event_grf_address = NULL;
 
 	CSearchCode addPak_event_grf(
-		"68*1******"        // push    dword *"event.grf"
-		"B9*2******"        // mov     ecx, dword CFileMgr::g_fileMgr
-		"E8*3******"        // call    near CFileMgr::AddPak
+		"68*1******"              ///< push    dword *"event.grf"
+		"B9*2******"              ///< mov     ecx, dword CFileMgr::g_fileMgr
+		"E8*3******"              ///< call    near CFileMgr::AddPak
 	);
 
 	CSearchCode strings_readfolder(0, "ReadFolder");
