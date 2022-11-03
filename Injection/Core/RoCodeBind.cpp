@@ -1789,27 +1789,27 @@ void CRoCodeBind::SearchRagexeMemory(void)
 
 	// 2014-08-20data-gm Ragexe.exe iRO
 	CSearchCode UIYourItemWnd__SendMsg_REQ_WEAR_EQUIP_Handler_TypeF(
-		"B9*1******"        // mov     ecx, dword L009b74f8
-		"E8*2******"        // call    near F005ac940
-		"668B96********"    // mov     dx, [esi + 00000008ch]
-		"8B86********"      // mov     eax, dword[esi + 000000090h]
-		"B998090000"        // mov     ecx, dword 000000998h
-		"66894D**"          // mov     [ebp - 034h], cx
-		"8D4D**"            // lea     ecx, [ebp - 034h]
-		"51"                // push    ecx
-		"6898090000"        // push    dword 000000998h
-		"668955**"          // mov     [ebp - 032h], dx
-		"8945**"            // mov     dword[ebp - 030h], eax
-		"E8*3******"        // call    near F0071fb40
-		"8BC8"              // mov     ecx, eax
-		"E8*4******"        // call    near F0071f460
-		"50"                // push    eax
-		"E8********"        // call    near F0071fb40
-		"8BC8"              // mov     ecx, eax
-		"E8*5******"        // call    near F0071fa60
-		"688A000000"        // push    dword 00000008ah
-		"B9*6******"        // mov     ecx, dword L009ebe90
-		"E8*7******"        // call    near F00579fc0
+		"B9*1******"              ///< mov     ecx, dword L009b74f8
+		"E8*2******"              ///< call    near F005ac940
+		"668B96********"          ///< mov     dx, [esi + 00000008ch]
+		"8B86********"            ///< mov     eax, dword[esi + 000000090h]
+		"B998090000"              ///< mov     ecx, dword 000000998h
+		"66894D**"                ///< mov     [ebp - 034h], cx
+		"8D4D**"                  ///< lea     ecx, [ebp - 034h]
+		"51"                      ///< push    ecx
+		"6898090000"              ///< push    dword 000000998h
+		"668955**"                ///< mov     [ebp - 032h], dx
+		"8945**"                  ///< mov     dword[ebp - 030h], eax
+		"E8*3******"              ///< call    near F0071fb40
+		"8BC8"                    ///< mov     ecx, eax
+		"E8*4******"              ///< call    near F0071f460
+		"50"                      ///< push    eax
+		"E8********"              ///< call    near F0071fb40
+		"8BC8"                    ///< mov     ecx, eax
+		"E8*5******"              ///< call    near F0071fa60
+		"688A000000"              ///< push    dword 00000008ah
+		"B9*6******"              ///< mov     ecx, dword L009ebe90
+		"E8*7******"              ///< call    near F00579fc0
 		);
 
 	// 2017-09-20ragexe Ragexe.exe iRO RE:Start
