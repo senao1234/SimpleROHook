@@ -1877,9 +1877,9 @@ void CRoCodeBind::SearchRagexeMemory(void)
 		);
 
 	CSearchCode winmain_init_CMouse_Init_call(
-		"B9*1******"        // mov     ecx, g_mouse
-		"E8*2******"        // call    near CMouse__Init
-		"A1*3******"        // mov     eax, g_renderer__CRenderer
+		"B9*1******"              ///< mov     ecx, g_mouse
+		"E8*2******"              ///< call    near CMouse__Init
+		"A1*3******"              ///< mov     eax, g_renderer__CRenderer
 		);
 
 	// 2017-09-27ragexe iRO RE:Start - does not use DirectInput
