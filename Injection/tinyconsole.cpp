@@ -116,7 +116,7 @@ LRESULT CALLBACK TinyConsoleWinProc(HWND hWnd, UINT message, WPARAM wParam, LPAR
 		case WM_CREATE:
 			{
 				::GetSystemDirectory(strPath, MAX_PATH + 1);
-				wsprintf(strPath, TEXT("%s\\%s"), strPath, _TEXT("RICHED20.DLL"));
+				wsprintf(strPath, TEXT("%s\\%s"), strPath, _TEXT("RichEd20.dll"));
 				s_hRtLib    = ::LoadLibrary((LPCTSTR)strPath);
 				s_hRichEdit = ::CreateWindowEx(WS_EX_CLIENTEDGE, _T("RichEdit20A"), _T(""),
 					WS_CHILD | WS_VISIBLE | WS_BORDER | ES_MULTILINE | WS_HSCROLL |
@@ -143,7 +143,7 @@ LRESULT CALLBACK TinyConsoleWinProc(HWND hWnd, UINT message, WPARAM wParam, LPAR
 				cfm.dwEffects   = 0;
 
 				::SendMessage(s_hRichEdit, EM_SETCHARFORMAT, SCF_SELECTION | SCF_WORD, (LPARAM)&cfm);
-				::SendMessage(s_hRichEdit, EM_REPLACESEL, FALSE, (LPARAM)(LPCTSTR)_T("hook enable.\n"));
+				::SendMessage(s_hRichEdit, EM_REPLACESEL, FALSE, (LPARAM)(LPCTSTR)_T("Hook Enable.\n"));
 
 				if (g_hTinyConsole)
 					::SetEvent(g_hTinyConsole);
