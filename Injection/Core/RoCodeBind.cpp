@@ -1946,16 +1946,16 @@ void CRoCodeBind::SearchRagexeMemory(void)
 
 	CSearchCode funcPlayStrem_based_20140226_155100iRagexe_exe(
 		// F00719260
-		"55"                // push    ebp
-		"8BEC"              // mov     ebp, esp
-		"81EC********"      // sub     esp, dword 000000104h
-		"A1*1******"        // mov     eax, [L009b63d0] ; g_soundMode
-		"33C5"              // xor     eax, ebp
-		"8945**"            // mov     dword [ebp-004h], eax
-		"833D********00"    // cmp     dword [L00aa1610], byte +000h
-		"56"                // push    esi
-		"8B75**"            // mov     esi, dword [ebp+008h]
-		"0F84********"      // jz      near C00719393
+		"55"                      ///< push    ebp
+		"8BEC"                    ///< mov     ebp, esp
+		"81EC********"            ///< sub     esp, dword 000000104h
+		"A1*1******"              ///< mov     eax, [L009b63d0] ; g_soundMode
+		"33C5"                    ///< xor     eax, ebp
+		"8945**"                  ///< mov     dword [ebp-004h], eax
+		"833D********00"          ///< cmp     dword [L00aa1610], byte +000h
+		"56"                      ///< push    esi
+		"8B75**"                  ///< mov     esi, dword [ebp+008h]
+		"0F84********"            ///< jz      near C00719393
 		);
 
 	CSearchCode initCConnection_20140318iRagexe(  // WinMain...
