@@ -2004,21 +2004,21 @@ void CRoCodeBind::SearchRagexeMemory(void)
 	PBOOL pg_readFolderFirst = NULL;
 
 	CSearchCode subfunction_CFileMgr__Open(
-		"803D*1******00"    // cmp     byte[ g_readFolderFirst ], byte 000h
-		"53"                // push    ebx
-		"8B5D08"            // mov     ebx, dword[ebp + 008h]
-		"57"                // push    edi
-		"8B7D0C"            // mov     edi, dword[ebp + 00ch]
-		"57"                // push    edi
-		"53"                // push    ebx
-		"7419"              // jz      C005c79ac
-		"E8*2******"        // call    near CFileMgr::GetFile
-		"85C0"              // test    eax, eax
-		"7522"              // jnz     C005c79be;; goto
-		"57"                // push    edi
-		"53"                // push    ebx
-		"8BCE"              // mov     ecx, esi
-		"E8*3******"        // call    near CFileMgr::GetPak
+		"803D*1******00"          ///< cmp     byte[ g_readFolderFirst ], byte 000h
+		"53"                      ///< push    ebx
+		"8B5D08"                  ///< mov     ebx, dword[ebp + 008h]
+		"57"                      ///< push    edi
+		"8B7D0C"                  ///< mov     edi, dword[ebp + 00ch]
+		"57"                      ///< push    edi
+		"53"                      ///< push    ebx
+		"7419"                    ///< jz      C005c79ac
+		"E8*2******"              ///< call    near CFileMgr::GetFile
+		"85C0"                    ///< test    eax, eax
+		"7522"                    ///< jnz     C005c79be;; goto
+		"57"                      ///< push    edi
+		"53"                      ///< push    ebx
+		"8BCE"                    ///< mov     ecx, esi
+		"E8*3******"              ///< call    near CFileMgr::GetPak
 	);
 
 	CSearchCode subfunction_CFileMgr__Open_v9(
