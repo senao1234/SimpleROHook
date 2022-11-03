@@ -1959,25 +1959,25 @@ void CRoCodeBind::SearchRagexeMemory(void)
 		);
 
 	CSearchCode initCConnection_20140318iRagexe(  // WinMain...
-//		"56"                // push    esi
-//		"68********"        // push    dword S00920704; "ws2_32.dll"
-//		"FF15********"      // call    dword[L008e619c]; ds:LoadLibraryA
-//		"8B35********"      // mov     esi, dword[L008e6194]; ds:GetProcAddress
-//		"68********"        // push    dword L009206e8 ; "send"
-//		"50"                // push    eax
-//		"A3********"        // mov     [L00a68674], eax; CConnection_s_wsmodule
-//		"FFD6"              // call    esi; GetProcAddress
-//		"A3********"        // mov     [L00a68678], eax; CConnection_s_wsSend
-//		"A1********"        // mov     eax, [L00a68674]; CConnection_s_wsmodule
-//		"68********"        // push    dword S0092078c; "recv"
-//		"50"                // push    eax; hModule
-		"FFD6"              // call    esi; GetProcAddress
-		"833D*1******00"    // cmp     dword[L00a68678], byte + 000h; CConnection_s_wsSend
-		"8B35********"      // mov     esi, dword[L008e66e8]; ds:MessageBoxA
-		"A3*2******"        // mov     [L00a68670], eax; CConnection_s_wsRecv
-		"751C"              // jnz     C007170db
-		"8B0D********"      // mov     ecx, dword[WS2_32.dll_13]; ds:send
-		"6A00"              // push    byte + 000h; uType
+//		"56"                      ///< push    esi
+//		"68********"              ///< push    dword S00920704; "ws2_32.dll"
+//		"FF15********"            ///< call    dword[L008e619c]; ds:LoadLibraryA
+//		"8B35********"            ///< mov     esi, dword[L008e6194]; ds:GetProcAddress
+//		"68********"              ///< push    dword L009206e8 ; "send"
+//		"50"                      ///< push    eax
+//		"A3********"              ///< mov     [L00a68674], eax; CConnection_s_wsmodule
+//		"FFD6"                    ///< call    esi; GetProcAddress
+//		"A3********"              ///< mov     [L00a68678], eax; CConnection_s_wsSend
+//		"A1********"              ///< mov     eax, [L00a68674]; CConnection_s_wsmodule
+//		"68********"              ///< push    dword S0092078c; "recv"
+//		"50"                      ///< push    eax; hModule
+		"FFD6"                    ///< call    esi; GetProcAddress
+		"833D*1******00"          ///< cmp     dword[L00a68678], byte + 000h; CConnection_s_wsSend
+		"8B35********"            ///< mov     esi, dword[L008e66e8]; ds:MessageBoxA
+		"A3*2******"              ///< mov     [L00a68670], eax; CConnection_s_wsRecv
+		"751C"                    ///< jnz     C007170db
+		"8B0D********"            ///< mov     ecx, dword[WS2_32.dll_13]; ds:send
+		"6A00"                    ///< push    byte + 000h; uType
 	);
 
 	CSearchCode strings_event_grf(0, "Event.grf");
