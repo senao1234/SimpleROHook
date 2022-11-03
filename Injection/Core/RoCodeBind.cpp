@@ -1884,10 +1884,10 @@ void CRoCodeBind::SearchRagexeMemory(void)
 
 	// 2017-09-27ragexe iRO RE:Start - does not use DirectInput
 	CSearchCode winmain_init_no_CMouse_Init_call(
-		"A1*1******"        // mov     eax, dword ptr ds:[BE29E8] ; g_renderer__CRenderer
-		"B9********"        // mov     ecx, ragexe.BE3658 ; g_windowMgr
-		"FF7028"            // push    dword ptr ds:[eax+28]
-		"FF7024"            // push    dword ptr ds:[eax+24]
+		"A1*1******"              ///< mov     eax, dword ptr ds:[BE29E8] ; g_renderer__CRenderer
+		"B9********"              ///< mov     ecx, ragexe.BE3658 ; g_windowMgr
+		"FF7028"                  ///< push    dword ptr ds:[eax+28]
+		"FF7024"                  ///< push    dword ptr ds:[eax+24]
 		);
 
 	CSearchCode funcPlayStrem_based_HighPrest_exe(
