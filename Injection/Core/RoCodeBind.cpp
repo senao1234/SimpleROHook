@@ -741,7 +741,7 @@ void CRoCodeBind::DrawSRHDebug(IDirect3DDevice7* d3ddevice)
 		std::stringstream str;
 		str << g_PerformanceCounter.GetFrameRate() << "Fps: "<<(int)g_PerformanceCounter.GetTotalTick() << std::endl;
 
-		m_pSFastFont->DrawText((LPSTR)str.str().c_str(), 0, 0, D3DCOLOR_ARGB(255, 255, 255, 255), 0, NULL);
+		m_pSFastFont->DrawText((LPSTR)str.str().c_str(), 1135, 185, D3DCOLOR_ARGB(255, 255, 255, 0), 0, NULL);
 	}
 
 	if (g_pSharedData->objectinformation)
