@@ -270,7 +270,7 @@ namespace SimpleROHookCS
 ; BB:Blue  00-FF (0-255)
 ;----------------------------------------------------------------------------//
 
-[MiscColor]
+[Misc Color]
 ; Alpha is ignored for these - use the alpha level option in the GUI
 Deadcell=0x00FF00FF
 Chatscope=0x0000FF00

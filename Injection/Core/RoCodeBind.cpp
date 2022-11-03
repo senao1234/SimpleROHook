@@ -490,7 +490,7 @@ void CRoCodeBind::LoadIni(void)
 			m_bbeGutterlineColor = 0x00ff0000;
 			m_bbeDemigutterColor = 0x000000ff;
 
-			sectionsize = GetPrivateProfileSection(_T("MiscColor"), Sectionbuf, 32768, filename);
+			sectionsize = GetPrivateProfileSection(_T("Misc Color"), Sectionbuf, 32768, filename);
 			pkey = Sectionbuf;
 
 			while (*pkey != '\0')
