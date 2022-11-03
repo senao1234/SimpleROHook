@@ -286,11 +286,9 @@ BOOL IsRagnarokApp(void)
 	::PathStripPath(filename);
 
 	// Check the module filename
-	if (_tcsicmp(filename, _T("Sakexe.exe"    )) == 0 ||
-		_tcsicmp(filename, _T("Ragexe.exe"    )) == 0 ||
-		_tcsicmp(filename, _T("RagFree.exe"   )) == 0 ||
-		_tcsicmp(filename, _T("clragexe.exe"  )) == 0 ||
-		_tcsicmp(filename, _T("HighPriest.exe")) == 0
+	if (_tcsicmp(filename, _T("Sakexe.exe")) == 0 ||
+		_tcsicmp(filename, _T("Ragexe.exe")) == 0 ||
+		_tcsicmp(filename, _T("RagexeRE.exe")) == 0
 		)
 		return TRUE;
 
