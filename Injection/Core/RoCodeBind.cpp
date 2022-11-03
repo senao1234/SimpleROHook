@@ -1868,12 +1868,12 @@ void CRoCodeBind::SearchRagexeMemory(void)
 		);
 
 	CSearchCode CMouse_Init_vc11(
-		"56"                // push    esi
-		"6A00"              // push    0 ; punkOuter
-		"8BF1"              // mov     esi, ecx
-		"56"                // push    esi ; ppDI
-		"6800070000"        // push    700 ; dwVersion
-		"FF35********"      // push    dword ptr ds:[D44B50] ; hinst
+		"56"                      ///< push    esi
+		"6A00"                    ///< push    0 ; punkOuter
+		"8BF1"                    ///< mov     esi, ecx
+		"56"                      ///< push    esi ; ppDI
+		"6800070000"              ///< push    700 ; dwVersion
+		"FF35********"            ///< push    dword ptr ds:[D44B50] ; hinst
 		);
 
 	CSearchCode winmain_init_CMouse_Init_call(
