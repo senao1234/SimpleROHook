@@ -1856,15 +1856,15 @@ void CRoCodeBind::SearchRagexeMemory(void)
 		);
 
 	CSearchCode CMouse_Init_vc9(
-		"A1********"        // mov     eax, [ g_hInstance ]
-		"53"                // push    ebx
-		"56"                // push    esi
-		"33DB"              // xor     ebx, ebx
-		"53"                // push    ebx
-		"8BF1"              // mov     esi, ecx
-		"56"                // push    esi
-		"6800070000"        // push    dword 000000700h
-		"50"                // push    eax
+		"A1********"              ///< mov     eax, [ g_hInstance ]
+		"53"                      ///< push    ebx
+		"56"                      ///< push    esi
+		"33DB"                    ///< xor     ebx, ebx
+		"53"                      ///< push    ebx
+		"8BF1"                    ///< mov     esi, ecx
+		"56"                      ///< push    esi
+		"6800070000"              ///< push    dword 000000700h
+		"50"                      ///< push    eax
 		);
 
 	CSearchCode CMouse_Init_vc11(
