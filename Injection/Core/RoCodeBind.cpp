@@ -1928,20 +1928,20 @@ void CRoCodeBind::SearchRagexeMemory(void)
 		);
 
 	CSearchCode funcPlayStrem_based_2011111201aRagexe_exe(
-		"81EC04010000"      // sub     esp, dword 000000104h
-		"A1*1******"        // mov     eax, [L00845990] ; g_soundMode
-		"33C4"              // xor     eax, esp
-		"89842400010000"    // mov     dword [esp+000000100h], eax
-		"833D********00"    // cmp     dword [L0084459c], byte +000h
-		"56"                // push    esi
-		"8BB4240C010000"    // mov     esi, dword [esp+00000010ch] ;+streamFileName
-		"0F8406010000"      // jz      near C0065fd9f
-		"B9********"        // mov     ecx, dword L008e348c
-		"8BC6"              // mov     eax, esi
-		"8A10"              // mov     dl, [eax]
-		"3A11"              // cmp     dl, [ecx]
-		"751A"              // jnz     C0065fcc0
-		"84D2"              // test    dl, dl
+		"81EC04010000"            ///< sub     esp, dword 000000104h
+		"A1*1******"              ///< mov     eax, [L00845990] ; g_soundMode
+		"33C4"                    ///< xor     eax, esp
+		"89842400010000"          ///< mov     dword [esp+000000100h], eax
+		"833D********00"          ///< cmp     dword [L0084459c], byte +000h
+		"56"                      ///< push    esi
+		"8BB4240C010000"          ///< mov     esi, dword [esp+00000010ch] ;+streamFileName
+		"0F8406010000"            ///< jz      near C0065fd9f
+		"B9********"              ///< mov     ecx, dword L008e348c
+		"8BC6"                    ///< mov     eax, esi
+		"8A10"                    ///< mov     dl, [eax]
+		"3A11"                    ///< cmp     dl, [ecx]
+		"751A"                    ///< jnz     C0065fcc0
+		"84D2"                    ///< test    dl, dl
 		);
 
 	CSearchCode funcPlayStrem_based_20140226_155100iRagexe_exe(
