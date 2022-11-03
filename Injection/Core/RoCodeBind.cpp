@@ -479,7 +479,7 @@ void CRoCodeBind::LoadIni(void)
 
 				pkey += linestring.length();
 
-				sscanf_s(linestring.c_str(), "Skill%x=%x", &index, &color);
+				sscanf_s(linestring.c_str(), "Skill%x = %x", &index, &color);
 				m_M2ESkillColor[index] = color;
 				pkey++;
 			}
