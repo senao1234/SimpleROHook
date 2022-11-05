@@ -147,6 +147,12 @@ Each file name has these tags:
 "MT", "MD", "MTd", "MDd":
     Runtime Link (Dynamic/Static) and Config (Release/Debug)
     Corresponding to "/MT", "/MD", "/MTd" and "/MDd" compiler options respectively.
+
+    Choose:
+    "/MT" for Multi-threaded
+    "/MD" for Multi-threaded DLL
+    "/MTd" for Multi-threaded Debug
+    "/MDd" for Multi-threaded Debug DLL
 ```
 
 ### Original README
