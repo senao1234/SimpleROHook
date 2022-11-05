@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // To change the information associated with the assembly,
 // Change these attribute values.
 [assembly: AssemblyTitle("SimpleROHookCS")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("SimpleROHook\r\nLast development by @drdxxy\r\nOriginal code by @sekishi1259\r\nSetting up again in 2020-12-05 by @X-EcutiOnner")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Planetleaf.com Lab.")]
 [assembly: AssemblyProduct("SimpleROHookCS")]
