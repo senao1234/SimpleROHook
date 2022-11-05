@@ -41,7 +41,9 @@
 
 - Capture Screen
 
-![Capture Screen](Screenshots/Capture%20Screen.png)
+![Capture Screen](Screenshots/Capture%20Screen%201.png)
+
+![Capture Screen](Screenshots/Capture%20Screen%202.png)
 
 -------
 
