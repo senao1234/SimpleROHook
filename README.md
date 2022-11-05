@@ -144,7 +144,7 @@ Each file name has these tags:
     "x86" for Intel 32 bit
     "x64" for AMD 64 bit
 
-"v90", "v100", "v110", "v120", "v140", "v141":
+"v90", "v100", "v110", "v120", "v140", "v141", "v142", "v143":
     Platform toolset (compiler version)
     Choose "v110" for "v110_xp", "v120" for "v120_xp", "v140" for "v140_xp", "v141" for "v141_xp"
 
