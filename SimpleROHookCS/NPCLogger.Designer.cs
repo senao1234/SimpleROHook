@@ -1,4 +1,4 @@
-﻿namespace SimpleROHookCS
+namespace SimpleROHookCS
 {
     partial class NPCLogger
     {
