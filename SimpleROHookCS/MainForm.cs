@@ -208,7 +208,7 @@ namespace SimpleROHookCS
 			}
 			else
 			{
-				CPUCoolerText_toolStripMenuItem.Text = String.Format("CPU Cooler Level: {0}", value);
+				CPUCoolerText_toolStripMenuItem.Text = String.Format("CPU Cooler: Level {0}", value);
 			}
 		}
 
