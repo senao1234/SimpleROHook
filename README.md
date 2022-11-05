@@ -10,9 +10,8 @@
   - [DirectX SDK August 2007](https://archive.org/details/dxsdk_aug2007)
   - [.NET Framework 4.8 Developer Pack](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48)
 
-  **PS.**
-  - Version of Visual Studio also can pick from 2015 up to 2022 (Recommended 2017)
-  - DirectX SDK also works with 2007 and 2010 or later
+  **PS. 1** Version of Visual Studio also can pick from 2015 up to 2022 (Recommended 2017)
+  **PS. 2** DirectX SDK also works with 2007 and 2010 or later
 
 ### Development Note
 
