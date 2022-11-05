@@ -16,6 +16,7 @@ namespace SimpleROHookCS
 		protected override CreateParams CreateParams
 		{
 			[SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.UnmanagedCode)]
+
 			get
 			{
 				const int  WS_EX_TOOLWINDOW = 0x80;
