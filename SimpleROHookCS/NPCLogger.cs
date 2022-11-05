@@ -15,7 +15,7 @@ namespace SimpleROHookCS
             {
                 const int WS_EX_TOOLWINDOW = 0x80;
                 const int CS_NOCLOSE = 0x0;
-                // const int CS_NOCLOSE = 0x200;
+
                 CreateParams cp = base.CreateParams;
                 cp.ClassStyle = cp.ClassStyle | CS_NOCLOSE;
                 cp.ExStyle = WS_EX_TOOLWINDOW;
