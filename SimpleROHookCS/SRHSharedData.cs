@@ -61,16 +61,16 @@ namespace SimpleROHookCS
             m_pSharedMemory = (StSHAREDMEMORY*)p;
 
             write_packetlog          = false;
-            freemouse                = false;
+            freemouse                = true;
             ground_zbias             = 0;
             alphalevel               = 0x7f;
-            m2e                      = false;
+            m2e                      = true;
             bbe                      = false;
             deadcell                 = false;
             chatscope                = false;
-            castrange                = false;
+            castrange                = true;
             fix_windowmode_vsyncwait = false;
-            show_framerate           = false;
+            show_framerate           = true;
             objectinformation        = false;
             _44khz_audiomode         = false;
             cpucoolerlevel           = 0;
