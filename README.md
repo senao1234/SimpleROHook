@@ -11,6 +11,7 @@
   - [.NET Framework 4.8 Developer Pack](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48)
 
   **PS. 1** Version of Visual Studio also can pick from 2015 up to 2022 (Recommended 2017)
+
   **PS. 2** DirectX SDK also works with 2007 and 2010 or later
 
 ### Development Note
