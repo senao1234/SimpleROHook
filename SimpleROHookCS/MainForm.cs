@@ -204,7 +204,7 @@ namespace SimpleROHookCS
 		{
 			if (value == 0)
 			{
-				CPUCoolerText_toolStripMenuItem.Text = "CPU Cooler: OFF";
+				CPUCoolerText_toolStripMenuItem.Text = "CPU Cooler: Off";
 			}
 			else
 			{
