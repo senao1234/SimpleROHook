@@ -5,16 +5,16 @@
 
 #pragma once
 
-#include "targetver.h"
+#include "TargetVer.h"
 
 #define WIN32_LEAN_AND_MEAN  // Exclude unused parts from the Windows header.
 
 // Windows Header Files:
-#include <windows.h>
+#include <Windows.h>
 #include <WinSock2.h>
 #include <Shlwapi.h>
 #include <mmsystem.h>
-#include <Richedit.h>
+#include <RichEdit.h>
 #include <tchar.h>
 
 #pragma comment(lib, "shlwapi.lib")
