@@ -2,7 +2,13 @@
  SimpleROHook - Simply Extend Ragnarök Online
 
 ![License](https://img.shields.io/github/license/X-EcutiOnner/SimpleROHook)
+![Language](https://img.shields.io/badge/language-C-blue)
 ![Language](https://img.shields.io/badge/language-C%2B%2B-blue)
+![Language](https://img.shields.io/badge/language-C%23-blue)
+![Client](https://img.shields.io/badge/client-main-green)
+![Client](https://img.shields.io/badge/client-main%20sakray-yellow)
+![Client](https://img.shields.io/badge/client-zero-orange)
+![Client](https://img.shields.io/badge/client-zero%20sakray-red)
 ![Contributors](https://img.shields.io/github/contributors/X-EcutiOnner/SimpleROHook.svg)
 
 ## Requeriments
