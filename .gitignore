@@ -15,8 +15,8 @@ packages/
 obj/
 ipch/
 [Bb]in
-[Dd]ebug*/
-[Rr]elease*/
+*[Dd]ebug*/
+*[Rr]elease*/
 *.db
 *.obj
 *.sdf
