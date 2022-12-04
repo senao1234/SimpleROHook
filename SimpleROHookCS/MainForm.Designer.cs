@@ -50,8 +50,13 @@ namespace SimpleROHookCS
 			this.showDeadCelltoolStripMenuItem                              = new System.Windows.Forms.ToolStripMenuItem();
 			this.showChatScopetoolStripMenuItem                             = new System.Windows.Forms.ToolStripMenuItem();
 			this.showCastRangetoolStripMenuItem                             = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator4                                        = new System.Windows.Forms.ToolStripSeparator();
+			this.castRangeToolStripMenuItem	                                = new System.Windows.Forms.ToolStripMenuItem();
+			this.cast_range_ToolStripTrackBar                               = new SimpleROHookCS.ToolStripTrackBar();
+			this.toolStripSeparator5                                        = new System.Windows.Forms.ToolStripSeparator();
 			this.groundZBiasToolStripMenuItem                               = new System.Windows.Forms.ToolStripMenuItem();
 			this.ground_zbias_ToolStripTrackBar                             = new SimpleROHookCS.ToolStripTrackBar();
+			this.toolStripSeparator6                                        = new System.Windows.Forms.ToolStripSeparator();
 			this.alphaLeveltoolStripMenuItem                                = new System.Windows.Forms.ToolStripMenuItem();
 			this.alphaLeveltoolStripTrackBar                                = new SimpleROHookCS.ToolStripTrackBar();
 			this.toolStripSeparator3                                        = new System.Windows.Forms.ToolStripSeparator();
@@ -209,8 +214,13 @@ namespace SimpleROHookCS
 					this.showDeadCelltoolStripMenuItem,
 					this.showChatScopetoolStripMenuItem,
 					this.showCastRangetoolStripMenuItem,
+					this.toolStripSeparator4,
+					this.castRangeToolStripMenuItem,
+					this.cast_range_ToolStripTrackBar,
+					this.toolStripSeparator5,
 					this.groundZBiasToolStripMenuItem,
 					this.ground_zbias_ToolStripTrackBar,
+					this.toolStripSeparator6,
 					this.alphaLeveltoolStripMenuItem,
 					this.alphaLeveltoolStripTrackBar
 				}
@@ -259,6 +269,31 @@ namespace SimpleROHookCS
 			this.showCastRangetoolStripMenuItem.Text = "Show Cast Range";
 			this.showCastRangetoolStripMenuItem.Click += new System.EventHandler(this.showCastRangetoolStripMenuItem_Click);
 			//
+			// toolStripSeparator4
+			//
+			this.toolStripSeparator4.Name = "toolStripSeparator4";
+			this.toolStripSeparator4.Size = new System.Drawing.Size(245, 6);
+			//
+			// castRangeToolStripMenuItem
+			//
+			this.castRangeToolStripMenuItem.Enabled = false;
+			this.castRangeToolStripMenuItem.Name = "castRangeToolStripMenuItem";
+			this.castRangeToolStripMenuItem.Size = new System.Drawing.Size(275, 22);
+			this.castRangeToolStripMenuItem.Text = "Cast Range";
+			//
+			// cast_range_ToolStripTrackBar
+			//
+			this.cast_range_ToolStripTrackBar.Name = "cast_range_ToolStripTrackBar";
+			this.cast_range_ToolStripTrackBar.Size = new System.Drawing.Size(215, 45);
+			this.cast_range_ToolStripTrackBar.Text = "ToolStripTrackBar1";
+			this.cast_range_ToolStripTrackBar.Value = 0;
+			this.cast_range_ToolStripTrackBar.ValueChanged += new System.EventHandler(this.cast_range_ToolStripTrackBar_Update);
+			//
+			// toolStripSeparator5
+			//
+			this.toolStripSeparator5.Name = "toolStripSeparator5";
+			this.toolStripSeparator5.Size = new System.Drawing.Size(245, 6);
+			//
 			// groundZBiasToolStripMenuItem
 			//
 			this.groundZBiasToolStripMenuItem.Enabled = false;
@@ -273,6 +308,11 @@ namespace SimpleROHookCS
 			this.ground_zbias_ToolStripTrackBar.Text = "ToolStripTrackBar1";
 			this.ground_zbias_ToolStripTrackBar.Value = 0;
 			this.ground_zbias_ToolStripTrackBar.ValueChanged += new System.EventHandler(this.ground_zbias_ToolStripTrackBar_Update);
+			//
+			// toolStripSeparator6
+			//
+			this.toolStripSeparator6.Name = "toolStripSeparator6";
+			this.toolStripSeparator6.Size = new System.Drawing.Size(245, 6);
 			//
 			// alphaLeveltoolStripMenuItem
 			//
@@ -377,8 +417,13 @@ namespace SimpleROHookCS
 		private System.Windows.Forms.ToolStripMenuItem showDeadCelltoolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem showChatScopetoolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem showCastRangetoolStripMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+		private System.Windows.Forms.ToolStripMenuItem castRangeToolStripMenuItem;
+		private ToolStripTrackBar cast_range_ToolStripTrackBar;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
 		private System.Windows.Forms.ToolStripMenuItem groundZBiasToolStripMenuItem;
 		private ToolStripTrackBar ground_zbias_ToolStripTrackBar;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
 		private System.Windows.Forms.ToolStripMenuItem alphaLeveltoolStripMenuItem;
 		private ToolStripTrackBar alphaLeveltoolStripTrackBar;
 		private System.Windows.Forms.ToolStripMenuItem chainloadDinputdllasiForDinputfreeRagexesToolStripMenuItem;

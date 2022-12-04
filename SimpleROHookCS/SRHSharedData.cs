@@ -24,6 +24,7 @@ namespace SimpleROHookCS
 
             public int write_packetlog;
             public int freemouse;
+            public int cast_range;
             public int ground_zbias;
             public int alphalevel;
             public int m2e;
@@ -62,6 +63,7 @@ namespace SimpleROHookCS
 
             write_packetlog          = false;
             freemouse                = true;
+            cast_range               = 0x09;
             ground_zbias             = 0;
             alphalevel               = 0x7f;
             m2e                      = true;
@@ -110,6 +112,19 @@ namespace SimpleROHookCS
             set
             {
                 m_pSharedMemory->freemouse = (value == false)? 0 : 1;
+            }
+        }
+
+        public int cast_range
+        {
+            get
+            {
+                return m_pSharedMemory->cast_range;
+            }
+
+            set
+            {
+                m_pSharedMemory->cast_range = value;
             }
         }
 

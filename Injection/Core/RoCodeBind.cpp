@@ -1130,7 +1130,8 @@ void CRoCodeBind::DrawM2E(IDirect3DDevice7* d3ddevice)
 	CWorld *pWorld = pGamemode->m_world;
 	CView *pView = pGamemode->m_view;
 
-	int zbias = g_pSharedData->ground_zbias;
+	int cast_range = g_pSharedData->cast_range;
+	int zbias      = g_pSharedData->ground_zbias;
 
 	d3ddevice->SetTexture(0, NULL);
 	d3ddevice->SetRenderState(D3DRENDERSTATE_ZENABLE       , D3DZB_TRUE);
@@ -1232,7 +1233,8 @@ void CRoCodeBind::DrawBBE(IDirect3DDevice7* d3ddevice)
 	CWorld *pWorld = pGamemode->m_world;
 	CView *pView = pGamemode->m_view;
 
-	int zbias = g_pSharedData->ground_zbias;
+	int cast_range = g_pSharedData->cast_range;
+	int zbias      = g_pSharedData->ground_zbias;
 	int alphalevel = g_pSharedData->alphalevel;
 
 	BOOL bbe       = g_pSharedData->bbe;
@@ -1304,7 +1306,7 @@ void CRoCodeBind::DrawBBE(IDirect3DDevice7* d3ddevice)
 
 					if (castrange)
 					{
-						if (check_distance_circle(xx - cx, yy - cy, 9))
+						if (check_distance_circle(xx - cx, yy - cy, g_pSharedData->cast_range))
 							color = m_castrangeColor;
 					}
 

@@ -79,6 +79,9 @@ namespace SimpleROHookCS
 			packetLogToolStripMenuItem.Checked = m_SharedData.write_packetlog;
 			freeMouseToolStripMenuItem.Checked = m_SharedData.freemouse;
 
+			cast_range_ToolStripTrackBar.Value = m_SharedData.cast_range;
+			Set_CastRangeValue_castRangeToolStripMenuItem(m_SharedData.cast_range);
+
 			ground_zbias_ToolStripTrackBar.Value = m_SharedData.ground_zbias;
 			Set_ZBiasValue_groundZBiasToolStripMenuItem(m_SharedData.ground_zbias);
 
@@ -180,6 +183,19 @@ namespace SimpleROHookCS
 			UpdateCheckMenu();
 		}
 
+		private void cast_range_ToolStripTrackBar_Update(object sender, EventArgs e)
+		{
+			ToolStripTrackBar tsTrackbar = (ToolStripTrackBar)sender;
+			m_SharedData.cast_range = tsTrackbar.Value;
+
+			Set_CastRangeValue_castRangeToolStripMenuItem(m_SharedData.cast_range);
+		}
+
+		private void Set_CastRangeValue_castRangeToolStripMenuItem(int value)
+		{
+			castRangeToolStripMenuItem.Text = String.Format("Cast Range: {0}", value);
+		}
+
 		private void ground_zbias_ToolStripTrackBar_Update(object sender, EventArgs e)
 		{
 			ToolStripTrackBar tsTrackbar = (ToolStripTrackBar)sender;
@@ -236,6 +252,10 @@ namespace SimpleROHookCS
 
 		private void InitTaskTrayMenu()
 		{
+			cast_range_ToolStripTrackBar.SetMinMax(0, 30);
+			cast_range_ToolStripTrackBar.SetTickFrequency(1);
+			cast_range_ToolStripTrackBar.SetChangeValue(1, 4);
+
 			ground_zbias_ToolStripTrackBar.SetMinMax(0, 16);
 			ground_zbias_ToolStripTrackBar.SetTickFrequency(1);
 			ground_zbias_ToolStripTrackBar.SetChangeValue(1, 4);
@@ -603,6 +623,7 @@ Skill00FF = 0x7F888888
 
 					m_SharedData.write_packetlog          = configration.write_packetlog;
 					m_SharedData.freemouse                = configration.freemouse;
+					m_SharedData.cast_range               = configration.cast_range;
 					m_SharedData.ground_zbias             = configration.ground_zbias;
 					m_SharedData.alphalevel               = configration.alphalevel;
 					m_SharedData.m2e                      = configration.m2e;
@@ -649,6 +670,7 @@ Skill00FF = 0x7F888888
 
 				configration.write_packetlog          = m_SharedData.write_packetlog;
 				configration.freemouse                = m_SharedData.freemouse;
+				configration.cast_range               = m_SharedData.cast_range;
 				configration.ground_zbias             = m_SharedData.ground_zbias;
 				configration.alphalevel               = m_SharedData.alphalevel;
 				configration.m2e                      = m_SharedData.m2e;
@@ -699,6 +721,7 @@ Skill00FF = 0x7F888888
 		{
 			write_packetlog          = false;
 			freemouse                = false;
+			cast_range               = 0;
 			ground_zbias             = 0;
 			alphalevel               = 0;
 			m2e                      = true;
@@ -716,6 +739,7 @@ Skill00FF = 0x7F888888
 
 		public bool write_packetlog          { get; set; }
 		public bool freemouse                { get; set; }
+		public int  cast_range               { get; set; }
 		public int  ground_zbias             { get; set; }
 		public int  alphalevel               { get; set; }
 		public bool m2e                      { get; set; }
