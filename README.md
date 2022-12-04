@@ -5,11 +5,15 @@
 ![Language](https://img.shields.io/badge/language-C-blue)
 ![Language](https://img.shields.io/badge/language-C%2B%2B-blue)
 ![Language](https://img.shields.io/badge/language-C%23-blue)
-![Client](https://img.shields.io/badge/client-main-green)
-![Client](https://img.shields.io/badge/client-main%20sakray-yellow)
-![Client](https://img.shields.io/badge/client-zero-orange)
-![Client](https://img.shields.io/badge/client-zero%20sakray-red)
 ![Contributors](https://img.shields.io/github/contributors/X-EcutiOnner/SimpleROHook.svg)
+
+ Supported kRO Clients
+
+![Client](https://img.shields.io/badge/client-Sakray-lightgreen)
+![Client](https://img.shields.io/badge/client-Main-green)
+![Client](https://img.shields.io/badge/client-Main%20Sakray-yellow)
+![Client](https://img.shields.io/badge/client-Zero-orange)
+![Client](https://img.shields.io/badge/client-Zero%20Sakray-red)
 
 ## Requeriments
   - [Visual Studio 2022 (with C++ support)](https://visualstudio.microsoft.com/downloads/)
