@@ -15,6 +15,7 @@ typedef struct _StSHAREDMEMORY
 
 	BOOL  write_packetlog;
 	BOOL  freemouse;
+	int   cast_range;
 	int   ground_zbias;
 	int   alphalevel;
 	BOOL  m2e;
